@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace EduCal {
 	internal static class Program {
-		//This is my QA Branch
+		//This is my DEV Branch
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>

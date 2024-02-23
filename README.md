@@ -1,5 +1,5 @@
 # 202420_CIS285
-<<<<<<< HEAD
+
 Andrew
 Dalton Waters
 Keiohna Evans

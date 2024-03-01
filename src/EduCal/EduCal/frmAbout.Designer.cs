@@ -33,12 +33,12 @@
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.statusMain = new System.Windows.Forms.StatusStrip();
             this.okButton = new System.Windows.Forms.Button();
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusMain = new System.Windows.Forms.StatusStrip();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.mnuMain.SuspendLayout();
@@ -58,7 +58,7 @@
             this.tableLayoutPanel.Controls.Add(this.mnuMain, 1, 2);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(12, 11);
-            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 6;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -77,7 +77,7 @@
             this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
             this.logoPictureBox.Location = new System.Drawing.Point(4, 4);
-            this.logoPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logoPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
             this.logoPictureBox.Size = new System.Drawing.Size(175, 318);
@@ -124,12 +124,21 @@
             this.textBoxDescription.Text = "Description: Elbakri Walaa, Evans Keiohna, Trader Andrew, Waters Dalton, Zhong Mi" +
     "n";
             // 
+            // statusMain
+            // 
+            this.statusMain.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusMain.Location = new System.Drawing.Point(183, 106);
+            this.statusMain.Name = "statusMain";
+            this.statusMain.Size = new System.Drawing.Size(373, 22);
+            this.statusMain.TabIndex = 26;
+            this.statusMain.Text = "statusStrip1";
+            // 
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.okButton.Location = new System.Drawing.Point(452, 295);
-            this.okButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.okButton.Margin = new System.Windows.Forms.Padding(4);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(100, 27);
             this.okButton.TabIndex = 24;
@@ -166,15 +175,6 @@
             this.mnuAbout.Size = new System.Drawing.Size(64, 24);
             this.mnuAbout.Text = "Abou&t";
             // 
-            // statusMain
-            // 
-            this.statusMain.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusMain.Location = new System.Drawing.Point(183, 104);
-            this.statusMain.Name = "statusMain";
-            this.statusMain.Size = new System.Drawing.Size(373, 24);
-            this.statusMain.TabIndex = 26;
-            this.statusMain.Text = "statusStrip1";
-            // 
             // frmAbout
             // 
             this.AcceptButton = this.okButton;
@@ -184,7 +184,7 @@
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.mnuMain;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAbout";

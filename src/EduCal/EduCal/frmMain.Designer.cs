@@ -24,38 +24,38 @@
 		/// </summary>
 		private void InitializeComponent () {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMain = new System.Windows.Forms.MenuStrip();
+            this.mnuFIle = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.statusMain = new System.Windows.Forms.StatusStrip();
-            this.menuStrip1.SuspendLayout();
+            this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // mnuMain
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.Name = "menuStrip1";
+            this.mnuMain.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFIle,
+            this.mnuEdit,
+            this.mnuAbout});
+            resources.ApplyResources(this.mnuMain, "mnuMain");
+            this.mnuMain.Name = "mnuMain";
             // 
-            // toolStripMenuItem1
+            // mnuFIle
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+            this.mnuFIle.Name = "mnuFIle";
+            resources.ApplyResources(this.mnuFIle, "mnuFIle");
             // 
-            // toolStripMenuItem2
+            // mnuEdit
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+            this.mnuEdit.Name = "mnuEdit";
+            resources.ApplyResources(this.mnuEdit, "mnuEdit");
             // 
-            // toolStripMenuItem3
+            // mnuAbout
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+            this.mnuAbout.Name = "mnuAbout";
+            resources.ApplyResources(this.mnuAbout, "mnuAbout");
             // 
             // statusMain
             // 
@@ -68,14 +68,14 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.statusMain);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.mnuMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mnuMain.ResumeLayout(false);
+            this.mnuMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,10 +83,10 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.MenuStrip mnuMain;
+        private System.Windows.Forms.ToolStripMenuItem mnuFIle;
+        private System.Windows.Forms.ToolStripMenuItem mnuEdit;
+        private System.Windows.Forms.ToolStripMenuItem mnuAbout;
         private System.Windows.Forms.StatusStrip statusMain;
     }
 }

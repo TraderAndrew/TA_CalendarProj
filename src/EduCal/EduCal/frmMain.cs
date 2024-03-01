@@ -10,8 +10,20 @@ using System.Windows.Forms;
 
 namespace EduCal {
 	public partial class frmMain : Form {
-		public frmMain () {
+
+        public frmMain () {
 			InitializeComponent ();
 		}
-	}
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+    }
 }

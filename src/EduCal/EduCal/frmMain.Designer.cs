@@ -34,33 +34,33 @@
             // 
             // mnuMain
             // 
+            resources.ApplyResources(this.mnuMain, "mnuMain");
             this.mnuMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFIle,
             this.mnuEdit,
             this.mnuAbout});
-            resources.ApplyResources(this.mnuMain, "mnuMain");
             this.mnuMain.Name = "mnuMain";
             // 
             // mnuFIle
             // 
-            this.mnuFIle.Name = "mnuFIle";
             resources.ApplyResources(this.mnuFIle, "mnuFIle");
+            this.mnuFIle.Name = "mnuFIle";
             // 
             // mnuEdit
             // 
-            this.mnuEdit.Name = "mnuEdit";
             resources.ApplyResources(this.mnuEdit, "mnuEdit");
+            this.mnuEdit.Name = "mnuEdit";
             // 
             // mnuAbout
             // 
-            this.mnuAbout.Name = "mnuAbout";
             resources.ApplyResources(this.mnuAbout, "mnuAbout");
+            this.mnuAbout.Name = "mnuAbout";
             // 
             // statusMain
             // 
-            this.statusMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             resources.ApplyResources(this.statusMain, "statusMain");
+            this.statusMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusMain.Name = "statusMain";
             // 
             // frmMain
@@ -74,6 +74,7 @@
             this.Name = "frmMain";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
             this.ResumeLayout(false);

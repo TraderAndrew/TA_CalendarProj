@@ -39,6 +39,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
+            this.LabelDate = new System.Windows.Forms.Label();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,17 +119,25 @@
             resources.ApplyResources(this.btnNext, "btnNext");
             this.btnNext.Name = "btnNext";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
             resources.ApplyResources(this.btnPrevious, "btnPrevious");
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // LabelDate
+            // 
+            resources.ApplyResources(this.LabelDate, "LabelDate");
+            this.LabelDate.Name = "LabelDate";
             // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.LabelDate);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.label7);
@@ -171,6 +180,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Label LabelDate;
     }
 }
 

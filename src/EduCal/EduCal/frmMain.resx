@@ -121,11 +121,29 @@
     <value>139, 16</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="mnuFIle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 24</value>
+  </data>
+  <data name="mnuFIle.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="mnuEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 24</value>
+  </data>
+  <data name="mnuEdit.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="mnuAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="mnuAbout.Text" xml:space="preserve">
+    <value>Abou&amp;t</value>
+  </data>
   <data name="mnuMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="mnuMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1924, 38</value>
+    <value>1539, 28</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="mnuMain.TabIndex" type="System.Int32, mscorlib">
@@ -145,24 +163,6 @@
   </data>
   <data name="&gt;&gt;mnuMain.ZOrder" xml:space="preserve">
     <value>12</value>
-  </data>
-  <data name="mnuFIle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 34</value>
-  </data>
-  <data name="mnuFIle.Text" xml:space="preserve">
-    <value>&amp;File</value>
-  </data>
-  <data name="mnuEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 34</value>
-  </data>
-  <data name="mnuEdit.Text" xml:space="preserve">
-    <value>&amp;Edit</value>
-  </data>
-  <data name="mnuAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 34</value>
-  </data>
-  <data name="mnuAbout.Text" xml:space="preserve">
-    <value>Abou&amp;t</value>
   </data>
   <metadata name="statusMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>248, 16</value>
@@ -527,6 +527,9 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>67</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>120, 120</value>

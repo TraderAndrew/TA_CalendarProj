@@ -33,15 +33,9 @@
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.statusMain = new System.Windows.Forms.StatusStrip();
             this.okButton = new System.Windows.Forms.Button();
-            this.mnuMain = new System.Windows.Forms.MenuStrip();
-            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
-            this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
@@ -53,9 +47,7 @@
             this.tableLayoutPanel.Controls.Add(this.labelProductName, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.labelVersion, 1, 1);
             this.tableLayoutPanel.Controls.Add(this.textBoxDescription, 1, 4);
-            this.tableLayoutPanel.Controls.Add(this.statusMain, 1, 3);
             this.tableLayoutPanel.Controls.Add(this.okButton, 1, 5);
-            this.tableLayoutPanel.Controls.Add(this.mnuMain, 1, 2);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(12, 11);
             this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
@@ -124,15 +116,6 @@
             this.textBoxDescription.Text = "Description: Elbakri Walaa, Evans Keiohna, Trader Andrew, Waters Dalton, Zhong Mi" +
     "n";
             // 
-            // statusMain
-            // 
-            this.statusMain.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusMain.Location = new System.Drawing.Point(183, 106);
-            this.statusMain.Name = "statusMain";
-            this.statusMain.Size = new System.Drawing.Size(373, 22);
-            this.statusMain.TabIndex = 26;
-            this.statusMain.Text = "statusStrip1";
-            // 
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -144,37 +127,6 @@
             this.okButton.TabIndex = 24;
             this.okButton.Text = "&OK";
             // 
-            // mnuMain
-            // 
-            this.mnuMain.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile,
-            this.mnuEdit,
-            this.mnuAbout});
-            this.mnuMain.Location = new System.Drawing.Point(183, 64);
-            this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Size = new System.Drawing.Size(373, 28);
-            this.mnuMain.TabIndex = 25;
-            this.mnuMain.Text = "menuStrip1";
-            // 
-            // mnuFile
-            // 
-            this.mnuFile.Name = "mnuFile";
-            this.mnuFile.Size = new System.Drawing.Size(46, 24);
-            this.mnuFile.Text = "&File";
-            // 
-            // mnuEdit
-            // 
-            this.mnuEdit.Name = "mnuEdit";
-            this.mnuEdit.Size = new System.Drawing.Size(49, 24);
-            this.mnuEdit.Text = "&Edit";
-            // 
-            // mnuAbout
-            // 
-            this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(64, 24);
-            this.mnuAbout.Text = "Abou&t";
-            // 
             // frmAbout
             // 
             this.AcceptButton = this.okButton;
@@ -183,7 +135,6 @@
             this.ClientSize = new System.Drawing.Size(580, 348);
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MainMenuStrip = this.mnuMain;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -196,8 +147,6 @@
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
-            this.mnuMain.ResumeLayout(false);
-            this.mnuMain.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -210,10 +159,5 @@
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.MenuStrip mnuMain;
-        private System.Windows.Forms.ToolStripMenuItem mnuFile;
-        private System.Windows.Forms.StatusStrip statusMain;
-        private System.Windows.Forms.ToolStripMenuItem mnuEdit;
-        private System.Windows.Forms.ToolStripMenuItem mnuAbout;
     }
 }

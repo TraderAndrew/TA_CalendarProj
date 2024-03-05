@@ -14,6 +14,9 @@ namespace EduCal {
     {
         int month, year;
 
+        //Static variable that passes to another form for month and year
+        public static int static_month, static_year;
+
         public frmMain() {
             InitializeComponent();
         }
@@ -37,6 +40,10 @@ namespace EduCal {
             //This changes the name of the month
             String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LabelDate.Text = monthname + " " + year;
+
+            //Static variables
+            static_month = month;
+            static_year = year;
 
             //This gets the first day of the month
             DateTime startofthemonth = new DateTime(year, month, 1);
@@ -71,6 +78,16 @@ namespace EduCal {
 
             //This decrements to previous month
             month--;
+            //This goes into the previous years
+            if (month == 0)
+            {
+                month = 12;
+                year--;
+            }
+
+            //Static variables
+            static_month = month;
+            static_year = year;
 
             //This changes the name of the month
             String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
@@ -108,6 +125,16 @@ namespace EduCal {
 
             //This increments to next month
             month++;
+            //This goes into the next years
+            if (month == 13)
+            {
+                month = 1;
+                year++;
+            }
+
+            //Static variables
+            static_month = month;
+            static_year = year;
 
             //This changes the name of the month
             String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);

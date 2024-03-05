@@ -12,6 +12,9 @@ namespace EduCal
 {
     public partial class UserControlDays : UserControl
     {
+        //Static Var
+        public static string static_day;
+
         public UserControlDays()
         {
             InitializeComponent();
@@ -25,6 +28,13 @@ namespace EduCal
         public void days(int numday)
         {
             labelDays.Text = numday + "";
+        }
+
+        private void UserControlDays_Click(object sender, EventArgs e)
+        {
+            static_day = labelDays.Text;
+            EventForm eventForm = new EventForm();
+            eventForm.Show();
         }
     }
 }

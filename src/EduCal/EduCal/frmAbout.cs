@@ -17,7 +17,7 @@ namespace EduCal
             this.Text = String.Format("About {0}", AssemblyTitle);
             this.labelProductName.Text = "Education Calendar";
             this.labelVersion.Text = String.Format("Version 2024.04");
-            this.textBoxDescription.Text = "Hello";
+            this.textBoxDescription.Text = "Description: Elbakri Walaa, Evans Keiohna, Trader Andrew, Waters Dalton, Zhong Min";
         }
 
         #region Assembly Attribute Accessors

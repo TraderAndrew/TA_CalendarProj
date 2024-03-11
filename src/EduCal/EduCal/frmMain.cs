@@ -12,8 +12,8 @@ using System.Windows.Forms;
 namespace EduCal {
     public partial class frmMain : Form 
     {
-        int month, year;
         public static int static_month, static_year;
+        int month, year;
 
 
         public List<EventModel> Events { get; set; }
@@ -22,8 +22,8 @@ namespace EduCal {
         public EventForm CalEventForm { get; set; }
 
 
-        public frmMain() {
-            
+        public frmMain() 
+        { 
             InitializeComponent();
             Events = new List<EventModel>();
             NowDate = DateTime.Now;

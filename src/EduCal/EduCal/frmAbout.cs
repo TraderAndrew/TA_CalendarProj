@@ -15,11 +15,9 @@ namespace EduCal
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.labelProductName.Text = "Education Calendar";
+            this.labelVersion.Text = String.Format("Version 2024.04");
+            this.textBoxDescription.Text = "Hello";
         }
 
         #region Assembly Attribute Accessors
@@ -101,5 +99,10 @@ namespace EduCal
             }
         }
         #endregion
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

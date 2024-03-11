@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.labelDays = new System.Windows.Forms.Label();
+            this.lblUserTxt = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelDays
@@ -41,11 +42,20 @@
             this.labelDays.TabIndex = 0;
             this.labelDays.Text = "00";
             // 
+            // lblUserTxt
+            // 
+            this.lblUserTxt.AutoSize = true;
+            this.lblUserTxt.Location = new System.Drawing.Point(61, 62);
+            this.lblUserTxt.Name = "lblUserTxt";
+            this.lblUserTxt.Size = new System.Drawing.Size(0, 20);
+            this.lblUserTxt.TabIndex = 1;
+            // 
             // UserControlDays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblUserTxt);
             this.Controls.Add(this.labelDays);
             this.Name = "UserControlDays";
             this.Size = new System.Drawing.Size(171, 118);
@@ -59,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Label labelDays;
+        private System.Windows.Forms.Label lblUserTxt;
     }
 }

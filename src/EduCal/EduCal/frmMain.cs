@@ -13,156 +13,119 @@ namespace EduCal {
     public partial class frmMain : Form 
     {
         int month, year;
-
-        //Static variable that passes to another form for month and year
         public static int static_month, static_year;
 
+
+        public List<EventModel> Events { get; set; }
+        public List<UserControlDays> userControlDays { get; set;  }
+        public DateTime NowDate { get; set; } 
+        public EventForm CalEventForm { get; set; }
+
+
         public frmMain() {
+            
             InitializeComponent();
+            Events = new List<EventModel>();
+            NowDate = DateTime.Now;
+            displaymonths();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+
+        private void about_Click(object sender, EventArgs e)
         {
-
+            frmAbout names = new frmAbout();
+            names.ShowDialog();
         }
+
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            displaydays();
+            
         }
 
-        private void displaydays()
-        {
-            DateTime now = DateTime.Now;
-            month = now.Month;
-            year = now.Year;
 
-            //This changes the name of the month
+        private void displaymonths() 
+        {
+            daycontainer.Controls.Clear();
+            month = NowDate.Month;
+            year = NowDate.Year;
+
             String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LabelDate.Text = monthname + " " + year;
 
-            //Static variables
             static_month = month;
             static_year = year;
 
-            //This gets the first day of the month
             DateTime startofthemonth = new DateTime(year, month, 1);
 
-            //This gets the amount of days in the month
             int days = DateTime.DaysInMonth(year, month);
 
-            //This converts the startofmonth to an integer
             int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
+            displaydays(dayoftheweek, days);
+        }
 
-            //This is a blank user control to align the boxes for the first days of the week
-            for(int i = 1; i < dayoftheweek; i++)
+
+        private void displaydays(int _dayoftheweek, int _days)
+        {
+            userControlDays = new List<UserControlDays>();
+            for (int i = 1; i < _dayoftheweek; i++)
             {
                 UserControlBlank ucblank = new UserControlBlank();
                 daycontainer.Controls.Add(ucblank);
             }
 
-            //This is a user control for the days
-            for(int i = 1 ; i <= days ; i++) 
+            for(int i = 1 ; i <= _days ; i++) 
             {
-                UserControlDays userControlDays = new UserControlDays();
-                userControlDays.days(i);
-                daycontainer.Controls.Add(userControlDays);
-            }
+                UserControlDays newDay= new UserControlDays();
+                DateTime uniqToday = DateTime.Parse($"{NowDate.Month}/{i}/{NowDate.Year}");
+                newDay.days(i); 
+                foreach (EventModel em in Events)
+                { 
+                    if (em.eventday.ToShortDateString() == uniqToday.ToShortDateString()) {  
+                        newDay.ucTodaytxt =em.Name;
+                    } 
+                }
 
+                //eventwireup
+                userControlDays.Add(newDay);
+
+
+            }
+            foreach (UserControlDays item in userControlDays) 
+            {
+                item.popAdd += day_Click;
+                daycontainer.Controls.Add (item);
+            }
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            //Clears container
             daycontainer.Controls.Clear();
-
-            //This decrements to previous month
-            month--;
-            //This goes into the previous years
-            if (month == 0)
-            {
-                month = 12;
-                year--;
-            }
-
-            //Static variables
-            static_month = month;
-            static_year = year;
-
-            //This changes the name of the month
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            LabelDate.Text = monthname + " " + year;
-
-            //This gets the first day of the month
-            DateTime startofthemonth = new DateTime(year, month, 1);
-
-            //This gets the amount of days in the month
-            int days = DateTime.DaysInMonth(year, month);
-
-            //This converts the startofmonth to an integer
-            int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
-
-            //This is a blank user control to align the boxes for the first days of the week
-            for (int i = 1; i < dayoftheweek; i++)
-            {
-                UserControlBlank ucblank = new UserControlBlank();
-                daycontainer.Controls.Add(ucblank);
-            }
-
-            //This is a user control for the days
-            for (int i = 1; i <= days; i++)
-            {
-                UserControlDays userControlDays = new UserControlDays();
-                userControlDays.days(i);
-                daycontainer.Controls.Add(userControlDays);
-            }
+            NowDate = NowDate.AddMonths(-1);
+            displaymonths();
         }
+
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            //Clears container
             daycontainer.Controls.Clear();
+            NowDate = NowDate.AddMonths(1);
+            displaymonths();
+        }
 
-            //This increments to next month
-            month++;
-            //This goes into the next years
-            if (month == 13)
-            {
-                month = 1;
-                year++;
-            }
 
-            //Static variables
-            static_month = month;
-            static_year = year;
+        private void eventform_AddNew(object sender, AddEventArgs e)
+        { 
+            Events.Add(e.Model);
+            displaymonths();
+        }
 
-            //This changes the name of the month
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            LabelDate.Text = monthname + " " + year;
 
-            //This gets the first day of the month
-            DateTime startofthemonth = new DateTime(year, month, 1);
-
-            //This gets the amount of days in the month
-            int days = DateTime.DaysInMonth(year, month);
-
-            //This converts the startofmonth to an integer
-            int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
-
-            //This is a blank user control to align the boxes for the first days of the week
-            for (int i = 1; i < dayoftheweek; i++)
-            {
-                UserControlBlank ucblank = new UserControlBlank();
-                daycontainer.Controls.Add(ucblank);
-            }
-
-            //This is a user control for the days
-            for (int i = 1; i <= days; i++)
-            {
-                UserControlDays userControlDays = new UserControlDays();
-                userControlDays.days(i);
-                daycontainer.Controls.Add(userControlDays);
-            }
+        public void day_Click(object sender, AddEventArgs e) 
+        {
+            CalEventForm = new EventForm();
+            CalEventForm.added += eventform_AddNew;
+            CalEventForm.Show();
         }
     }
 }

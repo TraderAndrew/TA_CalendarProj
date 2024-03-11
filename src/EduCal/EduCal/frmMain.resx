@@ -492,37 +492,37 @@
   <data name="&gt;&gt;btnPrevious.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="LabelDate.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblMonthYear.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 18pt</value>
   </data>
-  <data name="LabelDate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblMonthYear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelDate.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblMonthYear.Location" type="System.Drawing.Point, System.Drawing">
     <value>611, 54</value>
   </data>
-  <data name="LabelDate.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblMonthYear.Size" type="System.Drawing.Size, System.Drawing">
     <value>450, 33</value>
   </data>
-  <data name="LabelDate.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblMonthYear.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
   </data>
-  <data name="LabelDate.Text" xml:space="preserve">
+  <data name="lblMonthYear.Text" xml:space="preserve">
     <value>MONTH YEAR</value>
   </data>
-  <data name="LabelDate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="lblMonthYear.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;LabelDate.Name" xml:space="preserve">
-    <value>LabelDate</value>
+  <data name="&gt;&gt;lblMonthYear.Name" xml:space="preserve">
+    <value>lblMonthYear</value>
   </data>
-  <data name="&gt;&gt;LabelDate.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblMonthYear.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelDate.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblMonthYear.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;LabelDate.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblMonthYear.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

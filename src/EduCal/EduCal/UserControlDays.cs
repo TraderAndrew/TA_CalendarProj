@@ -45,8 +45,6 @@ namespace EduCal
             EventModel tmp = new EventModel();
             AddEventArgs ae = new AddEventArgs();
             popAdd(this, ae);
-            //eventForm.Show();
-
         }
     }
 }

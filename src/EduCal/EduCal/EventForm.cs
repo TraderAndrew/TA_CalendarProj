@@ -13,7 +13,6 @@ namespace EduCal
     public partial class EventForm : Form
     {
         public event AddEventHandler added;
-        String connString = "server=localhost;user id=root;database=db_calendar;sslmode=none";
 
         public EventForm()
         {
@@ -28,7 +27,11 @@ namespace EduCal
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            EventModel tmp = new EventModel() { Id = 3, eventday = DateTime.Parse(txtDate.Text), Name = txtEvent.Text };
+            EventModel tmp = new EventModel() {eventday = DateTime.Parse(txtDate.Text), Name = txtEvent.Text };
+
+
+
+
             AddEventArgs ae = new AddEventArgs() { Model = tmp };
             added(this, ae);
             this.Close();

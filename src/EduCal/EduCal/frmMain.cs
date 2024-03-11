@@ -25,20 +25,16 @@ namespace EduCal {
         public frmMain() {
             
             InitializeComponent();
-            Events = new List<EventModel>() {
-                new EventModel() { Id = 1, eventday= DateTime.Parse("3/4/2024"), Name="My Test Date"},
-                new EventModel() { Id = 2, eventday= DateTime.Parse("3/25/2024"), Name="Date Due"}
-            };
+            Events = new List<EventModel>();
             NowDate = DateTime.Now;
-            CalEventForm = new EventForm();
-            CalEventForm.added += eventform_AddNew;
             displaymonths();
         }
 
 
-        private void label4_Click(object sender, EventArgs e)
+        private void about_Click(object sender, EventArgs e)
         {
-
+            frmAbout names = new frmAbout();
+            names.ShowDialog();
         }
 
 
@@ -102,11 +98,6 @@ namespace EduCal {
             }
         }
 
-        public void popitday_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
@@ -129,9 +120,11 @@ namespace EduCal {
             displaymonths();
         }
 
+
         public void day_Click(object sender, AddEventArgs e) 
         {
             CalEventForm = new EventForm();
+            CalEventForm.added += eventform_AddNew;
             CalEventForm.Show();
         }
     }

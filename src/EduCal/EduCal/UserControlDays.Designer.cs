@@ -47,9 +47,8 @@
             this.lblUserTxt.AutoSize = true;
             this.lblUserTxt.Location = new System.Drawing.Point(61, 62);
             this.lblUserTxt.Name = "lblUserTxt";
-            this.lblUserTxt.Size = new System.Drawing.Size(44, 16);
+            this.lblUserTxt.Size = new System.Drawing.Size(0, 20);
             this.lblUserTxt.TabIndex = 1;
-            this.lblUserTxt.Text = "label1";
             // 
             // UserControlDays
             // 

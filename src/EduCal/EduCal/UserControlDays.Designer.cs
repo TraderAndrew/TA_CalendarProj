@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelDays = new System.Windows.Forms.Label();
+            this.lblDays = new System.Windows.Forms.Label();
             this.lblUserTxt = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // labelDays
+            // lblDays
             // 
-            this.labelDays.AutoSize = true;
-            this.labelDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDays.Location = new System.Drawing.Point(3, 0);
-            this.labelDays.Name = "labelDays";
-            this.labelDays.Size = new System.Drawing.Size(27, 20);
-            this.labelDays.TabIndex = 0;
-            this.labelDays.Text = "00";
+            this.lblDays.AutoSize = true;
+            this.lblDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDays.Location = new System.Drawing.Point(3, 0);
+            this.lblDays.Name = "lblDays";
+            this.lblDays.Size = new System.Drawing.Size(27, 20);
+            this.lblDays.TabIndex = 0;
+            this.lblDays.Text = "00";
             // 
             // lblUserTxt
             // 
             this.lblUserTxt.AutoSize = true;
             this.lblUserTxt.Location = new System.Drawing.Point(61, 62);
             this.lblUserTxt.Name = "lblUserTxt";
-            this.lblUserTxt.Size = new System.Drawing.Size(0, 20);
+            this.lblUserTxt.Size = new System.Drawing.Size(0, 16);
             this.lblUserTxt.TabIndex = 1;
             // 
             // UserControlDays
@@ -56,7 +56,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblUserTxt);
-            this.Controls.Add(this.labelDays);
+            this.Controls.Add(this.lblDays);
             this.Name = "UserControlDays";
             this.Size = new System.Drawing.Size(171, 118);
             this.Load += new System.EventHandler(this.UserControlDays_Load);
@@ -68,7 +68,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelDays;
+        private System.Windows.Forms.Label lblDays;
         private System.Windows.Forms.Label lblUserTxt;
     }
 }

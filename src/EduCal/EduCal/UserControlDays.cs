@@ -35,12 +35,12 @@ namespace EduCal
         
         public void days(int numday)
         {
-            labelDays.Text = numday + "";
+            lblDays.Text = numday + "";
         }
 
         private void UserControlDays_Click(object sender, EventArgs e)
         {
-            static_day = labelDays.Text;
+            static_day = lblDays.Text;
             EventForm eventForm = new EventForm();
             EventModel tmp = new EventModel();
             AddEventArgs ae = new AddEventArgs();

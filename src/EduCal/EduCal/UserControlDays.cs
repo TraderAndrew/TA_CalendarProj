@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,16 @@ namespace EduCal
 {
     public partial class UserControlDays : UserControl
     {
-        //Static Var
-        public static string static_day;
+        public event AddEventHandler popAdd;
 
+        public static string static_day;
+        private String _ucTodaytxt;
+
+
+        public DateTime ucToday { get; set; }
+        public String ucTodaytxt { get { return _ucTodaytxt;  } set { _ucTodaytxt = value; lblUserTxt.Text = value; } }
+
+       
         public UserControlDays()
         {
             InitializeComponent();
@@ -27,14 +35,16 @@ namespace EduCal
         
         public void days(int numday)
         {
-            labelDays.Text = numday + "";
+            lblDays.Text = numday + "";
         }
 
         private void UserControlDays_Click(object sender, EventArgs e)
         {
-            static_day = labelDays.Text;
+            static_day = lblDays.Text;
             EventForm eventForm = new EventForm();
-            eventForm.Show();
+            EventModel tmp = new EventModel();
+            AddEventArgs ae = new AddEventArgs();
+            popAdd(this, ae);
         }
     }
 }

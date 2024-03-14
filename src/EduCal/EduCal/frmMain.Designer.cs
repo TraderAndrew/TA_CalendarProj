@@ -39,7 +39,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.LabelDate = new System.Windows.Forms.Label();
+            this.lblMonthYear = new System.Windows.Forms.Label();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,7 @@
             // 
             this.mnuAbout.Name = "mnuAbout";
             resources.ApplyResources(this.mnuAbout, "mnuAbout");
+            this.mnuAbout.Click += new System.EventHandler(this.about_Click);
             // 
             // statusMain
             // 
@@ -128,16 +129,16 @@
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // LabelDate
+            // lblMonthYear
             // 
-            resources.ApplyResources(this.LabelDate, "LabelDate");
-            this.LabelDate.Name = "LabelDate";
+            resources.ApplyResources(this.lblMonthYear, "lblMonthYear");
+            this.lblMonthYear.Name = "lblMonthYear";
             // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.LabelDate);
+            this.Controls.Add(this.lblMonthYear);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.label7);
@@ -180,7 +181,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Label LabelDate;
+        private System.Windows.Forms.Label lblMonthYear;
     }
 }
 

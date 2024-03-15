@@ -27,7 +27,7 @@ namespace EduCal
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            EventModel dalton = new EventModel() {eventday = DateTime.Parse(txtDate.Text), Name = txtEvent.Text };
+            EventModel tmp = new EventModel() {eventday = DateTime.Parse(txtDate.Text), Name = txtEvent.Text };
             AddEventArgs ae = new AddEventArgs() { Model = tmp };
 
             added(this, ae);

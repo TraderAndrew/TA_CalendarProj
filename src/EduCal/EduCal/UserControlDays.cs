@@ -13,6 +13,8 @@ namespace EduCal
 {
     public partial class UserControlDays : UserControl
     {
+        public bool weekEnd { get; set; } = false;
+
         public event AddEventHandler popAdd;
 
         public static string static_day;
@@ -26,11 +28,6 @@ namespace EduCal
         public UserControlDays()
         {
             InitializeComponent();
-        }
-
-        private void UserControlDays_Load(object sender, EventArgs e)
-        {
-
         }
         
         public void days(int numday)

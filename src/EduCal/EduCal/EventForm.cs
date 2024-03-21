@@ -28,13 +28,6 @@ namespace EduCal
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            EventModel tmp = new EventModel() {eventday = DateTime.Parse(txtDate.Text), Name = txtEvent.Text };
-            AddEventArgs ae = new AddEventArgs() { Model = tmp };
-
-            added(this, ae);
-            this.Close();
-=======
             if (txtDate.Text.Contains("-"))
             {
                 runDateRange();
@@ -43,7 +36,6 @@ namespace EduCal
             {
                 runSingleDay();
             }
->>>>>>> Andrew
         }
 
         private void runDateRange() 

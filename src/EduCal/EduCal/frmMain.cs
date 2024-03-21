@@ -14,12 +14,7 @@ namespace EduCal {
     public partial class frmMain : Form 
     {
         public static int static_month, static_year;
-<<<<<<< HEAD
-        int month, year;
-
-=======
         public Color fore, back;
->>>>>>> Andrew
 
         public List<EventModel> Events { get; set; }
         public List<UserControlDays> UserDays { get; set;  }

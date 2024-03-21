@@ -13,15 +13,16 @@ using System.Windows.Forms;
 namespace EduCal {
     public partial class frmMain : Form 
     {
+        public List<EventModel> Events { get; set; }
+        public List<UserControlDays> UserDays { get; set; }
+        public DateTime NowDate { get; set; }
+        public EventForm CalEventForm { get; set; }
+        public frmSettings settingMenu { get; set; }
+
+
         int month, year;
         public static int static_month, static_year;
         public Color fore, back;
-
-        public List<EventModel> Events { get; set; }
-        public List<UserControlDays> UserDays { get; set;  }
-        public DateTime NowDate { get; set; } 
-        public EventForm CalEventForm { get; set; }
-        public frmSettings settingMenu { get; set; }
 
 
         public frmMain() {
@@ -34,19 +35,16 @@ namespace EduCal {
             displaymonths();
         }
 
-
         private void about_Click(object sender, EventArgs e)
         {
             frmAbout TeamTwoNames = new frmAbout();
             TeamTwoNames.ShowDialog();
         }
 
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             
         }
-
 
         private void displaymonths() 
         {
@@ -67,7 +65,6 @@ namespace EduCal {
             
             displaydays(dayoftheweek, days);
         }
-
 
         private void displaydays(int _dayoftheweek, int _days)
         {
@@ -124,7 +121,6 @@ namespace EduCal {
             displaymonths();
         }
 
-
         private void btnNext_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
@@ -158,5 +154,19 @@ namespace EduCal {
             Events.Add(e.Model);
             displaymonths();
         }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
 }

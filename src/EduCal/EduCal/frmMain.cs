@@ -13,6 +13,7 @@ using System.Windows.Forms;
 namespace EduCal {
     public partial class frmMain : Form 
     {
+        int month, year;
         public static int static_month, static_year;
         public Color fore, back;
 

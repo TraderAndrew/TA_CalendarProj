@@ -15,6 +15,7 @@ namespace EduCal
     {
         public event ColorOfDayEventHandler settingsChanged;
 
+
         public frmSettings()
         {
             InitializeComponent();
@@ -45,5 +46,18 @@ namespace EduCal
             this.Close();
         }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
 }

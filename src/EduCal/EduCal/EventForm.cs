@@ -15,11 +15,11 @@ namespace EduCal
         public event AddEventHandler eventfrmAdd;
         DateTime dt = DateTime.Now;
 
+
         public EventForm()
         {
             InitializeComponent();
         }
-
 
         private void EventForm_Load(object sender, EventArgs e)
         {
@@ -63,5 +63,23 @@ namespace EduCal
             }
         }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
 }

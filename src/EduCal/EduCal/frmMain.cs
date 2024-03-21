@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -13,13 +14,18 @@ namespace EduCal {
     public partial class frmMain : Form 
     {
         public static int static_month, static_year;
+<<<<<<< HEAD
         int month, year;
 
+=======
+        public Color fore, back;
+>>>>>>> Andrew
 
         public List<EventModel> Events { get; set; }
         public List<UserControlDays> UserDays { get; set;  }
         public DateTime NowDate { get; set; } 
         public EventForm CalEventForm { get; set; }
+        public frmSettings settingMenu { get; set; }
 
 
         public frmMain() 
@@ -27,6 +33,8 @@ namespace EduCal {
             InitializeComponent();
             Events = new List<EventModel>();
             NowDate = DateTime.Now;
+            fore = Color.Black;
+            back = Color.White;
             displaymonths();
         }
 
@@ -79,6 +87,11 @@ namespace EduCal {
             {
                 UserControlDays newDay = new UserControlDays();
                 DateTime uniqToday = DateTime.Parse($"{NowDate.Month}/{i}/{NowDate.Year}");
+
+                if (uniqToday.DayOfWeek == DayOfWeek.Sunday || uniqToday.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    newDay.weekEnd = true;
+                }
                 newDay.days(i); 
 
                 foreach (EventModel em in Events)
@@ -90,9 +103,20 @@ namespace EduCal {
                 UserDays.Add(newDay);
             }
 
-            foreach (UserControlDays item in UserDays) 
+            foreach (UserControlDays item in UserDays)
             {
-                item.popAdd += day_Click;
+                if (item.weekEnd)
+                {
+                    item.BackColor = Color.DarkGray;
+                    item.ForeColor = Color.Gray;
+                }
+                else 
+                {
+                    item.BackColor = back;
+                    item.ForeColor = fore;
+                }
+
+                item.popAdd += mnuFileEvent_Click;
                 daycontainer.Controls.Add (item);
             }
         }
@@ -112,19 +136,31 @@ namespace EduCal {
             displaymonths();
         }
 
+        private void mnuSettings_Click(object sender, EventArgs e)
+        {
+            settingMenu = new frmSettings();
+            settingMenu.settingsChanged += mnuSetting_AddNew;
+            settingMenu.Show();
+        }
+
+        private void mnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
+        {
+            fore = e.foreColor;
+            back = e.backGroundColor;
+            displaymonths();
+        }
+
+        private void mnuFileEvent_Click(object sender, EventArgs e)
+        {
+            CalEventForm = new EventForm();
+            CalEventForm.eventfrmAdd += eventform_AddNew;
+            CalEventForm.Show();
+        }
 
         private void eventform_AddNew(object sender, AddEventArgs e)
         { 
             Events.Add(e.Model);
             displaymonths();
-        }
-
-
-        public void day_Click(object sender, AddEventArgs e) 
-        {
-            CalEventForm = new EventForm();
-            CalEventForm.added += eventform_AddNew;
-            CalEventForm.Show();
         }
     }
 }

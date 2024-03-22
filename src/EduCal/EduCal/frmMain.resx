@@ -121,20 +121,32 @@
     <value>139, 16</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="mnuFileEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="mnuFileEvent.Text" xml:space="preserve">
+    <value>New Event</value>
+  </data>
   <data name="mnuFIle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 24</value>
+    <value>46, 34</value>
   </data>
   <data name="mnuFIle.Text" xml:space="preserve">
     <value>&amp;File</value>
   </data>
+  <data name="mnuSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="mnuSettings.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="mnuEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 24</value>
+    <value>49, 34</value>
   </data>
   <data name="mnuEdit.Text" xml:space="preserve">
     <value>&amp;Edit</value>
   </data>
   <data name="mnuAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>64, 34</value>
   </data>
   <data name="mnuAbout.Text" xml:space="preserve">
     <value>Abou&amp;t</value>
@@ -143,7 +155,7 @@
     <value>0, 0</value>
   </data>
   <data name="mnuMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1539, 28</value>
+    <value>1931, 38</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="mnuMain.TabIndex" type="System.Int32, mscorlib">
@@ -168,10 +180,10 @@
     <value>248, 16</value>
   </metadata>
   <data name="statusMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1022</value>
+    <value>0, 1008</value>
   </data>
   <data name="statusMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1539, 22</value>
+    <value>1545, 22</value>
   </data>
   <data name="statusMain.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -193,7 +205,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="daycontainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 215</value>
+    <value>118, 153</value>
   </data>
   <data name="daycontainer.Size" type="System.Drawing.Size, System.Drawing">
     <value>1187, 795</value>
@@ -220,7 +232,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>300, 168</value>
+    <value>156, 125</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 25</value>
@@ -253,7 +265,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>465, 168</value>
+    <value>311, 125</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 25</value>
@@ -286,7 +298,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>778, 168</value>
+    <value>637, 125</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 25</value>
@@ -319,7 +331,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>611, 168</value>
+    <value>471, 125</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 25</value>
@@ -352,7 +364,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1129, 168</value>
+    <value>998, 125</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 25</value>
@@ -385,7 +397,7 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>966, 168</value>
+    <value>824, 125</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 25</value>
@@ -418,7 +430,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1267, 168</value>
+    <value>1138, 125</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 25</value>
@@ -442,16 +454,16 @@
     <value>3</value>
   </data>
   <data name="btnNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1417, 1022</value>
+    <value>1270, 954</value>
   </data>
   <data name="btnNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>75, 26</value>
   </data>
   <data name="btnNext.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
   <data name="btnNext.Text" xml:space="preserve">
-    <value>next</value>
+    <value>Next</value>
   </data>
   <data name="&gt;&gt;btnNext.Name" xml:space="preserve">
     <value>btnNext</value>
@@ -469,16 +481,16 @@
     <value>NoControl</value>
   </data>
   <data name="btnPrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1336, 1022</value>
+    <value>1189, 954</value>
   </data>
   <data name="btnPrevious.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>75, 26</value>
   </data>
   <data name="btnPrevious.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
   <data name="btnPrevious.Text" xml:space="preserve">
-    <value>previous</value>
+    <value>Previous</value>
   </data>
   <data name="&gt;&gt;btnPrevious.Name" xml:space="preserve">
     <value>btnPrevious</value>
@@ -499,10 +511,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblMonthYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>611, 54</value>
+    <value>489, 28</value>
   </data>
   <data name="lblMonthYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 33</value>
+    <value>450, 47</value>
   </data>
   <data name="lblMonthYear.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -538,7 +550,7 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1539, 1044</value>
+    <value>1545, 1030</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>80, 37, 80, 37</value>
@@ -555,6 +567,12 @@
   <data name="&gt;&gt;mnuFIle.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;mnuFileEvent.Name" xml:space="preserve">
+    <value>mnuFileEvent</value>
+  </data>
+  <data name="&gt;&gt;mnuFileEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;mnuEdit.Name" xml:space="preserve">
     <value>mnuEdit</value>
   </data>
@@ -565,6 +583,12 @@
     <value>mnuAbout</value>
   </data>
   <data name="&gt;&gt;mnuAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mnuSettings.Name" xml:space="preserve">
+    <value>mnuSettings</value>
+  </data>
+  <data name="&gt;&gt;mnuSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -13,24 +13,19 @@ namespace EduCal
 {
     public partial class UserControlDays : UserControl
     {
-        public event AddEventHandler popAdd;
+        public bool weekEnd { get; set; } = false;
+        public DateTime ucToday { get; set; }
+        public String ucTodaytxt { get { return _ucTodaytxt; } set { _ucTodaytxt = value; lblUserTxt.Text = value; } }
 
+
+        public event AddEventHandler popAdd;
         public static string static_day;
         private String _ucTodaytxt;
-
-
-        public DateTime ucToday { get; set; }
-        public String ucTodaytxt { get { return _ucTodaytxt;  } set { _ucTodaytxt = value; lblUserTxt.Text = value; } }
-
        
+
         public UserControlDays()
         {
             InitializeComponent();
-        }
-
-        private void UserControlDays_Load(object sender, EventArgs e)
-        {
-
         }
         
         public void days(int numday)
@@ -46,5 +41,21 @@ namespace EduCal
             AddEventArgs ae = new AddEventArgs();
             popAdd(this, ae);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

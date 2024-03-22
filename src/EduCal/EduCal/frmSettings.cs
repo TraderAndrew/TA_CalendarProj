@@ -50,10 +50,5 @@ namespace EduCal
         {
 
         }
-
-        private void lblFirmMainColor_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

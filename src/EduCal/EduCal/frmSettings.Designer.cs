@@ -77,7 +77,6 @@
             this.lblFirmMainColor.Size = new System.Drawing.Size(130, 13);
             this.lblFirmMainColor.TabIndex = 3;
             this.lblFirmMainColor.Text = "Color of Main Background";
-            this.lblFirmMainColor.Click += new System.EventHandler(this.lblFirmMainColor_Click);
             // 
             // checkBox3
             // 

@@ -46,18 +46,14 @@ namespace EduCal
             this.Close();
         }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFirmMainColor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

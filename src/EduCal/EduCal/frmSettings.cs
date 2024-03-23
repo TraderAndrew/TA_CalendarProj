@@ -23,26 +23,26 @@ namespace EduCal
 
         private void checkBox_Changed(object sender, EventArgs e)
         {
-            var tmpBack = Color.White;
-            var tmpFore = Color.Black;
+            var dayBack = Color.White;
+            var dayFore = Color.Black;
 
             if (checkBox1.Checked)
             {
-               tmpBack = Color.Pink;
-               tmpFore = Color.Blue;
+               dayBack = Color.Pink;
+               dayFore = Color.Blue;
             }
 
             if (checkBox2.Checked) 
             {
-                tmpBack = Color.White;
-                tmpFore = Color.Black;
+                dayBack = Color.White;
+                dayFore = Color.Black;
             }
            
-            ColorOfDayEventArgs carrier = new ColorOfDayEventArgs();
-            carrier.foreColor = tmpFore;
-            carrier.backGroundColor = tmpBack;
+            ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs();
+            dayColor.foreColor = dayFore;
+            dayColor.backGroundColor = dayBack;
 
-            settingsChanged(this, carrier);
+            settingsChanged(this, dayColor);
             this.Close();
         }
 

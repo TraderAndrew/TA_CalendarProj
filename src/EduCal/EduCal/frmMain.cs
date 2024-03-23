@@ -21,8 +21,7 @@ namespace EduCal {
 
 
         int month, year;
-        public static int static_month, static_year;
-        public Color fore, back;
+        public Color dayFore, dayBack;
 
 
         public frmMain() {
@@ -30,40 +29,14 @@ namespace EduCal {
             InitializeComponent();
             Events = new List<EventModel>();
             NowDate = DateTime.Now;
-            fore = Color.Black;
-            back = Color.White;
+            dayFore = Color.Black;
+            dayBack = Color.White;
             displaymonths();
-        }
-
-        private void about_Click(object sender, EventArgs e)
-        {
-            frmAbout TeamTwoNames = new frmAbout();
-            TeamTwoNames.ShowDialog();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             
-        }
-
-        private void displaymonths() 
-        {
-            daycontainer.Controls.Clear();
-            month = NowDate.Month;
-            year = NowDate.Year;
-
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            lblMonthYear.Text = monthname + " " + year;
-
-            static_month = month;
-            static_year = year;
-
-            DateTime startofthemonth = new DateTime(year, month, 1);
-
-            int days = DateTime.DaysInMonth(year, month);
-            int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
-            
-            displaydays(dayoftheweek, days);
         }
 
         private void displaydays(int _dayoftheweek, int _days)
@@ -76,7 +49,7 @@ namespace EduCal {
                 daycontainer.Controls.Add(ucblank);
             }
 
-            for(int i = 1 ; i <= _days ; i++) 
+            for (int i = 1; i <= _days; i++)
             {
                 UserControlDays newDay = new UserControlDays();
                 DateTime uniqToday = DateTime.Parse($"{NowDate.Month}/{i}/{NowDate.Year}");
@@ -85,13 +58,14 @@ namespace EduCal {
                 {
                     newDay.weekEnd = true;
                 }
-                newDay.days(i); 
+                newDay.days(i);
 
                 foreach (EventModel em in Events)
-                { 
-                    if (em.eventday.ToShortDateString() == uniqToday.ToShortDateString()) {  
+                {
+                    if (em.eventday.ToShortDateString() == uniqToday.ToShortDateString())
+                    {
                         newDay.ucTodaytxt = em.Name;
-                    } 
+                    }
                 }
                 UserDays.Add(newDay);
             }
@@ -103,15 +77,33 @@ namespace EduCal {
                     item.BackColor = Color.DarkGray;
                     item.ForeColor = Color.Gray;
                 }
-                else 
+                else
                 {
                     item.BackColor = back;
                     item.ForeColor = fore;
                 }
 
                 item.popAdd += mnuFileEvent_Click;
-                daycontainer.Controls.Add (item);
+                daycontainer.Controls.Add(item);
             }
+        }
+
+        private void displaymonths() 
+        {
+            daycontainer.Controls.Clear();
+
+            month = NowDate.Month;
+            year = NowDate.Year;
+
+            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            lblMonthYear.Text = monthname + " " + year;
+
+            DateTime startofthemonth = new DateTime(year, month, 1);
+
+            int days = DateTime.DaysInMonth(year, month);
+            int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
+            
+            displaydays(dayoftheweek, days);
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -128,6 +120,12 @@ namespace EduCal {
             displaymonths();
         }
 
+        private void about_Click(object sender, EventArgs e)
+        {
+            frmAbout TeamTwoNames = new frmAbout();
+            TeamTwoNames.ShowDialog();
+        }    
+
         private void mnuSettings_Click(object sender, EventArgs e)
         {
             settingMenu = new frmSettings();
@@ -137,8 +135,8 @@ namespace EduCal {
 
         private void mnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
         {
-            fore = e.foreColor;
-            back = e.backGroundColor;
+            dayFore = e.foreColor;
+            dayBack = e.backGroundColor;
             displaymonths();
         }
 

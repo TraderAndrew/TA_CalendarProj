@@ -18,10 +18,11 @@ namespace EduCal {
         public DateTime NowDate { get; set; }
         public EventForm CalEventForm { get; set; }
         public frmSettings settingMenu { get; set; }
+        public frmSettings frmMainBackColor { get; set; }
 
 
         int month, year;
-        public Color dayFore, dayBack;
+        public Color dayFore, dayBack, mainColor;
 
 
         public frmMain() 
@@ -62,9 +63,22 @@ namespace EduCal {
 
                 foreach (EventModel em in Events)
                 {
-                    if (em.eventday.ToShortDateString() == uniqToday.ToShortDateString())
+                    if (em.isMutliDay)
                     {
-                        newDay.ucTodaytxt = em.Name;
+                        if (em.eventStartDay.Date <= uniqToday.Date) 
+                        {
+                            if (em.eventEndDay.Date >= uniqToday.Date) 
+                            {
+                                newDay.ucTodaytxt = em.Name;
+                            }
+                        }
+                    }
+                    else 
+                    {
+                        if (em.eventStartDay.ToShortDateString() == uniqToday.ToShortDateString())
+                        {
+                            newDay.ucTodaytxt = em.Name;
+                        }
                     }
                 }
                 UserDays.Add(newDay);
@@ -79,8 +93,8 @@ namespace EduCal {
                 }
                 else
                 {
-                    item.BackColor = back;
-                    item.ForeColor = fore;
+                    item.BackColor = dayBack;
+                    item.ForeColor = dayFore;
                 }
 
                 item.popAdd += mnuFileEvent_Click;
@@ -130,14 +144,20 @@ namespace EduCal {
         {
             settingMenu = new frmSettings();
             settingMenu.settingsChanged += mnuSetting_AddNew;
+            settingMenu.frmMainBackground += mainBackgroundColor;
             settingMenu.Show();
         }
 
         private void mnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
         {
             dayFore = e.foreColor;
-            dayBack = e.backGroundColor;
+            dayBack = e.backGroundColor;           
             displaymonths();
+        }
+
+        private void mainBackgroundColor(object sender, frmMainColorEventArgs e) 
+        {
+            this.BackColor = e.mainBackground;
         }
 
         private void mnuFileEvent_Click(object sender, EventArgs e)

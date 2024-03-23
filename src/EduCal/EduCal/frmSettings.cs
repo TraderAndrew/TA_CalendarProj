@@ -14,7 +14,7 @@ namespace EduCal
     public partial class frmSettings : Form
     {
         public event ColorOfDayEventHandler settingsChanged;
-
+        public event frmMainColorEventHandler frmMainBackground;
 
         public frmSettings()
         {
@@ -25,6 +25,7 @@ namespace EduCal
         {
             var dayBack = Color.White;
             var dayFore = Color.Black;
+            var mainBack = Color.White;
 
             if (checkBox1.Checked)
             {
@@ -37,18 +38,40 @@ namespace EduCal
                 dayBack = Color.White;
                 dayFore = Color.Black;
             }
-           
+
+            if (checkBox3.Checked)
+            {
+                mainBack = Color.Blue;
+            }
+
+            if (checkBox4.Checked) 
+            {
+                mainBack = SystemColors.Control;
+            }
+
             ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs();
             dayColor.foreColor = dayFore;
             dayColor.backGroundColor = dayBack;
-
             settingsChanged(this, dayColor);
+
+            frmMainColorEventArgs mainColor = new frmMainColorEventArgs();
+            mainColor.mainBackground = mainBack;
+            frmMainBackground(this, mainColor);
+
+
             this.Close();
         }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
 }

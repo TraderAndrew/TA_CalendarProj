@@ -8,8 +8,10 @@ namespace EduCal
 {
     public class EventModel
     {
-        public int Id { get; set; }
+        public bool isMutliDay = false;
+
         public string Name { get; set; }
-        public DateTime eventday { get; set; }
+        public DateTime eventStartDay { get; set; }
+        public DateTime eventEndDay { get; set;}
     }
 }

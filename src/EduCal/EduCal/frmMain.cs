@@ -24,8 +24,8 @@ namespace EduCal {
         public Color dayFore, dayBack;
 
 
-        public frmMain() {
-            
+        public frmMain() 
+        { 
             InitializeComponent();
             Events = new List<EventModel>();
             NowDate = DateTime.Now;

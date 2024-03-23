@@ -46,18 +46,9 @@ namespace EduCal
             this.Close();
         }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

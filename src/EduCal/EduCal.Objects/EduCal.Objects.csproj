@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddEventArgs.cs" />
+    <Compile Include="ColorOfDayEventArgs.cs" />
     <Compile Include="EduCalObject.cs" />
     <Compile Include="EventModel.cs" />
+    <Compile Include="frmMainColorEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

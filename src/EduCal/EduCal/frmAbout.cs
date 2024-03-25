@@ -20,7 +20,7 @@ namespace EduCal
             this.textBoxDescription.Text = "Description: Elbakri Walaa, Evans Keiohna, Trader Andrew, Waters Dalton, Zhong Min";
         }
 
-        #region Assembly Attribute Accessors
+         #region Assembly Attribute Accessors
 
         public string AssemblyTitle
         {
@@ -100,9 +100,5 @@ namespace EduCal
         }
         #endregion
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
     }
 }

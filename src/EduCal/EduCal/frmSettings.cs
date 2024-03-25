@@ -35,7 +35,7 @@ namespace EduCal
 
             if (checkBox2.Checked) 
             {
-                dayBack = Color.White;
+                dayBack = SystemColors.Control;
                 dayFore = Color.Black;
             }
 

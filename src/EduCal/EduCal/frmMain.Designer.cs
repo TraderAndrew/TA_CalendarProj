@@ -26,6 +26,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.mnuFIle = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileEvent = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.statusMain = new System.Windows.Forms.StatusStrip();
@@ -39,7 +40,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.LabelDate = new System.Windows.Forms.Label();
+            this.lblMonthYear = new System.Windows.Forms.Label();
+            this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,11 +57,21 @@
             // 
             // mnuFIle
             // 
+            this.mnuFIle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileEvent});
             this.mnuFIle.Name = "mnuFIle";
             resources.ApplyResources(this.mnuFIle, "mnuFIle");
             // 
+            // mnuFileEvent
+            // 
+            this.mnuFileEvent.Name = "mnuFileEvent";
+            resources.ApplyResources(this.mnuFileEvent, "mnuFileEvent");
+            this.mnuFileEvent.Click += new System.EventHandler(this.mnuFileEvent_Click);
+            // 
             // mnuEdit
             // 
+            this.mnuEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSettings});
             this.mnuEdit.Name = "mnuEdit";
             resources.ApplyResources(this.mnuEdit, "mnuEdit");
             // 
@@ -129,16 +141,22 @@
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // LabelDate
+            // lblMonthYear
             // 
-            resources.ApplyResources(this.LabelDate, "LabelDate");
-            this.LabelDate.Name = "LabelDate";
+            resources.ApplyResources(this.lblMonthYear, "lblMonthYear");
+            this.lblMonthYear.Name = "lblMonthYear";
+            // 
+            // mnuSettings
+            // 
+            this.mnuSettings.Name = "mnuSettings";
+            resources.ApplyResources(this.mnuSettings, "mnuSettings");
+            this.mnuSettings.Click += new System.EventHandler(this.mnuSettings_Click);
             // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.LabelDate);
+            this.Controls.Add(this.lblMonthYear);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.label7);
@@ -181,7 +199,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Label LabelDate;
+        private System.Windows.Forms.Label lblMonthYear;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileEvent;
+        private System.Windows.Forms.ToolStripMenuItem mnuSettings;
     }
 }
 

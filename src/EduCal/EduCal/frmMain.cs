@@ -98,7 +98,7 @@ namespace EduCal {
                     item.ForeColor = dayFore;
                 }
 
-                item.popAdd += MnuFileEvent_Click;
+                item.PopAdd += MnuFileEvent_Click;
                 daycontainer.Controls.Add(item);
             }
         }

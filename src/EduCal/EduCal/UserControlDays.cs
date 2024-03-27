@@ -20,7 +20,7 @@ namespace EduCal
         //UcTodaytxt gets the the txt from the event form the user inputs as his/her event and displays it in the middle of the boxes of the calendar
 
 
-        public event AddEventHandler popAdd;
+        public event AddEventHandler PopAdd;
         public static string static_day;
         private String _ucTodaytxt;
        
@@ -41,7 +41,7 @@ namespace EduCal
             EventForm eventForm = new EventForm();
             EventModel tmp = new EventModel();
             AddEventArgs ae = new AddEventArgs();
-            popAdd(this, ae);
+            PopAdd(this, ae);
         }
 
 

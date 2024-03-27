@@ -25,12 +25,10 @@ namespace EduCal
             if (dt.Month > 9)
             {
                 txtBoxStartDate.Text = $"{dt.Month}/{dt.Day}/{dt.Year}";
-                ///txtBoxEndDate.Text = $"{dt.Month}/00/{dt.Year}";
             }
             else 
             {
                 txtBoxStartDate.Text = $"0{dt.Month}/{dt.Day}/{dt.Year}";
-                //txtBoxEndDate.Text = $"0{dt.Month}/00/{dt.Year}";
             }
         }
 

@@ -15,7 +15,6 @@ namespace EduCal
         public event AddEventHandler eventfrmAdd;
         DateTime dt = DateTime.Now;
 
-
         public EventForm()
         {
             InitializeComponent();
@@ -23,16 +22,21 @@ namespace EduCal
 
         private void EventForm_Load(object sender, EventArgs e)
         {
-            txtBoxStartDate.Text = $"{dt.Month}/{dt.Day}/{dt.Year}";
+            if (dt.Month > 9)
+            {
+                txtBoxStartDate.Text = $"{dt.Month}/{dt.Day}/{dt.Year}";
+            }
+            else 
+            {
+                txtBoxStartDate.Text = $"0{dt.Month}/{dt.Day}/{dt.Year}";
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-
             if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
             {
-                runDateRange();
+                runDateRange();            
             }
             else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
             {
@@ -40,7 +44,7 @@ namespace EduCal
             }
             else 
             {
-                lblError.Text = "No No";
+                lblError.Text = "You have to enter a start date";
             }
         }
 

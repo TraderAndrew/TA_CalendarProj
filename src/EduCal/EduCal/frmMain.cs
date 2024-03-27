@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace EduCal {
     public partial class frmMain : Form 
     {
-        //ask why putting new on line 17 removed the squiggly line
+        //ask why putting keyword(new) on line 17 removed the squiggly line
         public new List<EventModel> Events { get; set; }
         public List<UserControlDays> UserDays { get; set; }
         public DateTime NowDate { get; set; }

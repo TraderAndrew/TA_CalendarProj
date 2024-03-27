@@ -33,15 +33,15 @@ namespace EduCal {
             NowDate = DateTime.Now;
             dayFore = Color.Black;
             dayBack = Color.White;
-            displaymonths();
+            Displaymonths();
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void FrmMain_Load(object sender, EventArgs e)
         {
             
         }
 
-        private void displaydays(int _dayoftheweek, int _days)
+        private void Displaydays(int _dayoftheweek, int _days)
         {
             UserDays = new List<UserControlDays>();
 
@@ -98,12 +98,12 @@ namespace EduCal {
                     item.ForeColor = dayFore;
                 }
 
-                item.popAdd += mnuFileEvent_Click;
+                item.popAdd += MnuFileEvent_Click;
                 daycontainer.Controls.Add(item);
             }
         }
 
-        private void displaymonths() 
+        private void Displaymonths() 
         {
             daycontainer.Controls.Clear();
 
@@ -118,60 +118,60 @@ namespace EduCal {
             int days = DateTime.DaysInMonth(year, month);
             int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
             
-            displaydays(dayoftheweek, days);
+            Displaydays(dayoftheweek, days);
         }
 
-        private void btnPrevious_Click(object sender, EventArgs e)
+        private void BtnPrevious_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
             NowDate = NowDate.AddMonths(-1);
-            displaymonths();
+            Displaymonths();
         }
 
-        private void btnNext_Click(object sender, EventArgs e)
+        private void BtnNext_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
             NowDate = NowDate.AddMonths(1);
-            displaymonths();
+            Displaymonths();
         }
 
-        private void about_Click(object sender, EventArgs e)
+        private void About_Click(object sender, EventArgs e)
         {
             frmAbout TeamTwoNames = new frmAbout();
             TeamTwoNames.ShowDialog();
         }    
 
-        private void mnuSettings_Click(object sender, EventArgs e)
+        private void MnuSettings_Click(object sender, EventArgs e)
         {
             SettingMenu = new frmSettings();
-            SettingMenu.SettingsChanged += mnuSetting_AddNew;
-            SettingMenu.FrmMainBackground += mainBackgroundColor;
+            SettingMenu.SettingsChanged += MnuSetting_AddNew;
+            SettingMenu.FrmMainBackground += MainBackgroundColor;
             SettingMenu.Show();
         }
 
-        private void mnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
+        private void MnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
         {
             dayFore = e.foreColor;
             dayBack = e.backGroundColor;           
-            displaymonths();
+            Displaymonths();
         }
 
-        private void mainBackgroundColor(object sender, frmMainColorEventArgs e) 
+        private void MainBackgroundColor(object sender, frmMainColorEventArgs e) 
         {
             this.BackColor = e.mainBackground;
         }
 
-        private void mnuFileEvent_Click(object sender, EventArgs e)
+        private void MnuFileEvent_Click(object sender, EventArgs e)
         {
             CalEventForm = new EventForm();
-            CalEventForm.EventfrmAdd += eventform_AddNew;
+            CalEventForm.EventfrmAdd += Eventform_AddNew;
             CalEventForm.Show();
         }
 
-        private void eventform_AddNew(object sender, AddEventArgs e)
+        private void Eventform_AddNew(object sender, AddEventArgs e)
         { 
             Events.Add(e.Model);
-            displaymonths();
+            Displaymonths();
         }
     
     

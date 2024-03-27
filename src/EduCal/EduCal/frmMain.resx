@@ -127,14 +127,14 @@
   <data name="mnuFileEvent.Text" xml:space="preserve">
     <value>New Event</value>
   </data>
-  <data name="mnuFIle.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="mnuFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 34</value>
   </data>
-  <data name="mnuFIle.Text" xml:space="preserve">
+  <data name="mnuFile.Text" xml:space="preserve">
     <value>&amp;File</value>
   </data>
   <data name="mnuSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 26</value>
+    <value>145, 26</value>
   </data>
   <data name="mnuSettings.Text" xml:space="preserve">
     <value>Settings</value>
@@ -561,10 +561,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Education Calendar</value>
   </data>
-  <data name="&gt;&gt;mnuFIle.Name" xml:space="preserve">
-    <value>mnuFIle</value>
+  <data name="&gt;&gt;mnuFile.Name" xml:space="preserve">
+    <value>mnuFile</value>
   </data>
-  <data name="&gt;&gt;mnuFIle.Type" xml:space="preserve">
+  <data name="&gt;&gt;mnuFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mnuFileEvent.Name" xml:space="preserve">
@@ -579,16 +579,16 @@
   <data name="&gt;&gt;mnuEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;mnuAbout.Name" xml:space="preserve">
-    <value>mnuAbout</value>
-  </data>
-  <data name="&gt;&gt;mnuAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;mnuSettings.Name" xml:space="preserve">
     <value>mnuSettings</value>
   </data>
   <data name="&gt;&gt;mnuSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mnuAbout.Name" xml:space="preserve">
+    <value>mnuAbout</value>
+  </data>
+  <data name="&gt;&gt;mnuAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

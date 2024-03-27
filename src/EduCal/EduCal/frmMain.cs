@@ -58,9 +58,9 @@ namespace EduCal {
 
                 if (uniqToday.DayOfWeek == DayOfWeek.Sunday || uniqToday.DayOfWeek == DayOfWeek.Saturday)
                 {
-                    newDay.weekEnd = true;
+                    newDay.WeekEnd = true;
                 }
-                newDay.days(i);
+                newDay.Days(i);
 
                 foreach (EventModel em in Events)
                 {
@@ -70,7 +70,7 @@ namespace EduCal {
                         {
                             if (em.EventEndDay.Date >= uniqToday.Date) 
                             {
-                                newDay.ucTodaytxt = em.Name;
+                                newDay.UcTodaytxt = em.Name;
                             }
                         }
                     }
@@ -78,7 +78,7 @@ namespace EduCal {
                     {
                         if (em.EventStartDay.ToShortDateString() == uniqToday.ToShortDateString())
                         {
-                            newDay.ucTodaytxt = em.Name;
+                            newDay.UcTodaytxt = em.Name;
                         }
                     }
                 }
@@ -87,7 +87,7 @@ namespace EduCal {
 
             foreach (UserControlDays item in UserDays)
             {
-                if (item.weekEnd)
+                if (item.WeekEnd)
                 {
                     item.BackColor = Color.DarkGray;
                     item.ForeColor = Color.Gray;
@@ -151,8 +151,8 @@ namespace EduCal {
 
         private void MnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
         {
-            dayFore = e.foreColor;
-            dayBack = e.backGroundColor;           
+            dayFore = e.ForeColor;
+            dayBack = e.BackGroundColor;           
             Displaymonths();
         }
 

@@ -51,8 +51,8 @@ namespace EduCal
 
             ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs
             {
-                foreColor = dayFore,
-                backGroundColor = dayBack
+                ForeColor = dayFore,
+                BackGroundColor = dayBack
             };
             SettingsChanged(this, dayColor);
 

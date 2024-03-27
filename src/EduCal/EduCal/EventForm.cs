@@ -53,7 +53,7 @@ namespace EduCal
             DateTime sDate = DateTime.Parse(txtBoxStartDate.Text);
             DateTime eDate = DateTime.Parse(txtBoxEndDate.Text);
 
-            EventModel tmp = new EventModel() { eventStartDay = sDate, eventEndDay = eDate, Name = txtEvent.Text, isMutliDay = true };
+            EventModel tmp = new EventModel() { EventStartDay = sDate, EventEndDay = eDate, Name = txtEvent.Text, isMutliDay = true };
             AddEventArgs ae = new AddEventArgs() { Model = tmp };
             eventfrmAdd(this, ae);
 
@@ -70,7 +70,7 @@ namespace EduCal
             }
             else
             {
-                EventModel tmp = new EventModel() { eventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
+                EventModel tmp = new EventModel() { EventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
                 AddEventArgs ae = new AddEventArgs() { Model = tmp };
                 eventfrmAdd(this, ae);
 

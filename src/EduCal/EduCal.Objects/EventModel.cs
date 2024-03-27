@@ -11,7 +11,7 @@ namespace EduCal
         public bool isMutliDay = false;
 
         public string Name { get; set; }
-        public DateTime eventStartDay { get; set; }
-        public DateTime eventEndDay { get; set;}
+        public DateTime EventStartDay { get; set; }
+        public DateTime EventEndDay { get; set;}
     }
 }

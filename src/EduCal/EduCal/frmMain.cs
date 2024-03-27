@@ -66,9 +66,9 @@ namespace EduCal {
                 {
                     if (em.isMutliDay)
                     {
-                        if (em.eventStartDay.Date <= uniqToday.Date) 
+                        if (em.EventStartDay.Date <= uniqToday.Date) 
                         {
-                            if (em.eventEndDay.Date >= uniqToday.Date) 
+                            if (em.EventEndDay.Date >= uniqToday.Date) 
                             {
                                 newDay.ucTodaytxt = em.Name;
                             }
@@ -76,7 +76,7 @@ namespace EduCal {
                     }
                     else 
                     {
-                        if (em.eventStartDay.ToShortDateString() == uniqToday.ToShortDateString())
+                        if (em.EventStartDay.ToShortDateString() == uniqToday.ToShortDateString())
                         {
                             newDay.ucTodaytxt = em.Name;
                         }

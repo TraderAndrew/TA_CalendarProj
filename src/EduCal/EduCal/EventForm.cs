@@ -12,7 +12,7 @@ namespace EduCal
 {
     public partial class EventForm : Form
     {
-        public event AddEventHandler eventfrmAdd;
+        public event AddEventHandler EventfrmAdd;
         DateTime dt = DateTime.Now;
 
         public EventForm()
@@ -55,7 +55,7 @@ namespace EduCal
 
             EventModel tmp = new EventModel() { EventStartDay = sDate, EventEndDay = eDate, Name = txtEvent.Text, isMutliDay = true };
             AddEventArgs ae = new AddEventArgs() { Model = tmp };
-            eventfrmAdd(this, ae);
+            EventfrmAdd(this, ae);
 
             this.Close();
         }
@@ -72,7 +72,7 @@ namespace EduCal
             {
                 EventModel tmp = new EventModel() { EventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
                 AddEventArgs ae = new AddEventArgs() { Model = tmp };
-                eventfrmAdd(this, ae);
+                EventfrmAdd(this, ae);
 
                 this.Close();
             }

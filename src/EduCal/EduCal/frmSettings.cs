@@ -13,8 +13,8 @@ namespace EduCal
 {
     public partial class frmSettings : Form
     {
-        public event ColorOfDayEventHandler settingsChanged;
-        public event frmMainColorEventHandler frmMainBackground;
+        public event ColorOfDayEventHandler SettingsChanged;
+        public event frmMainColorEventHandler FrmMainBackground;
 
         public frmSettings()
         {
@@ -49,14 +49,18 @@ namespace EduCal
                 mainBack = SystemColors.Control;
             }
 
-            ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs();
-            dayColor.foreColor = dayFore;
-            dayColor.backGroundColor = dayBack;
-            settingsChanged(this, dayColor);
+            ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs
+            {
+                foreColor = dayFore,
+                backGroundColor = dayBack
+            };
+            SettingsChanged(this, dayColor);
 
-            frmMainColorEventArgs mainColor = new frmMainColorEventArgs();
-            mainColor.mainBackground = mainBack;
-            frmMainBackground(this, mainColor);
+            frmMainColorEventArgs mainColor = new frmMainColorEventArgs
+            {
+                mainBackground = mainBack
+            };
+            FrmMainBackground(this, mainColor);
 
 
             this.Close();

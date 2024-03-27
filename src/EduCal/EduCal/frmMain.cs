@@ -18,8 +18,8 @@ namespace EduCal {
         public List<UserControlDays> UserDays { get; set; }
         public DateTime NowDate { get; set; }
         public EventForm CalEventForm { get; set; }
-        public frmSettings settingMenu { get; set; }
-        public frmSettings frmMainBackColor { get; set; }
+        public frmSettings SettingMenu { get; set; }
+        public frmSettings FrmMainBackColor { get; set; }
 
 
         int month, year;
@@ -143,10 +143,10 @@ namespace EduCal {
 
         private void mnuSettings_Click(object sender, EventArgs e)
         {
-            settingMenu = new frmSettings();
-            settingMenu.settingsChanged += mnuSetting_AddNew;
-            settingMenu.frmMainBackground += mainBackgroundColor;
-            settingMenu.Show();
+            SettingMenu = new frmSettings();
+            SettingMenu.SettingsChanged += mnuSetting_AddNew;
+            SettingMenu.FrmMainBackground += mainBackgroundColor;
+            SettingMenu.Show();
         }
 
         private void mnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
@@ -164,7 +164,7 @@ namespace EduCal {
         private void mnuFileEvent_Click(object sender, EventArgs e)
         {
             CalEventForm = new EventForm();
-            CalEventForm.eventfrmAdd += eventform_AddNew;
+            CalEventForm.EventfrmAdd += eventform_AddNew;
             CalEventForm.Show();
         }
 

@@ -8,7 +8,7 @@ namespace EduCal
 {
     public class EduCalObject
     {
-        public string ToString()
+        public override string ToString()
         {
             return "EduCalObject: ";
         }

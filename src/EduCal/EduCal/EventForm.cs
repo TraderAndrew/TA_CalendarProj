@@ -34,17 +34,24 @@ namespace EduCal
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
+            if (txtEvent.Text.Length < 3 || txtEvent.Text.Length > 100)
             {
-                runDateRange();            
+                lblError.Text = "Event name is either to large or to small. must be between 3 to 100 characters.";
             }
-            else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
-            {
-                runSingleDay();
-            }
-            else 
-            {
-                lblError.Text = "You have to enter a start date";
+            else
+            {  
+                if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
+                {
+                    runDateRange();
+                }
+                else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
+                {
+                    runSingleDay();
+                }
+                else
+                {
+                    lblError.Text = "You have to enter a start date";
+                }
             }
         }
 

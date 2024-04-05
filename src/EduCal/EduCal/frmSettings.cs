@@ -13,8 +13,8 @@ namespace EduCal
 {
     public partial class frmSettings : Form
     {
-        public event ColorOfDayEventHandler settingsChanged;
-
+        public event ColorOfDayEventHandler SettingsChanged;
+        public event frmMainColorEventHandler FrmMainBackground;
 
         public frmSettings()
         {
@@ -23,32 +23,59 @@ namespace EduCal
 
         private void checkBox_Changed(object sender, EventArgs e)
         {
-            var tmpBack = Color.White;
-            var tmpFore = Color.Black;
+            var dayBack = Color.White;
+            var dayFore = Color.Black;
+            var mainBack = Color.White;
 
             if (checkBox1.Checked)
             {
-               tmpBack = Color.Pink;
-               tmpFore = Color.Blue;
+               dayBack = Color.Pink;
+               dayFore = Color.Blue;
             }
 
             if (checkBox2.Checked) 
             {
-                tmpBack = Color.White;
-                tmpFore = Color.Black;
+                dayBack = SystemColors.Control;
+                dayFore = Color.Black;
             }
-           
-            ColorOfDayEventArgs carrier = new ColorOfDayEventArgs();
-            carrier.foreColor = tmpFore;
-            carrier.backGroundColor = tmpBack;
 
-            settingsChanged(this, carrier);
+            if (checkBox3.Checked)
+            {
+                mainBack = Color.Blue;
+            }
+
+            if (checkBox4.Checked) 
+            {
+                mainBack = SystemColors.Control;
+            }
+
+            ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs
+            {
+                ForeColor = dayFore,
+                BackGroundColor = dayBack
+            };
+            SettingsChanged(this, dayColor);
+
+            frmMainColorEventArgs mainColor = new frmMainColorEventArgs
+            {
+                mainBackground = mainBack
+            };
+            FrmMainBackground(this, mainColor);
+
+
             this.Close();
         }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
 }

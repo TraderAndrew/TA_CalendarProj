@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Xml;
+using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +10,12 @@ namespace EduCal
 {
     public class EventModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime eventday { get; set; }
+        public bool isMutliDay = false;
+
+        [XmlAttribute("Name")]
+        public string Name { get; set; } 
+        public string Description { get; set; }
+        public DateTime EventStartDay { get; set; }
+        public DateTime EventEndDay { get; set;}
     }
 }

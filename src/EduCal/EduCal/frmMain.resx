@@ -122,31 +122,49 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="mnuFileEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 26</value>
+    <value>246, 26</value>
   </data>
   <data name="mnuFileEvent.Text" xml:space="preserve">
     <value>New Event</value>
   </data>
-  <data name="mnuFIle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 34</value>
+  <data name="xmlSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 26</value>
   </data>
-  <data name="mnuFIle.Text" xml:space="preserve">
+  <data name="xmlSave.Text" xml:space="preserve">
+    <value>Save Calendar</value>
+  </data>
+  <data name="xmlOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 26</value>
+  </data>
+  <data name="xmlOpen.Text" xml:space="preserve">
+    <value>Open Existing Calendar</value>
+  </data>
+  <data name="iCalExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 26</value>
+  </data>
+  <data name="iCalExport.Text" xml:space="preserve">
+    <value>iCal Export</value>
+  </data>
+  <data name="mnuFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 26</value>
+  </data>
+  <data name="mnuFile.Text" xml:space="preserve">
     <value>&amp;File</value>
   </data>
   <data name="mnuSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 26</value>
+    <value>145, 26</value>
   </data>
   <data name="mnuSettings.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
   <data name="mnuEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 34</value>
+    <value>49, 26</value>
   </data>
   <data name="mnuEdit.Text" xml:space="preserve">
     <value>&amp;Edit</value>
   </data>
   <data name="mnuAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 34</value>
+    <value>64, 26</value>
   </data>
   <data name="mnuAbout.Text" xml:space="preserve">
     <value>Abou&amp;t</value>
@@ -155,7 +173,7 @@
     <value>0, 0</value>
   </data>
   <data name="mnuMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1931, 38</value>
+    <value>1545, 30</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="mnuMain.TabIndex" type="System.Int32, mscorlib">
@@ -561,10 +579,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Education Calendar</value>
   </data>
-  <data name="&gt;&gt;mnuFIle.Name" xml:space="preserve">
-    <value>mnuFIle</value>
+  <data name="&gt;&gt;mnuFile.Name" xml:space="preserve">
+    <value>mnuFile</value>
   </data>
-  <data name="&gt;&gt;mnuFIle.Type" xml:space="preserve">
+  <data name="&gt;&gt;mnuFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mnuFileEvent.Name" xml:space="preserve">
@@ -579,16 +597,34 @@
   <data name="&gt;&gt;mnuEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;mnuSettings.Name" xml:space="preserve">
+    <value>mnuSettings</value>
+  </data>
+  <data name="&gt;&gt;mnuSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;mnuAbout.Name" xml:space="preserve">
     <value>mnuAbout</value>
   </data>
   <data name="&gt;&gt;mnuAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;mnuSettings.Name" xml:space="preserve">
-    <value>mnuSettings</value>
+  <data name="&gt;&gt;xmlSave.Name" xml:space="preserve">
+    <value>xmlSave</value>
   </data>
-  <data name="&gt;&gt;mnuSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;xmlSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;xmlOpen.Name" xml:space="preserve">
+    <value>xmlOpen</value>
+  </data>
+  <data name="&gt;&gt;xmlOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iCalExport.Name" xml:space="preserve">
+    <value>iCalExport</value>
+  </data>
+  <data name="&gt;&gt;iCalExport.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

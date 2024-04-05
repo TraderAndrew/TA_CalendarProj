@@ -13,12 +13,14 @@ namespace EduCal
 {
     public partial class UserControlDays : UserControl
     {
-        public bool weekEnd { get; set; } = false;
-        public DateTime ucToday { get; set; }
-        public String ucTodaytxt { get { return _ucTodaytxt; } set { _ucTodaytxt = value; lblUserTxt.Text = value; } }
+        public bool WeekEnd { get; set; } = false;
+        public DateTime UcToday { get; set; }
+        //UcToday gets todays date and displays it in the top left corner of the boxes in the calendar
+        public String UcTodaytxt { get { return _ucTodaytxt; } set { _ucTodaytxt = value; lblUserTxt.Text = value; } }
+        //UcTodaytxt gets the the txt from the event form the user inputs as his/her event and displays it in the middle of the boxes of the calendar
 
 
-        public event AddEventHandler popAdd;
+        public event AddEventHandler PopAdd;
         public static string static_day;
         private String _ucTodaytxt;
        
@@ -28,7 +30,7 @@ namespace EduCal
             InitializeComponent();
         }
         
-        public void days(int numday)
+        public void Days(int numday)
         {
             lblDays.Text = numday + "";
         }
@@ -39,7 +41,7 @@ namespace EduCal
             EventForm eventForm = new EventForm();
             EventModel tmp = new EventModel();
             AddEventArgs ae = new AddEventArgs();
-            popAdd(this, ae);
+            PopAdd(this, ae);
         }
 
 

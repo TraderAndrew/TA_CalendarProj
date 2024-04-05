@@ -12,9 +12,8 @@ namespace EduCal
 {
     public partial class EventForm : Form
     {
-        public event AddEventHandler eventfrmAdd;
+        public event AddEventHandler EventfrmAdd;
         DateTime dt = DateTime.Now;
-
 
         public EventForm()
         {
@@ -23,42 +22,58 @@ namespace EduCal
 
         private void EventForm_Load(object sender, EventArgs e)
         {
-            txtDate.Text = $"{dt.Month}/{dt.Day}/{dt.Year}";
+            if (dt.Month > 9)
+            {
+                txtBoxStartDate.Text = $"{dt.Month}/{dt.Day}/{dt.Year}";
+            }
+            else 
+            {
+                txtBoxStartDate.Text = $"0{dt.Month}/{dt.Day}/{dt.Year}";
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtDate.Text.Contains("-"))
+            if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
             {
-                runDateRange();
+                runDateRange();            
+            }
+            else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
+            {
+                runSingleDay();
             }
             else 
             {
-                runSingleDay();
+                lblError.Text = "You have to enter a start date";
             }
         }
 
         private void runDateRange() 
         {
-            //    var sDate = txtDate.Text.Split('-')[0];
-            //    var eDate = txtDate.Text.Split('-')[1];
-            lblError.Text = "Date ranges are not yet supported";
+            DateTime sDate = DateTime.Parse(txtBoxStartDate.Text);
+            DateTime eDate = DateTime.Parse(txtBoxEndDate.Text);
+
+            EventModel tmp = new EventModel() { EventStartDay = sDate, EventEndDay = eDate, Name = txtEvent.Text, isMutliDay = true };
+            AddEventArgs ae = new AddEventArgs() { Model = tmp };
+            EventfrmAdd(this, ae);
+
+            this.Close();
         }
 
         private void runSingleDay() 
         {
             
-            if (!DateTime.TryParse(txtDate.Text, out dt))
+            if (!DateTime.TryParse(txtBoxStartDate.Text, out dt))
             {
                 lblError.Text = "Enter a valid date";
                 dt = DateTime.Now;
             }
             else
             {
-                EventModel tmp = new EventModel() { eventday = dt, Name = txtEvent.Text };
+                EventModel tmp = new EventModel() { EventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
                 AddEventArgs ae = new AddEventArgs() { Model = tmp };
+                EventfrmAdd(this, ae);
 
-                eventfrmAdd(this, ae);
                 this.Close();
             }
         }

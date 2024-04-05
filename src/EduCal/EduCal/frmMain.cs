@@ -205,8 +205,12 @@ namespace EduCal {
             this.BackColor = e.mainBackground;
         }
         
-//mnuFileEvent_click will open a file form on the calendar app when
-//the user clicks on the file button on the calendar.
+        /// <summary>
+        /// MnuFileEvent_Click allows the user to acess the event form to
+        /// put an event on the calendar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MnuFileEvent_Click(object sender, EventArgs e)
         {
             CalEventForm = new EventForm();

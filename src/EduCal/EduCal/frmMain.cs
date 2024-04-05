@@ -161,7 +161,7 @@ namespace EduCal {
             Displaymonths();
         }
 
-        private void xmlSave_Click(object sender, EventArgs e)
+        private void XmlSave_Click(object sender, EventArgs e)
         {
             XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
             TextWriter writer = new StreamWriter("C:\\Users\\Literally\\FILES\\MyEvents.xml");
@@ -173,7 +173,7 @@ namespace EduCal {
             }
         }
 
-        private void xmlOpen_Click(object sender, EventArgs e)
+        private void XmlOpen_Click(object sender, EventArgs e)
         {
             XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
             FileStream fs = new FileStream("C:\\Users\\Literally\\FILES\\MyEvents.xml", FileMode.Open);
@@ -182,7 +182,7 @@ namespace EduCal {
             Displaymonths();
         }
 
-        private void iCalExport_Click(object sender, EventArgs e)
+        private void ICalExport_Click(object sender, EventArgs e)
         {
             FileStream writer = new FileStream("C:\\Users\\Literally\\FILES\\Event.ics", FileMode.Create);
             var iCalSerializer = new CalendarSerializer();

@@ -162,19 +162,19 @@
             // 
             this.xmlSave.Name = "xmlSave";
             resources.ApplyResources(this.xmlSave, "xmlSave");
-            this.xmlSave.Click += new System.EventHandler(this.xmlSave_Click);
+            this.xmlSave.Click += new System.EventHandler(this.XmlSave_Click);
             // 
             // xmlOpen
             // 
             this.xmlOpen.Name = "xmlOpen";
             resources.ApplyResources(this.xmlOpen, "xmlOpen");
-            this.xmlOpen.Click += new System.EventHandler(this.xmlOpen_Click);
+            this.xmlOpen.Click += new System.EventHandler(this.XmlOpen_Click);
             // 
             // iCalExport
             // 
             this.iCalExport.Name = "iCalExport";
             resources.ApplyResources(this.iCalExport, "iCalExport");
-            this.iCalExport.Click += new System.EventHandler(this.iCalExport_Click);
+            this.iCalExport.Click += new System.EventHandler(this.ICalExport_Click);
             // 
             // frmMain
             // 

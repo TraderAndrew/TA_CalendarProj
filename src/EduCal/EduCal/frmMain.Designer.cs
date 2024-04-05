@@ -42,6 +42,9 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.lblMonthYear = new System.Windows.Forms.Label();
+            this.xmlSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.xmlOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.iCalExport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +61,10 @@
             // mnuFile
             // 
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileEvent});
+            this.mnuFileEvent,
+            this.xmlSave,
+            this.xmlOpen,
+            this.iCalExport});
             this.mnuFile.Name = "mnuFile";
             resources.ApplyResources(this.mnuFile, "mnuFile");
             // 
@@ -152,6 +158,24 @@
             resources.ApplyResources(this.lblMonthYear, "lblMonthYear");
             this.lblMonthYear.Name = "lblMonthYear";
             // 
+            // xmlSave
+            // 
+            this.xmlSave.Name = "xmlSave";
+            resources.ApplyResources(this.xmlSave, "xmlSave");
+            this.xmlSave.Click += new System.EventHandler(this.xmlSave_Click);
+            // 
+            // xmlOpen
+            // 
+            this.xmlOpen.Name = "xmlOpen";
+            resources.ApplyResources(this.xmlOpen, "xmlOpen");
+            this.xmlOpen.Click += new System.EventHandler(this.xmlOpen_Click);
+            // 
+            // iCalExport
+            // 
+            this.iCalExport.Name = "iCalExport";
+            resources.ApplyResources(this.iCalExport, "iCalExport");
+            this.iCalExport.Click += new System.EventHandler(this.iCalExport_Click);
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -202,6 +226,9 @@
         private System.Windows.Forms.Label lblMonthYear;
         private System.Windows.Forms.ToolStripMenuItem mnuFileEvent;
         private System.Windows.Forms.ToolStripMenuItem mnuSettings;
+        private System.Windows.Forms.ToolStripMenuItem xmlSave;
+        private System.Windows.Forms.ToolStripMenuItem xmlOpen;
+        private System.Windows.Forms.ToolStripMenuItem iCalExport;
     }
 }
 

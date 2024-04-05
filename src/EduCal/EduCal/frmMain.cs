@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
+using Ical.Net;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
@@ -9,11 +12,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ical.Net.Serialization;
+using Ical.Net.CalendarComponents;
+using Ical.Net.DataTypes;
 
 namespace EduCal {
     public partial class frmMain : Form 
     {
-        //ask why putting keyword(new) on line 17 removed the squiggly line
         public new List<EventModel> Events { get; set; }
         public List<UserControlDays> UserDays { get; set; }
         public DateTime NowDate { get; set; }
@@ -154,6 +159,45 @@ namespace EduCal {
             dayFore = e.ForeColor;
             dayBack = e.BackGroundColor;           
             Displaymonths();
+        }
+
+        private void xmlSave_Click(object sender, EventArgs e)
+        {
+            XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
+            TextWriter writer = new StreamWriter("C:\\Users\\Literally\\FILES\\MyEvents.xml");
+
+            if (Events != null && Events.Count > 0) 
+            {
+                XmlFile.Serialize(writer, Events);
+                writer.Close();
+            }
+        }
+
+        private void xmlOpen_Click(object sender, EventArgs e)
+        {
+            XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
+            FileStream fs = new FileStream("C:\\Users\\Literally\\FILES\\MyEvents.xml", FileMode.Open);
+
+            Events = (List<EventModel>)XmlFile.Deserialize(fs);
+            Displaymonths();
+        }
+
+        private void iCalExport_Click(object sender, EventArgs e)
+        {
+            FileStream writer = new FileStream("C:\\Users\\Literally\\FILES\\Event.ics", FileMode.Create);
+            var iCalSerializer = new CalendarSerializer();
+            var cal = new Ical.Net.Calendar();
+            foreach (EventModel x in Events)
+            {
+                CalDateTime s = new CalDateTime(x.EventStartDay.Year, x.EventStartDay.Day, x.EventStartDay.Month, x.EventStartDay.Hour, x.EventStartDay.Minute, x.EventStartDay.Second);
+                CalDateTime n = new CalDateTime(x.EventEndDay.Year, x.EventEndDay.Day, x.EventEndDay.Month, x.EventEndDay.Hour, x.EventEndDay.Minute, x.EventEndDay.Second);
+                var icalevent = new CalendarEvent() { Summary = x.Name, Description = x.Description, Start = s, End = n };
+                cal.Events.Add(icalevent);
+            }
+            string var1 = iCalSerializer.SerializeToString(cal);
+            byte[] buffer = new ASCIIEncoding().GetBytes(var1);
+            writer.Write(buffer, 0, buffer.Length);
+            writer.Close();
         }
 
         private void MainBackgroundColor(object sender, frmMainColorEventArgs e) 

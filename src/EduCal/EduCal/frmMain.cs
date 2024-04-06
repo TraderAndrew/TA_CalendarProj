@@ -161,6 +161,12 @@ namespace EduCal {
             Displaymonths();
         }
 
+        /// <summary>
+        /// XmlSave_Click, Xml_Open, and ICalExport_Click all save to 
+        /// the file directory C:\WORKING\CIS285_EduCal_T2\bin\Debug
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void XmlSave_Click(object sender, EventArgs e)
         {
             XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));

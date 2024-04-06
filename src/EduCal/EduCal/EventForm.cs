@@ -34,7 +34,7 @@ namespace EduCal
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtEvent.Text.Length < 3 || txtEvent.Text.Length > 100)
+            if (txtEvent.Text.Length < 3 || txtEvent.Text.Length > 100 || String.IsNullOrEmpty(txtEvent.Text))
             {
                 lblError.Text = "Event name is either to large or to small. must be between 3 to 100 characters.";
             }

@@ -25,9 +25,10 @@
 		private void InitializeComponent () {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnuMain = new System.Windows.Forms.MenuStrip();
-            this.mnuFIle = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileEvent = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.statusMain = new System.Windows.Forms.StatusStrip();
             this.daycontainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -41,7 +42,9 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.lblMonthYear = new System.Windows.Forms.Label();
-            this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.xmlSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.xmlOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.iCalExport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,24 +52,27 @@
             // 
             this.mnuMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFIle,
+            this.mnuFile,
             this.mnuEdit,
             this.mnuAbout});
             resources.ApplyResources(this.mnuMain, "mnuMain");
             this.mnuMain.Name = "mnuMain";
             // 
-            // mnuFIle
+            // mnuFile
             // 
-            this.mnuFIle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileEvent});
-            this.mnuFIle.Name = "mnuFIle";
-            resources.ApplyResources(this.mnuFIle, "mnuFIle");
+            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileEvent,
+            this.xmlSave,
+            this.xmlOpen,
+            this.iCalExport});
+            this.mnuFile.Name = "mnuFile";
+            resources.ApplyResources(this.mnuFile, "mnuFile");
             // 
             // mnuFileEvent
             // 
             this.mnuFileEvent.Name = "mnuFileEvent";
             resources.ApplyResources(this.mnuFileEvent, "mnuFileEvent");
-            this.mnuFileEvent.Click += new System.EventHandler(this.mnuFileEvent_Click);
+            this.mnuFileEvent.Click += new System.EventHandler(this.MnuFileEvent_Click);
             // 
             // mnuEdit
             // 
@@ -75,11 +81,17 @@
             this.mnuEdit.Name = "mnuEdit";
             resources.ApplyResources(this.mnuEdit, "mnuEdit");
             // 
+            // mnuSettings
+            // 
+            this.mnuSettings.Name = "mnuSettings";
+            resources.ApplyResources(this.mnuSettings, "mnuSettings");
+            this.mnuSettings.Click += new System.EventHandler(this.MnuSettings_Click);
+            // 
             // mnuAbout
             // 
             this.mnuAbout.Name = "mnuAbout";
             resources.ApplyResources(this.mnuAbout, "mnuAbout");
-            this.mnuAbout.Click += new System.EventHandler(this.about_Click);
+            this.mnuAbout.Click += new System.EventHandler(this.About_Click);
             // 
             // statusMain
             // 
@@ -132,25 +144,37 @@
             resources.ApplyResources(this.btnNext, "btnNext");
             this.btnNext.Name = "btnNext";
             this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
             // btnPrevious
             // 
             resources.ApplyResources(this.btnPrevious, "btnPrevious");
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.UseVisualStyleBackColor = true;
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            this.btnPrevious.Click += new System.EventHandler(this.BtnPrevious_Click);
             // 
             // lblMonthYear
             // 
             resources.ApplyResources(this.lblMonthYear, "lblMonthYear");
             this.lblMonthYear.Name = "lblMonthYear";
             // 
-            // mnuSettings
+            // xmlSave
             // 
-            this.mnuSettings.Name = "mnuSettings";
-            resources.ApplyResources(this.mnuSettings, "mnuSettings");
-            this.mnuSettings.Click += new System.EventHandler(this.mnuSettings_Click);
+            this.xmlSave.Name = "xmlSave";
+            resources.ApplyResources(this.xmlSave, "xmlSave");
+            this.xmlSave.Click += new System.EventHandler(this.XmlSave_Click);
+            // 
+            // xmlOpen
+            // 
+            this.xmlOpen.Name = "xmlOpen";
+            resources.ApplyResources(this.xmlOpen, "xmlOpen");
+            this.xmlOpen.Click += new System.EventHandler(this.XmlOpen_Click);
+            // 
+            // iCalExport
+            // 
+            this.iCalExport.Name = "iCalExport";
+            resources.ApplyResources(this.iCalExport, "iCalExport");
+            this.iCalExport.Click += new System.EventHandler(this.ICalExport_Click);
             // 
             // frmMain
             // 
@@ -174,7 +198,7 @@
             this.Name = "frmMain";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
             this.ResumeLayout(false);
@@ -185,7 +209,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip mnuMain;
-        private System.Windows.Forms.ToolStripMenuItem mnuFIle;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile;
         private System.Windows.Forms.ToolStripMenuItem mnuEdit;
         private System.Windows.Forms.ToolStripMenuItem mnuAbout;
         private System.Windows.Forms.StatusStrip statusMain;
@@ -202,6 +226,9 @@
         private System.Windows.Forms.Label lblMonthYear;
         private System.Windows.Forms.ToolStripMenuItem mnuFileEvent;
         private System.Windows.Forms.ToolStripMenuItem mnuSettings;
+        private System.Windows.Forms.ToolStripMenuItem xmlSave;
+        private System.Windows.Forms.ToolStripMenuItem xmlOpen;
+        private System.Windows.Forms.ToolStripMenuItem iCalExport;
     }
 }
 

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
+using Ical.Net;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
@@ -9,17 +12,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ical.Net.Serialization;
+using Ical.Net.CalendarComponents;
+using Ical.Net.DataTypes;
 
 namespace EduCal {
     public partial class frmMain : Form 
     {
-        //ask why putting new on line 17 removed the squiggly line
         public new List<EventModel> Events { get; set; }
         public List<UserControlDays> UserDays { get; set; }
         public DateTime NowDate { get; set; }
         public EventForm CalEventForm { get; set; }
-        public frmSettings settingMenu { get; set; }
-        public frmSettings frmMainBackColor { get; set; }
+        public frmSettings SettingMenu { get; set; }
+        public frmSettings FrmMainBackColor { get; set; }
 
 
         int month, year;
@@ -33,15 +38,15 @@ namespace EduCal {
             NowDate = DateTime.Now;
             dayFore = Color.Black;
             dayBack = Color.White;
-            displaymonths();
+            Displaymonths();
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void FrmMain_Load(object sender, EventArgs e)
         {
             
         }
 
-        private void displaydays(int _dayoftheweek, int _days)
+        private void Displaydays(int _dayoftheweek, int _days)
         {
             UserDays = new List<UserControlDays>();
 
@@ -58,27 +63,27 @@ namespace EduCal {
 
                 if (uniqToday.DayOfWeek == DayOfWeek.Sunday || uniqToday.DayOfWeek == DayOfWeek.Saturday)
                 {
-                    newDay.weekEnd = true;
+                    newDay.WeekEnd = true;
                 }
-                newDay.days(i);
+                newDay.Days(i);
 
                 foreach (EventModel em in Events)
                 {
                     if (em.isMutliDay)
                     {
-                        if (em.eventStartDay.Date <= uniqToday.Date) 
+                        if (em.EventStartDay.Date <= uniqToday.Date) 
                         {
-                            if (em.eventEndDay.Date >= uniqToday.Date) 
+                            if (em.EventEndDay.Date >= uniqToday.Date) 
                             {
-                                newDay.ucTodaytxt = em.Name;
+                                newDay.UcTodaytxt = em.Name;
                             }
                         }
                     }
                     else 
                     {
-                        if (em.eventStartDay.ToShortDateString() == uniqToday.ToShortDateString())
+                        if (em.EventStartDay.ToShortDateString() == uniqToday.ToShortDateString())
                         {
-                            newDay.ucTodaytxt = em.Name;
+                            newDay.UcTodaytxt = em.Name;
                         }
                     }
                 }
@@ -87,7 +92,7 @@ namespace EduCal {
 
             foreach (UserControlDays item in UserDays)
             {
-                if (item.weekEnd)
+                if (item.WeekEnd)
                 {
                     item.BackColor = Color.DarkGray;
                     item.ForeColor = Color.Gray;
@@ -98,12 +103,12 @@ namespace EduCal {
                     item.ForeColor = dayFore;
                 }
 
-                item.popAdd += mnuFileEvent_Click;
+                item.PopAdd += MnuFileEvent_Click;
                 daycontainer.Controls.Add(item);
             }
         }
 
-        private void displaymonths() 
+        private void Displaymonths() 
         {
             daycontainer.Controls.Clear();
 
@@ -118,60 +123,111 @@ namespace EduCal {
             int days = DateTime.DaysInMonth(year, month);
             int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
             
-            displaydays(dayoftheweek, days);
+            Displaydays(dayoftheweek, days);
         }
 
-        private void btnPrevious_Click(object sender, EventArgs e)
+        private void BtnPrevious_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
             NowDate = NowDate.AddMonths(-1);
-            displaymonths();
+            Displaymonths();
         }
 
-        private void btnNext_Click(object sender, EventArgs e)
+        private void BtnNext_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
             NowDate = NowDate.AddMonths(1);
-            displaymonths();
+            Displaymonths();
         }
 
-        private void about_Click(object sender, EventArgs e)
+        private void About_Click(object sender, EventArgs e)
         {
             frmAbout TeamTwoNames = new frmAbout();
             TeamTwoNames.ShowDialog();
         }    
 
-        private void mnuSettings_Click(object sender, EventArgs e)
+        private void MnuSettings_Click(object sender, EventArgs e)
         {
-            settingMenu = new frmSettings();
-            settingMenu.settingsChanged += mnuSetting_AddNew;
-            settingMenu.frmMainBackground += mainBackgroundColor;
-            settingMenu.Show();
+            SettingMenu = new frmSettings();
+            SettingMenu.SettingsChanged += MnuSetting_AddNew;
+            SettingMenu.FrmMainBackground += MainBackgroundColor;
+            SettingMenu.Show();
         }
 
-        private void mnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
+        private void MnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
         {
-            dayFore = e.foreColor;
-            dayBack = e.backGroundColor;           
-            displaymonths();
+            dayFore = e.ForeColor;
+            dayBack = e.BackGroundColor;           
+            Displaymonths();
         }
 
-        private void mainBackgroundColor(object sender, frmMainColorEventArgs e) 
+        /// <summary>
+        /// XmlSave_Click, Xml_Open, and ICalExport_Click all save to 
+        /// the file directory C:\WORKING\CIS285_EduCal_T2\bin\Debug
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void XmlSave_Click(object sender, EventArgs e)
+        {
+            XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
+            TextWriter writer = new StreamWriter("MyEvents.xml");
+
+            if (Events != null && Events.Count > 0) 
+            {
+                XmlFile.Serialize(writer, Events);
+                writer.Close();
+            }
+        }
+
+        private void XmlOpen_Click(object sender, EventArgs e)
+        {
+            XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
+            FileStream fs = new FileStream("MyEvents.xml", FileMode.Open);
+
+            Events = (List<EventModel>)XmlFile.Deserialize(fs);
+            Displaymonths();
+        }
+
+        private void ICalExport_Click(object sender, EventArgs e)
+        {
+            FileStream writer = new FileStream("Event.ics", FileMode.Create);
+            var iCalSerializer = new CalendarSerializer();
+            var cal = new Ical.Net.Calendar();
+            foreach (EventModel x in Events)
+            {
+                CalDateTime s = new CalDateTime(x.EventStartDay.Year, x.EventStartDay.Day, x.EventStartDay.Month, x.EventStartDay.Hour, x.EventStartDay.Minute, x.EventStartDay.Second);
+                CalDateTime n = new CalDateTime(x.EventEndDay.Year, x.EventEndDay.Day, x.EventEndDay.Month, x.EventEndDay.Hour, x.EventEndDay.Minute, x.EventEndDay.Second);
+                var icalevent = new CalendarEvent() { Summary = x.Name, Description = x.Description, Start = s, End = n };
+                cal.Events.Add(icalevent);
+            }
+            string var1 = iCalSerializer.SerializeToString(cal);
+            byte[] buffer = new ASCIIEncoding().GetBytes(var1);
+            writer.Write(buffer, 0, buffer.Length);
+            writer.Close();
+        }
+
+        private void MainBackgroundColor(object sender, frmMainColorEventArgs e) 
         {
             this.BackColor = e.mainBackground;
         }
-
-        private void mnuFileEvent_Click(object sender, EventArgs e)
+        
+        /// <summary>
+        /// MnuFileEvent_Click allows the user to acess the event form to
+        /// put an event on the calendar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MnuFileEvent_Click(object sender, EventArgs e)
         {
             CalEventForm = new EventForm();
-            CalEventForm.eventfrmAdd += eventform_AddNew;
+            CalEventForm.EventfrmAdd += Eventform_AddNew;
             CalEventForm.Show();
         }
 
-        private void eventform_AddNew(object sender, AddEventArgs e)
+        private void Eventform_AddNew(object sender, AddEventArgs e)
         { 
             Events.Add(e.Model);
-            displaymonths();
+            Displaymonths();
         }
     
     

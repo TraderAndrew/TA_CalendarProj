@@ -11,7 +11,7 @@ namespace EduCal
     public delegate void ColorOfDayEventHandler(object sender, ColorOfDayEventArgs e);
     public class ColorOfDayEventArgs:EventArgs
     {
-        public Color backGroundColor { get; set; }
-        public Color foreColor { get; set; }
+        public Color BackGroundColor { get; set; }
+        public Color ForeColor { get; set; }
     }
 }

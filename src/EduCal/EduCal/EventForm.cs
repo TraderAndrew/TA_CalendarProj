@@ -12,7 +12,7 @@ namespace EduCal
 {
     public partial class EventForm : Form
     {
-        public event AddEventHandler eventfrmAdd;
+        public event AddEventHandler EventfrmAdd;
         DateTime dt = DateTime.Now;
 
         public EventForm()
@@ -34,17 +34,24 @@ namespace EduCal
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
+            if (txtEvent.Text.Length < 3 || txtEvent.Text.Length > 100 || String.IsNullOrEmpty(txtEvent.Text))
             {
-                runDateRange();            
+                lblError.Text = "Event name is either to large or to small. must be between 3 to 100 characters.";
             }
-            else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
-            {
-                runSingleDay();
-            }
-            else 
-            {
-                lblError.Text = "You have to enter a start date";
+            else
+            {  
+                if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
+                {
+                    runDateRange();
+                }
+                else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
+                {
+                    runSingleDay();
+                }
+                else
+                {
+                    lblError.Text = "You have to enter a start date";
+                }
             }
         }
 
@@ -53,9 +60,9 @@ namespace EduCal
             DateTime sDate = DateTime.Parse(txtBoxStartDate.Text);
             DateTime eDate = DateTime.Parse(txtBoxEndDate.Text);
 
-            EventModel tmp = new EventModel() { eventStartDay = sDate, eventEndDay = eDate, Name = txtEvent.Text, isMutliDay = true };
+            EventModel tmp = new EventModel() { EventStartDay = sDate, EventEndDay = eDate, Name = txtEvent.Text, isMutliDay = true };
             AddEventArgs ae = new AddEventArgs() { Model = tmp };
-            eventfrmAdd(this, ae);
+            EventfrmAdd(this, ae);
 
             this.Close();
         }
@@ -70,9 +77,9 @@ namespace EduCal
             }
             else
             {
-                EventModel tmp = new EventModel() { eventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
+                EventModel tmp = new EventModel() { EventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
                 AddEventArgs ae = new AddEventArgs() { Model = tmp };
-                eventfrmAdd(this, ae);
+                EventfrmAdd(this, ae);
 
                 this.Close();
             }

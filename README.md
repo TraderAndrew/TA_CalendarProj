@@ -1,16 +1,4 @@
 # 202420_CIS285
-
-Andrew
-Dalton Waters
-Keiohna Evans
-Min Zhong
-=======
-Dalton Waters
-
->>>>>>> QA
+Andrew Trader, Dalton Waters, Min Zhong, Braki Walaa
 # Header
-
-Keiohna
-
-Min Zhong
-Andrew trader
+This is our project for school

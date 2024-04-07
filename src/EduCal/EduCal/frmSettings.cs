@@ -20,7 +20,11 @@ namespace EduCal
         {
             InitializeComponent();
         }
-
+        
+// This event handler will allow the user to change the 
+// background color of the calendar to blue as well as
+// change the background color of the weekend days to pink
+// and blue. 
         private void checkBox_Changed(object sender, EventArgs e)
         {
             var dayBack = Color.White;

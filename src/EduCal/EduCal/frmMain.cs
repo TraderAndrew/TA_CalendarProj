@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EduCal {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class frmMain : Form 
     {
         //ask why putting keyword(new) on line 17 removed the squiggly line
@@ -103,6 +106,13 @@ namespace EduCal {
             }
         }
 
+        
+        /// <summary>
+        /// The displayMonths method works to hold as well
+        /// display the date, time, and year to be used by 
+        /// on click buttons as well as the creation of
+        /// events by the user.
+        /// </summary>
         private void Displaymonths() 
         {
             daycontainer.Controls.Clear();
@@ -121,6 +131,14 @@ namespace EduCal {
             Displaydays(dayoftheweek, days);
         }
 
+            
+        /// <summary>
+        /// This btnPrevious_Click allows user to toggle
+        /// through the different months in a year as
+        /// well go back to months in previous years.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnPrevious_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();

@@ -140,11 +140,11 @@ namespace EduCal {
             Displaymonths();
         }
 
-        private void About_Click(object sender, EventArgs e)
+        private void mnuAboutBtn_Click(object sender, EventArgs e)
         {
-            frmAbout TeamTwoNames = new frmAbout();
-            TeamTwoNames.ShowDialog();
-        }    
+            frmAbout CalendarProjectInfo = new frmAbout();
+            CalendarProjectInfo.ShowDialog();
+        }
 
         private void MnuSettings_Click(object sender, EventArgs e)
         {
@@ -159,6 +159,30 @@ namespace EduCal {
             dayFore = e.ForeColor;
             dayBack = e.BackGroundColor;           
             Displaymonths();
+        }
+
+        /// <summary>
+        /// MnuFileEvent_Click allows the user to acess the event form to
+        /// put an event on the calendar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MnuFileEvent_Click(object sender, EventArgs e)
+        {
+            CalEventForm = new EventForm();
+            CalEventForm.EventfrmAdd += Eventform_AddNew;
+            CalEventForm.Show();
+        }
+
+        private void Eventform_AddNew(object sender, AddEventArgs e)
+        {
+            Events.Add(e.Model);
+            Displaymonths();
+        }
+
+        private void MainBackgroundColor(object sender, frmMainColorEventArgs e)
+        {
+            this.BackColor = e.mainBackground;
         }
 
         /// <summary>
@@ -204,30 +228,6 @@ namespace EduCal {
             byte[] buffer = new ASCIIEncoding().GetBytes(var1);
             writer.Write(buffer, 0, buffer.Length);
             writer.Close();
-        }
-
-        private void MainBackgroundColor(object sender, frmMainColorEventArgs e) 
-        {
-            this.BackColor = e.mainBackground;
-        }
-        
-        /// <summary>
-        /// MnuFileEvent_Click allows the user to acess the event form to
-        /// put an event on the calendar.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MnuFileEvent_Click(object sender, EventArgs e)
-        {
-            CalEventForm = new EventForm();
-            CalEventForm.EventfrmAdd += Eventform_AddNew;
-            CalEventForm.Show();
-        }
-
-        private void Eventform_AddNew(object sender, AddEventArgs e)
-        { 
-            Events.Add(e.Model);
-            Displaymonths();
         }
     
     

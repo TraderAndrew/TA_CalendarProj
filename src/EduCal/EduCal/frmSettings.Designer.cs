@@ -67,7 +67,7 @@
             this.lblColorofDays.Location = new System.Drawing.Point(36, 26);
             this.lblColorofDays.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblColorofDays.Name = "lblColorofDays";
-            this.lblColorofDays.Size = new System.Drawing.Size(170, 31);
+            this.lblColorofDays.Size = new System.Drawing.Size(136, 25);
             this.lblColorofDays.TabIndex = 2;
             this.lblColorofDays.Text = "Color of Days:";
             // 
@@ -78,7 +78,7 @@
             this.lblFirmMainColor.Location = new System.Drawing.Point(36, 138);
             this.lblFirmMainColor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFirmMainColor.Name = "lblFirmMainColor";
-            this.lblFirmMainColor.Size = new System.Drawing.Size(305, 31);
+            this.lblFirmMainColor.Size = new System.Drawing.Size(244, 25);
             this.lblFirmMainColor.TabIndex = 3;
             this.lblFirmMainColor.Text = "Color of Main Background:";
             // 
@@ -88,7 +88,7 @@
             this.checkBox3.Location = new System.Drawing.Point(59, 173);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(118, 25);
+            this.checkBox3.Size = new System.Drawing.Size(94, 20);
             this.checkBox3.TabIndex = 4;
             this.checkBox3.Text = "Color: Blue";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@
             this.checkBox4.Location = new System.Drawing.Point(59, 201);
             this.checkBox4.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(126, 25);
+            this.checkBox4.Size = new System.Drawing.Size(101, 20);
             this.checkBox4.TabIndex = 5;
             this.checkBox4.Text = "Color: White";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(522, 288);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.lblFirmMainColor);

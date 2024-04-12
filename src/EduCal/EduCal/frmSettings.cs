@@ -29,7 +29,7 @@ namespace EduCal
         {
             var dayBack = Color.White;
             var dayFore = Color.Black;
-            var mainBack = Color.White;
+            var mainBack = SystemColors.Control;
 
             if (checkBox1.Checked)
             {
@@ -39,7 +39,7 @@ namespace EduCal
 
             if (checkBox2.Checked) 
             {
-                dayBack = SystemColors.Control;
+                dayBack = Color.White;
                 dayFore = Color.Black;
             }
 

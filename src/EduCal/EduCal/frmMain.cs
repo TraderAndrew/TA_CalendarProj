@@ -63,6 +63,7 @@ namespace EduCal {
             {
                 UserControlDays newDay = new UserControlDays();
                 DateTime uniqToday = DateTime.Parse($"{NowDate.Month}/{i}/{NowDate.Year}");
+                newDay.UcToday = uniqToday;
 
                 if (uniqToday.DayOfWeek == DayOfWeek.Sunday || uniqToday.DayOfWeek == DayOfWeek.Saturday)
                 {

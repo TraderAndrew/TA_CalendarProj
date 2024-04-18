@@ -520,7 +520,7 @@
     <value>36</value>
   </data>
   <data name="btnNext.Text" xml:space="preserve">
-    <value>Next</value>
+    <value>Next Month</value>
   </data>
   <data name="&gt;&gt;btnNext.Name" xml:space="preserve">
     <value>btnNext</value>
@@ -550,7 +550,7 @@
     <value>37</value>
   </data>
   <data name="btnPrevious.Text" xml:space="preserve">
-    <value>Previous</value>
+    <value>Previous Month</value>
   </data>
   <data name="&gt;&gt;btnPrevious.Name" xml:space="preserve">
     <value>btnPrevious</value>

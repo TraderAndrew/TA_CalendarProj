@@ -41,15 +41,15 @@ namespace EduCal
             }
             else if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
             {
-                runDateRange();
+                RunDateRange();
             }
             else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
             {
-                runSingleDay();
+                RunSingleDay();
             }
         }
 
-        private void runDateRange() 
+        private void RunDateRange() 
         {
             DateTime sDate = DateTime.Parse(txtBoxStartDate.Text);
             DateTime eDate = DateTime.Parse(txtBoxEndDate.Text);
@@ -61,7 +61,7 @@ namespace EduCal
             this.Close();
         }
 
-        private void runSingleDay() 
+        private void RunSingleDay() 
         {
             
             if (!DateTime.TryParse(txtBoxStartDate.Text, out dt))

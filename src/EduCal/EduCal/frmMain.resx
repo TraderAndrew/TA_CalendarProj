@@ -121,6 +121,60 @@
     <value>139, 16</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="mnuFileEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 22</value>
+  </data>
+  <data name="mnuFileEvent.Text" xml:space="preserve">
+    <value>New Event</value>
+  </data>
+  <data name="xmlSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 22</value>
+  </data>
+  <data name="xmlSave.Text" xml:space="preserve">
+    <value>Save Calendar</value>
+  </data>
+  <data name="xmlOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 22</value>
+  </data>
+  <data name="xmlOpen.Text" xml:space="preserve">
+    <value>Open Existing Calendar</value>
+  </data>
+  <data name="iCalExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 22</value>
+  </data>
+  <data name="iCalExport.Text" xml:space="preserve">
+    <value>iCal Export</value>
+  </data>
+  <data name="mnuFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="mnuFile.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="mnuSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="mnuSettings.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="mnuEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 20</value>
+  </data>
+  <data name="mnuEdit.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="mnuAboutBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 22</value>
+  </data>
+  <data name="mnuAboutBtn.Text" xml:space="preserve">
+    <value>Calendar Project Info</value>
+  </data>
+  <data name="mnuAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 20</value>
+  </data>
+  <data name="mnuAbout.Text" xml:space="preserve">
+    <value>Abou&amp;t</value>
+  </data>
   <data name="mnuMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -149,60 +203,6 @@
   </data>
   <data name="&gt;&gt;mnuMain.ZOrder" xml:space="preserve">
     <value>12</value>
-  </data>
-  <data name="mnuFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="mnuFile.Text" xml:space="preserve">
-    <value>&amp;File</value>
-  </data>
-  <data name="mnuFileEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
-  </data>
-  <data name="mnuFileEvent.Text" xml:space="preserve">
-    <value>New Event</value>
-  </data>
-  <data name="xmlSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
-  </data>
-  <data name="xmlSave.Text" xml:space="preserve">
-    <value>Save Calendar</value>
-  </data>
-  <data name="xmlOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
-  </data>
-  <data name="xmlOpen.Text" xml:space="preserve">
-    <value>Open Existing Calendar</value>
-  </data>
-  <data name="iCalExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
-  </data>
-  <data name="iCalExport.Text" xml:space="preserve">
-    <value>iCal Export</value>
-  </data>
-  <data name="mnuEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 20</value>
-  </data>
-  <data name="mnuEdit.Text" xml:space="preserve">
-    <value>&amp;Edit</value>
-  </data>
-  <data name="mnuSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
-  </data>
-  <data name="mnuSettings.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="mnuAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 20</value>
-  </data>
-  <data name="mnuAbout.Text" xml:space="preserve">
-    <value>Abou&amp;t</value>
-  </data>
-  <data name="mnuAboutBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
-  </data>
-  <data name="mnuAboutBtn.Text" xml:space="preserve">
-    <value>Calendar Project Info</value>
   </data>
   <metadata name="statusMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>248, 16</value>
@@ -571,7 +571,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblMonthYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>391, 22</value>
+    <value>376, 39</value>
   </data>
   <data name="lblMonthYear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>

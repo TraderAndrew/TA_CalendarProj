@@ -39,8 +39,9 @@ namespace EduCal
         {
             static_day = lblDays.Text;
             EventForm eventForm = new EventForm();
-            eventForm.Show();
-            eventForm.ClickedDay = UcToday.ToShortDateString();
+            EventModel tmp = new EventModel();
+            AddEventArgs ae = new AddEventArgs();
+            PopAdd(this, ae);
         }
 
 

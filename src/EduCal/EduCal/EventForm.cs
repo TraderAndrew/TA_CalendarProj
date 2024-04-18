@@ -12,25 +12,24 @@ namespace EduCal
 {
     public partial class EventForm : Form
     {
-        public string ClickedDay { get { return fclickedDay; } set { fclickedDay = value; txtBoxStartDate.Text = value; } }
-
         public event AddEventHandler EventfrmAdd;
         DateTime dt = DateTime.Now;
-        string fclickedDay = string.Empty;
 
         public EventForm()
         {
             InitializeComponent();
         }
 
-        public EventForm(string ClickDay) : this()
-        {
-            ClickedDay = ClickDay;
-        }
-
         private void EventForm_Load(object sender, EventArgs e)
         {
-            txtBoxStartDate.Text = ClickedDay;
+            if (dt.Month > 9)
+            {
+                txtBoxStartDate.Text = $"{dt.Month}/{dt.Day}/{dt.Year}";
+            }
+            else 
+            {
+                txtBoxStartDate.Text = $"0{dt.Month}/{dt.Day}/{dt.Year}";
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)

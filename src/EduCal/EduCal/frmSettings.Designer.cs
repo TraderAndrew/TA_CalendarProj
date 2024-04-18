@@ -46,7 +46,7 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Color: Pink";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox_Changed);
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox_Changed);
             // 
             // checkBox2
             // 
@@ -58,7 +58,7 @@
             this.checkBox2.TabIndex = 1;
             this.checkBox2.Text = "Color: White";
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox_Changed);
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox_Changed);
             // 
             // lblColorofDays
             // 
@@ -92,7 +92,7 @@
             this.checkBox3.TabIndex = 4;
             this.checkBox3.Text = "Color: Blue";
             this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox_Changed);
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.CheckBox_Changed);
             // 
             // checkBox4
             // 
@@ -104,7 +104,7 @@
             this.checkBox4.TabIndex = 5;
             this.checkBox4.Text = "Color: White";
             this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox_Changed);
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.CheckBox_Changed);
             // 
             // frmSettings
             // 

@@ -117,7 +117,7 @@
             // 
             this.mnuAboutBtn.Name = "mnuAboutBtn";
             resources.ApplyResources(this.mnuAboutBtn, "mnuAboutBtn");
-            this.mnuAboutBtn.Click += new System.EventHandler(this.mnuAboutBtn_Click);
+            this.mnuAboutBtn.Click += new System.EventHandler(this.MnuAboutBtn_Click);
             // 
             // statusMain
             // 

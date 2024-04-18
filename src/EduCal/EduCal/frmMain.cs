@@ -153,7 +153,7 @@ namespace EduCal {
             Displaymonths();
         }
 
-        private void mnuAboutBtn_Click(object sender, EventArgs e)
+        private void MnuAboutBtn_Click(object sender, EventArgs e)
         {
             frmAbout CalendarProjectInfo = new frmAbout();
             CalendarProjectInfo.ShowDialog();

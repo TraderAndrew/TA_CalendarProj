@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Ical.Net;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
@@ -12,9 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ical.Net.Serialization;
-using Ical.Net.CalendarComponents;
-using Ical.Net.DataTypes;
+
 
 namespace EduCal {
 

@@ -20,11 +20,24 @@ namespace EduCal
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// This event handler will create a series of checkboxes that 
+        /// the user can choose from with the first checkbox being
+        /// an option of one other color pairing for the color of the 
+        /// number and background color of the weekdays and this choice 
+        /// is pink for the background of the weekdays and blue for 
+        /// color of the numbers of the weekdays. The second checkbox will return 
+        /// the colors of the numbers and background to their default colors.
+        /// The third checkbox will change the main background color to 
+        /// lightblue. The final checkbox will return the main background color
+        /// to its default setting. The ColorOfDayEventArgs and the MainColorEventsArgs
+        /// will hold the option that the users choose so that if they return to the calendar or
+        /// copy the calendar into a file then it will retain the color setting choices.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         
-// This event handler will allow the user to change the 
-// background color of the calendar to blue as well as
-// change the background color of the weekend days to pink
-// and blue. 
         private void checkBox_Changed(object sender, EventArgs e)
         {
             var dayBack = Color.White;
@@ -45,7 +58,7 @@ namespace EduCal
 
             if (checkBox3.Checked)
             {
-                mainBack = Color.Blue;
+                mainBack = Color.LightBlue;
             }
 
             if (checkBox4.Checked) 

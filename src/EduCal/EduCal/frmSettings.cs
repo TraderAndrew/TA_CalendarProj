@@ -38,15 +38,12 @@ namespace EduCal
         /// <param name="sender"></param>
         /// <param name="e"></param>
         
-<<<<<<< HEAD
-// This event handler will allow the user to change the 
-// background color of the calendar to blue as well as
-// change the background color of the weekend days to pink
-// and blue. 
-        private void CheckBox_Changed(object sender, EventArgs e)
-=======
-        private void checkBox_Changed(object sender, EventArgs e)
->>>>>>> 643c877da4314d4a48bc95ecd99861f81009c9cc
+
+        // This event handler will allow the user to change the 
+        // background color of the calendar to blue as well as
+        // change the background color of the weekend days to pink
+        // and blue. 
+        private void CheckBox_Changed(object sender, EventArgs e) 
         {
             var dayBack = Color.White;
             var dayFore = Color.Black;
@@ -54,11 +51,11 @@ namespace EduCal
 
             if (checkBox1.Checked)
             {
-               dayBack = Color.Pink;
-               dayFore = Color.Blue;
+                dayBack = Color.Pink;
+                dayFore = Color.Blue;
             }
 
-            if (checkBox2.Checked) 
+            if (checkBox2.Checked)
             {
                 dayBack = Color.White;
                 dayFore = Color.Black;
@@ -69,7 +66,7 @@ namespace EduCal
                 mainBack = Color.LightBlue;
             }
 
-            if (checkBox4.Checked) 
+            if (checkBox4.Checked)
             {
                 mainBack = SystemColors.Control;
             }
@@ -90,6 +87,7 @@ namespace EduCal
 
             this.Close();
         }
+        
     
     
     

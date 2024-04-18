@@ -12,11 +12,11 @@ namespace EduCal
 {
     public partial class EventForm : Form
     {
+        public string ClickedDay { get { return fclickedDay; } set { fclickedDay = value; txtBoxStartDate.Text = value; } }
+
         public event AddEventHandler EventfrmAdd;
         DateTime dt = DateTime.Now;
         string fclickedDay = string.Empty;
-
-        public string ClickedDay { get { return fclickedDay; } set { fclickedDay = value; txtBoxStartDate.Text = value; } }
 
         public EventForm()
         {

@@ -17,9 +17,7 @@ using Ical.Net.CalendarComponents;
 using Ical.Net.DataTypes;
 
 namespace EduCal {
-    /// <summary>
-    /// 
-    /// </summary>
+
     public partial class frmMain : Form 
     {
         public new List<EventModel> Events { get; set; }
@@ -234,17 +232,17 @@ namespace EduCal {
         private void ICalExport_Click(object sender, EventArgs e)
         {
             FileStream writer = new FileStream("Event.ics", FileMode.Create);
-            var iCalSerializer = new CalendarSerializer();
-            var cal = new Ical.Net.Calendar();
-            foreach (EventModel x in Events)
-            {
-                CalDateTime s = new CalDateTime(x.EventStartDay.Year, x.EventStartDay.Day, x.EventStartDay.Month, x.EventStartDay.Hour, x.EventStartDay.Minute, x.EventStartDay.Second);
-                CalDateTime n = new CalDateTime(x.EventEndDay.Year, x.EventEndDay.Day, x.EventEndDay.Month, x.EventEndDay.Hour, x.EventEndDay.Minute, x.EventEndDay.Second);
-                var icalevent = new CalendarEvent() { Summary = x.Name, Description = x.Description, Start = s, End = n };
-                cal.Events.Add(icalevent);
-            }
-            string var1 = iCalSerializer.SerializeToString(cal);
-            byte[] buffer = new ASCIIEncoding().GetBytes(var1);
+            StringBuilder var1 = new StringBuilder();
+            var1.AppendLine("BEGIN: VCALENDAR");
+            var1.AppendLine("VERSION:2.0");
+            var1.AppendLine("PRODID: -//Andrews Calendar/ v1.0//EN");
+            var1.AppendLine("BEGIN: VEVENT");
+            var1.AppendLine($"DTSTAMP: {DateTime.Now}");
+            var1.AppendLine($"DTSTART:{DateTime.Now}");
+            var1.AppendLine($"DTEND:{DateTime.Now}");
+            var1.AppendLine("END:VEVENT");
+            var1.AppendLine("END:VCALENDAR"); 
+            byte[] buffer = new ASCIIEncoding().GetBytes(var1.ToString());
             writer.Write(buffer, 0, buffer.Length);
             writer.Close();
         }

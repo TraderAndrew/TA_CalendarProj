@@ -22,20 +22,11 @@ namespace EduCal
 
         private void EventForm_Load(object sender, EventArgs e)
         {
-            if (dt.Month > 9)
-            {
-                txtBoxStartDate.Text = $"{dt.Month}/{dt.Day}/{dt.Year}";
-            }
-            else 
-            {
-                txtBoxStartDate.Text = $"0{dt.Month}/{dt.Day}/{dt.Year}";
-            }
+            txtBoxStartDate.Text = $"{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-
             if (String.IsNullOrEmpty(txtBoxStartDate.Text))
             {
                 lblError.Text = "Start Date Empty";
@@ -48,20 +39,14 @@ namespace EduCal
             {
                 lblError.Text = "Must be between 3 to 100 characters.";
             }
-            else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
-            {
-                runSingleDay();
-            }
             else if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
             {
                 runDateRange();
             }
-            
-            
-            
-            
-              
-            
+            else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
+            {
+                runSingleDay();
+            }
         }
 
         private void runDateRange() 

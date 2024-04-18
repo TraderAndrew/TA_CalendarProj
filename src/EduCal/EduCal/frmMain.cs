@@ -43,7 +43,17 @@ namespace EduCal {
         {
             
         }
-
+/// <summary>
+/// This method takes in _dayoftheweek and _days for the first
+/// for loop will display usercontroldays within the daycontainer
+/// which is set equal to datetime. The second for loop takes the
+/// text from the first loop and applies it to the date range.
+/// The two foreach loops determine whether or not the event will
+/// effect the one day or the date range that the user selected or multiple days.
+/// The last for loop changes the color of the weekend.
+/// </summary>
+/// <param name="_dayoftheweek"></param>
+/// <param name="_days"></param>
         private void Displaydays(int _dayoftheweek, int _days)
         {
             UserDays = new List<UserControlDays>();
@@ -63,21 +73,22 @@ namespace EduCal {
                 {
                     newDay.WeekEnd = true;
                 }
+
                 newDay.Days(i);
 
                 foreach (EventModel em in Events)
                 {
                     if (em.isMutliDay)
                     {
-                        if (em.EventStartDay.Date <= uniqToday.Date) 
+                        if (em.EventStartDay.Date <= uniqToday.Date)
                         {
-                            if (em.EventEndDay.Date >= uniqToday.Date) 
+                            if (em.EventEndDay.Date >= uniqToday.Date)
                             {
                                 newDay.UcTodaytxt = em.Name;
                             }
                         }
                     }
-                    else 
+                    else
                     {
                         if (em.EventStartDay.ToShortDateString() == uniqToday.ToShortDateString())
                         {
@@ -85,6 +96,7 @@ namespace EduCal {
                         }
                     }
                 }
+
                 UserDays.Add(newDay);
             }
 
@@ -146,19 +158,41 @@ namespace EduCal {
             Displaymonths();
         }
 
+        /// <summary>
+        /// This BtnNext_Click will allow the user to click back
+        /// and forth between the different months of the year
+        /// and even go back to the months of the previous and future
+        /// years.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnNext_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
             NowDate = NowDate.AddMonths(1);
             Displaymonths();
         }
-
+        
+        /// <summary>
+        /// This About_Click will display the names of the
+        /// different people that contributed to making of
+        /// this project.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void About_Click(object sender, EventArgs e)
         {
             frmAbout TeamTwoNames = new frmAbout();
             TeamTwoNames.ShowDialog();
         }    
 
+        /// <summary>
+        /// The MnuSettings_Click when clicked will allow the user to
+        /// change the settings of the calendar itself as well change
+        /// the main background color of the calendar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MnuSettings_Click(object sender, EventArgs e)
         {
             SettingMenu = new frmSettings();
@@ -166,7 +200,15 @@ namespace EduCal {
             SettingMenu.FrmMainBackground += MainBackgroundColor;
             SettingMenu.Show();
         }
-
+        
+        /// <summary>
+        /// This MnuSetting_AddNew will hold the color value
+        /// that the user decides in the settings and ensure
+        /// that they are displayed in the calendar everytime
+        /// the user opens the calendar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
         {
             dayFore = e.ForeColor;
@@ -179,15 +221,27 @@ namespace EduCal {
             this.BackColor = e.mainBackground;
         }
         
-//mnuFileEvent_click will open a file form on the calendar app when
-//the user clicks on the file button on the calendar.
+        /// <summary>
+        /// The MnuFileEvent_Click will allow the user to open an
+        /// event form that will allow them to attach an event
+        /// to the date or dates of their choosing.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MnuFileEvent_Click(object sender, EventArgs e)
         {
             CalEventForm = new EventForm();
             CalEventForm.EventfrmAdd += Eventform_AddNew;
             CalEventForm.Show();
         }
-
+        
+        /// <summary>
+        /// This Eventform_AddNew will ensure that the event or events that
+        /// user inputs into the event form will be displayed visually
+        /// on the calendar under the date or dates that they are relevant to.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Eventform_AddNew(object sender, AddEventArgs e)
         { 
             Events.Add(e.Model);

@@ -51,7 +51,7 @@
     <Compile Include="ColorOfDayEventArgs.cs" />
     <Compile Include="EduCalObject.cs" />
     <Compile Include="EventModel.cs" />
-    <Compile Include="frmMainColorEventArgs.cs" />
+    <Compile Include="MainBackgroundChange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

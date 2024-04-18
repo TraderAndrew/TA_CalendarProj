@@ -60,7 +60,7 @@ namespace EduCal
             };
             SettingsChanged(this, dayColor);
 
-            frmMainColorEventArgs mainColor = new frmMainColorEventArgs
+            MainBackgroundChange mainColor = new MainBackgroundChange
             {
                 mainBackground = mainBack
             };

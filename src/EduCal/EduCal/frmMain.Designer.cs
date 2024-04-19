@@ -51,12 +51,12 @@
             // 
             // mnuMain
             // 
+            resources.ApplyResources(this.mnuMain, "mnuMain");
             this.mnuMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile,
             this.mnuEdit,
             this.mnuAbout});
-            resources.ApplyResources(this.mnuMain, "mnuMain");
             this.mnuMain.Name = "mnuMain";
             // 
             // mnuFile

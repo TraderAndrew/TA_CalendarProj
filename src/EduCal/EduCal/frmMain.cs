@@ -130,7 +130,6 @@ namespace EduCal {
             
             Displaydays(dayoftheweek, days);
         }
-
             
         /// <summary>
         /// This btnPrevious_Click allows user to toggle
@@ -159,9 +158,8 @@ namespace EduCal {
             Displaymonths();
         }
         
-        
         /// <summary>
-        /// 
+        /// Brings up the about form when the dropdown on the about button is clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -170,6 +168,7 @@ namespace EduCal {
             frmAbout CalendarProjectInfo = new frmAbout();
             CalendarProjectInfo.ShowDialog();
         }
+
         /// <summary>
         /// This MnuSettings_CLick when clicked will display
         /// a form that will allow the user to change the color
@@ -216,7 +215,7 @@ namespace EduCal {
         }
 
         /// <summary>
-        /// 
+        /// Adds the event from the model AddEventArgs e
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

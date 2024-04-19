@@ -121,8 +121,8 @@
             // 
             // statusMain
             // 
-            this.statusMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             resources.ApplyResources(this.statusMain, "statusMain");
+            this.statusMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusMain.Name = "statusMain";
             // 
             // daycontainer

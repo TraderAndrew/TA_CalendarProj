@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,14 +24,26 @@ namespace EduCal
 
         private void EventForm_Load(object sender, EventArgs e)
         {
-            if (dt.Month > 9) 
+            int myint = int.Parse(UserControlDays.static_day);
+            if (dt.Month < 10 && myint < 10)
             {
-                txtBoxStartDate.Text = $"{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
+                txtBoxStartDate.Text = $"0{dt.Month}/0{UserControlDays.static_day}/{dt.Year}";
             }
-            else
+            else if (dt.Month < 10 && myint > 9)
             {
                 txtBoxStartDate.Text = $"0{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
             }
+            else if (dt.Month > 9 && myint < 10)
+            {
+                txtBoxStartDate.Text = $"{dt.Month}/0{UserControlDays.static_day}/{dt.Year}";
+            }
+            else if (dt.Month > 9 && myint > 10)
+            {
+                txtBoxStartDate.Text = $"{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
+            }
+
+
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -85,13 +98,16 @@ namespace EduCal
 
                 this.Close();
             }
+
+
+
         }
 
-    
-    
-    
-    
-    
+
+
+
+
+        
     
     
     

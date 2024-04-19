@@ -15,6 +15,7 @@ namespace EduCal
         public event AddEventHandler EventfrmAdd;
         DateTime dt = DateTime.Now;
 
+
         public EventForm()
         {
             InitializeComponent();
@@ -22,7 +23,14 @@ namespace EduCal
 
         private void EventForm_Load(object sender, EventArgs e)
         {
-            txtBoxStartDate.Text = $"{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
+            if (dt.Month > 9) 
+            {
+                txtBoxStartDate.Text = $"{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
+            }
+            else
+            {
+                txtBoxStartDate.Text = $"0{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)

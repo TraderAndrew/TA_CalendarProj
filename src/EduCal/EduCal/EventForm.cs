@@ -15,6 +15,7 @@ namespace EduCal
         public event AddEventHandler EventfrmAdd;
         DateTime dt = DateTime.Now;
 
+
         public EventForm()
         {
             InitializeComponent();
@@ -22,40 +23,41 @@ namespace EduCal
 
         private void EventForm_Load(object sender, EventArgs e)
         {
-            if (dt.Month > 9)
+            if (dt.Month > 9) 
             {
-                txtBoxStartDate.Text = $"{dt.Month}/{dt.Day}/{dt.Year}";
+                txtBoxStartDate.Text = $"{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
             }
-            else 
+            else
             {
-                txtBoxStartDate.Text = $"0{dt.Month}/{dt.Day}/{dt.Year}";
+                txtBoxStartDate.Text = $"0{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtEvent.Text.Length < 3 || txtEvent.Text.Length > 100 || String.IsNullOrEmpty(txtEvent.Text))
+            if (String.IsNullOrEmpty(txtBoxStartDate.Text))
             {
-                lblError.Text = "Event name is either to large or to small. must be between 3 to 100 characters.";
+                lblError.Text = "Start Date Empty";
             }
-            else
-            {  
-                if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
-                {
-                    runDateRange();
-                }
-                else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
-                {
-                    runSingleDay();
-                }
-                else
-                {
-                    lblError.Text = "You have to enter a start date";
-                }
+            else if (String.IsNullOrEmpty(txtEvent.Text))
+            {
+                lblError.Text = "Event Text Empty";
+            }
+            else if (txtEvent.Text.Length < 3 || txtEvent.Text.Length > 100)
+            {
+                lblError.Text = "Must be between 3 to 100 characters.";
+            }
+            else if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
+            {
+                RunDateRange();
+            }
+            else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
+            {
+                RunSingleDay();
             }
         }
 
-        private void runDateRange() 
+        private void RunDateRange() 
         {
             DateTime sDate = DateTime.Parse(txtBoxStartDate.Text);
             DateTime eDate = DateTime.Parse(txtBoxEndDate.Text);
@@ -67,7 +69,7 @@ namespace EduCal
             this.Close();
         }
 
-        private void runSingleDay() 
+        private void RunSingleDay() 
         {
             
             if (!DateTime.TryParse(txtBoxStartDate.Text, out dt))

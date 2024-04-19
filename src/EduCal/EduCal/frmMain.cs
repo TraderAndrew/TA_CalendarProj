@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Ical.Net;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
@@ -12,11 +11,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ical.Net.Serialization;
-using Ical.Net.CalendarComponents;
-using Ical.Net.DataTypes;
+
 
 namespace EduCal {
+
     public partial class frmMain : Form 
     {
         public new List<EventModel> Events { get; set; }
@@ -108,6 +106,13 @@ namespace EduCal {
             }
         }
 
+        
+        /// <summary>
+        /// The displayMonths method works to hold as well
+        /// display the date, time, and year to be used by 
+        /// on click buttons as well as the creation of
+        /// events by the user.
+        /// </summary>
         private void Displaymonths() 
         {
             daycontainer.Controls.Clear();
@@ -126,6 +131,14 @@ namespace EduCal {
             Displaydays(dayoftheweek, days);
         }
 
+            
+        /// <summary>
+        /// This btnPrevious_Click allows user to toggle
+        /// through the different months in a year as
+        /// well go back to months in previous years.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnPrevious_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
@@ -140,11 +153,11 @@ namespace EduCal {
             Displaymonths();
         }
 
-        private void About_Click(object sender, EventArgs e)
+        private void MnuAboutBtn_Click(object sender, EventArgs e)
         {
-            frmAbout TeamTwoNames = new frmAbout();
-            TeamTwoNames.ShowDialog();
-        }    
+            frmAbout CalendarProjectInfo = new frmAbout();
+            CalendarProjectInfo.ShowDialog();
+        }
 
         private void MnuSettings_Click(object sender, EventArgs e)
         {
@@ -159,6 +172,30 @@ namespace EduCal {
             dayFore = e.ForeColor;
             dayBack = e.BackGroundColor;           
             Displaymonths();
+        }
+
+        /// <summary>
+        /// MnuFileEvent_Click allows the user to acess the event form to
+        /// put an event on the calendar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MnuFileEvent_Click(object sender, EventArgs e)
+        {
+            CalEventForm = new EventForm();
+            CalEventForm.EventfrmAdd += Eventform_AddNew;
+            CalEventForm.Show();
+        }
+
+        private void Eventform_AddNew(object sender, AddEventArgs e)
+        {
+            Events.Add(e.Model);
+            Displaymonths();
+        }
+
+        private void MainBackgroundColor(object sender, MainBackgroundChange e)
+        {
+            this.BackColor = e.mainBackground;
         }
 
         /// <summary>
@@ -191,43 +228,19 @@ namespace EduCal {
         private void ICalExport_Click(object sender, EventArgs e)
         {
             FileStream writer = new FileStream("Event.ics", FileMode.Create);
-            var iCalSerializer = new CalendarSerializer();
-            var cal = new Ical.Net.Calendar();
-            foreach (EventModel x in Events)
-            {
-                CalDateTime s = new CalDateTime(x.EventStartDay.Year, x.EventStartDay.Day, x.EventStartDay.Month, x.EventStartDay.Hour, x.EventStartDay.Minute, x.EventStartDay.Second);
-                CalDateTime n = new CalDateTime(x.EventEndDay.Year, x.EventEndDay.Day, x.EventEndDay.Month, x.EventEndDay.Hour, x.EventEndDay.Minute, x.EventEndDay.Second);
-                var icalevent = new CalendarEvent() { Summary = x.Name, Description = x.Description, Start = s, End = n };
-                cal.Events.Add(icalevent);
-            }
-            string var1 = iCalSerializer.SerializeToString(cal);
-            byte[] buffer = new ASCIIEncoding().GetBytes(var1);
+            StringBuilder var1 = new StringBuilder();
+            var1.AppendLine("BEGIN: VCALENDAR");
+            var1.AppendLine("VERSION:2.0");
+            var1.AppendLine("PRODID: -//Andrews Calendar/ v1.0//EN");
+            var1.AppendLine("BEGIN: VEVENT");
+            var1.AppendLine($"DTSTAMP: {DateTime.Now}");
+            var1.AppendLine($"DTSTART:{DateTime.Now}");
+            var1.AppendLine($"DTEND:{DateTime.Now}");
+            var1.AppendLine("END:VEVENT");
+            var1.AppendLine("END:VCALENDAR"); 
+            byte[] buffer = new ASCIIEncoding().GetBytes(var1.ToString());
             writer.Write(buffer, 0, buffer.Length);
             writer.Close();
-        }
-
-        private void MainBackgroundColor(object sender, frmMainColorEventArgs e) 
-        {
-            this.BackColor = e.mainBackground;
-        }
-        
-        /// <summary>
-        /// MnuFileEvent_Click allows the user to acess the event form to
-        /// put an event on the calendar.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MnuFileEvent_Click(object sender, EventArgs e)
-        {
-            CalEventForm = new EventForm();
-            CalEventForm.EventfrmAdd += Eventform_AddNew;
-            CalEventForm.Show();
-        }
-
-        private void Eventform_AddNew(object sender, AddEventArgs e)
-        { 
-            Events.Add(e.Model);
-            Displaymonths();
         }
     
     

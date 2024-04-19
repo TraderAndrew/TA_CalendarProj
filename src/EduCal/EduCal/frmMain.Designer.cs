@@ -27,9 +27,13 @@
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileEvent = new System.Windows.Forms.ToolStripMenuItem();
+            this.xmlSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.xmlOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.iCalExport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAboutBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.statusMain = new System.Windows.Forms.StatusStrip();
             this.daycontainer = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,9 +46,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.lblMonthYear = new System.Windows.Forms.Label();
-            this.xmlSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.xmlOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.iCalExport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +75,24 @@
             resources.ApplyResources(this.mnuFileEvent, "mnuFileEvent");
             this.mnuFileEvent.Click += new System.EventHandler(this.MnuFileEvent_Click);
             // 
+            // xmlSave
+            // 
+            this.xmlSave.Name = "xmlSave";
+            resources.ApplyResources(this.xmlSave, "xmlSave");
+            this.xmlSave.Click += new System.EventHandler(this.XmlSave_Click);
+            // 
+            // xmlOpen
+            // 
+            this.xmlOpen.Name = "xmlOpen";
+            resources.ApplyResources(this.xmlOpen, "xmlOpen");
+            this.xmlOpen.Click += new System.EventHandler(this.XmlOpen_Click);
+            // 
+            // iCalExport
+            // 
+            this.iCalExport.Name = "iCalExport";
+            resources.ApplyResources(this.iCalExport, "iCalExport");
+            this.iCalExport.Click += new System.EventHandler(this.ICalExport_Click);
+            // 
             // mnuEdit
             // 
             this.mnuEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -89,9 +108,16 @@
             // 
             // mnuAbout
             // 
+            this.mnuAbout.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuAboutBtn});
             this.mnuAbout.Name = "mnuAbout";
             resources.ApplyResources(this.mnuAbout, "mnuAbout");
-            this.mnuAbout.Click += new System.EventHandler(this.About_Click);
+            // 
+            // mnuAboutBtn
+            // 
+            this.mnuAboutBtn.Name = "mnuAboutBtn";
+            resources.ApplyResources(this.mnuAboutBtn, "mnuAboutBtn");
+            this.mnuAboutBtn.Click += new System.EventHandler(this.MnuAboutBtn_Click);
             // 
             // statusMain
             // 
@@ -158,24 +184,6 @@
             resources.ApplyResources(this.lblMonthYear, "lblMonthYear");
             this.lblMonthYear.Name = "lblMonthYear";
             // 
-            // xmlSave
-            // 
-            this.xmlSave.Name = "xmlSave";
-            resources.ApplyResources(this.xmlSave, "xmlSave");
-            this.xmlSave.Click += new System.EventHandler(this.XmlSave_Click);
-            // 
-            // xmlOpen
-            // 
-            this.xmlOpen.Name = "xmlOpen";
-            resources.ApplyResources(this.xmlOpen, "xmlOpen");
-            this.xmlOpen.Click += new System.EventHandler(this.XmlOpen_Click);
-            // 
-            // iCalExport
-            // 
-            this.iCalExport.Name = "iCalExport";
-            resources.ApplyResources(this.iCalExport, "iCalExport");
-            this.iCalExport.Click += new System.EventHandler(this.ICalExport_Click);
-            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -229,6 +237,7 @@
         private System.Windows.Forms.ToolStripMenuItem xmlSave;
         private System.Windows.Forms.ToolStripMenuItem xmlOpen;
         private System.Windows.Forms.ToolStripMenuItem iCalExport;
+        private System.Windows.Forms.ToolStripMenuItem mnuAboutBtn;
     }
 }
 

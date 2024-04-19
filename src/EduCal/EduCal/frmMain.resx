@@ -122,49 +122,55 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="mnuFileEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 26</value>
+    <value>197, 22</value>
   </data>
   <data name="mnuFileEvent.Text" xml:space="preserve">
     <value>New Event</value>
   </data>
   <data name="xmlSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 26</value>
+    <value>197, 22</value>
   </data>
   <data name="xmlSave.Text" xml:space="preserve">
     <value>Save Calendar</value>
   </data>
   <data name="xmlOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 26</value>
+    <value>197, 22</value>
   </data>
   <data name="xmlOpen.Text" xml:space="preserve">
     <value>Open Existing Calendar</value>
   </data>
   <data name="iCalExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 26</value>
+    <value>197, 22</value>
   </data>
   <data name="iCalExport.Text" xml:space="preserve">
     <value>iCal Export</value>
   </data>
   <data name="mnuFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 26</value>
+    <value>37, 20</value>
   </data>
   <data name="mnuFile.Text" xml:space="preserve">
     <value>&amp;File</value>
   </data>
   <data name="mnuSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 26</value>
+    <value>116, 22</value>
   </data>
   <data name="mnuSettings.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
   <data name="mnuEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 26</value>
+    <value>39, 20</value>
   </data>
   <data name="mnuEdit.Text" xml:space="preserve">
     <value>&amp;Edit</value>
   </data>
+  <data name="mnuAboutBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 22</value>
+  </data>
+  <data name="mnuAboutBtn.Text" xml:space="preserve">
+    <value>Calendar Project Info</value>
+  </data>
   <data name="mnuAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 26</value>
+    <value>52, 20</value>
   </data>
   <data name="mnuAbout.Text" xml:space="preserve">
     <value>Abou&amp;t</value>
@@ -172,8 +178,12 @@
   <data name="mnuMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="mnuMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 2, 0, 2</value>
+  </data>
   <data name="mnuMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1545, 30</value>
+    <value>1236, 24</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="mnuMain.TabIndex" type="System.Int32, mscorlib">
@@ -198,10 +208,13 @@
     <value>248, 16</value>
   </metadata>
   <data name="statusMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1008</value>
+    <value>0, 802</value>
+  </data>
+  <data name="statusMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 0, 11, 0</value>
   </data>
   <data name="statusMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1545, 22</value>
+    <value>1236, 22</value>
   </data>
   <data name="statusMain.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -218,15 +231,17 @@
   <data name="&gt;&gt;statusMain.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="daycontainer.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
   <data name="daycontainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 153</value>
+    <value>94, 122</value>
+  </data>
+  <data name="daycontainer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="daycontainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1187, 795</value>
+    <value>950, 636</value>
   </data>
   <data name="daycontainer.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -250,10 +265,13 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 125</value>
+    <value>125, 100</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 25</value>
+    <value>63, 20</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -283,10 +301,13 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 125</value>
+    <value>249, 100</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 25</value>
+    <value>65, 20</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -316,10 +337,13 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 125</value>
+    <value>510, 100</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 25</value>
+    <value>93, 20</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -349,10 +373,13 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>471, 125</value>
+    <value>377, 100</value>
+  </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 25</value>
+    <value>69, 20</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -382,10 +409,13 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>998, 125</value>
+    <value>798, 100</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 25</value>
+    <value>52, 20</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -415,10 +445,13 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>824, 125</value>
+    <value>659, 100</value>
+  </data>
+  <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 25</value>
+    <value>74, 20</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -448,10 +481,13 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1138, 125</value>
+    <value>910, 100</value>
+  </data>
+  <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 25</value>
+    <value>73, 20</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -472,16 +508,19 @@
     <value>3</value>
   </data>
   <data name="btnNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1270, 954</value>
+    <value>923, 26</value>
+  </data>
+  <data name="btnNext.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btnNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 26</value>
+    <value>60, 51</value>
   </data>
   <data name="btnNext.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
   <data name="btnNext.Text" xml:space="preserve">
-    <value>Next</value>
+    <value>Next Month</value>
   </data>
   <data name="&gt;&gt;btnNext.Name" xml:space="preserve">
     <value>btnNext</value>
@@ -499,16 +538,19 @@
     <value>NoControl</value>
   </data>
   <data name="btnPrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1189, 954</value>
+    <value>129, 26</value>
+  </data>
+  <data name="btnPrevious.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btnPrevious.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 26</value>
+    <value>60, 51</value>
   </data>
   <data name="btnPrevious.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
   <data name="btnPrevious.Text" xml:space="preserve">
-    <value>Previous</value>
+    <value>Previous Month</value>
   </data>
   <data name="&gt;&gt;btnPrevious.Name" xml:space="preserve">
     <value>btnPrevious</value>
@@ -529,10 +571,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblMonthYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>489, 28</value>
+    <value>376, 39</value>
+  </data>
+  <data name="lblMonthYear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lblMonthYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 47</value>
+    <value>360, 38</value>
   </data>
   <data name="lblMonthYear.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -562,16 +607,16 @@
     <value>69</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>120, 120</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1545, 1030</value>
+    <value>1236, 824</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>80, 37, 80, 37</value>
+    <value>64, 30, 64, 30</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -589,6 +634,24 @@
     <value>mnuFileEvent</value>
   </data>
   <data name="&gt;&gt;mnuFileEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;xmlSave.Name" xml:space="preserve">
+    <value>xmlSave</value>
+  </data>
+  <data name="&gt;&gt;xmlSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;xmlOpen.Name" xml:space="preserve">
+    <value>xmlOpen</value>
+  </data>
+  <data name="&gt;&gt;xmlOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iCalExport.Name" xml:space="preserve">
+    <value>iCalExport</value>
+  </data>
+  <data name="&gt;&gt;iCalExport.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mnuEdit.Name" xml:space="preserve">
@@ -609,22 +672,10 @@
   <data name="&gt;&gt;mnuAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;xmlSave.Name" xml:space="preserve">
-    <value>xmlSave</value>
+  <data name="&gt;&gt;mnuAboutBtn.Name" xml:space="preserve">
+    <value>mnuAboutBtn</value>
   </data>
-  <data name="&gt;&gt;xmlSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;xmlOpen.Name" xml:space="preserve">
-    <value>xmlOpen</value>
-  </data>
-  <data name="&gt;&gt;xmlOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;iCalExport.Name" xml:space="preserve">
-    <value>iCalExport</value>
-  </data>
-  <data name="&gt;&gt;iCalExport.Type" xml:space="preserve">
+  <data name="&gt;&gt;mnuAboutBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

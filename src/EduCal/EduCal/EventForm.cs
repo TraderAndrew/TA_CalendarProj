@@ -50,15 +50,15 @@ namespace EduCal
         {
             if (String.IsNullOrEmpty(txtBoxStartDate.Text))
             {
-                lblError.Text = "Start Date Empty";
+                lblError.Text = "Please enter a start date.";
             }
             else if (String.IsNullOrEmpty(txtEvent.Text))
             {
-                lblError.Text = "Event Text Empty";
+                lblError.Text = "Please enter your event.";
             }
             else if (txtEvent.Text.Length < 3 || txtEvent.Text.Length > 100)
             {
-                lblError.Text = "Must be between 3 to 100 characters.";
+                lblError.Text = "There must be between 3 to 100 characters to make a event.";
             }
             else if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
             {

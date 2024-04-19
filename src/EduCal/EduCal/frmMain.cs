@@ -193,7 +193,7 @@ namespace EduCal {
             Displaymonths();
         }
 
-        private void MainBackgroundColor(object sender, MainBackgroundChange e)
+        private void MainBackgroundColor(object sender, MainBackgroundEventArgs e)
         {
             this.BackColor = e.mainBackground;
         }

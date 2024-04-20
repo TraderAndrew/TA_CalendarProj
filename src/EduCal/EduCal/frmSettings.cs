@@ -16,7 +16,6 @@ namespace EduCal
         public event ColorOfDayEventHandler SettingsChanged;
         public event frmMainColorEventHandler FrmMainBackground;
 
-
         public frmSettings()
         {
             InitializeComponent();

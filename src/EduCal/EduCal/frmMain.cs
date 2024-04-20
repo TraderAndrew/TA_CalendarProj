@@ -22,12 +22,10 @@ namespace EduCal {
         public DateTime NowDate { get; set; }
         public EventForm CalEventForm { get; set; }
         public frmSettings SettingMenu { get; set; }
-        public frmSettings FrmMainBackColor { get; set; }
 
 
         int month, year;
         public Color dayFore, dayBack, mainColor;
-
 
         public frmMain() 
         { 
@@ -41,7 +39,7 @@ namespace EduCal {
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Displaydays(int _dayoftheweek, int _days)
@@ -105,7 +103,6 @@ namespace EduCal {
                 daycontainer.Controls.Add(item);
             }
         }
-
         
         /// <summary>
         /// The displayMonths method works to hold as well
@@ -253,6 +250,8 @@ namespace EduCal {
                 XmlFile.Serialize(writer, Events);
                 writer.Close();
             }
+
+            MessageBox.Show("Saved :)");
         }
 
         private void XmlOpen_Click(object sender, EventArgs e)
@@ -281,19 +280,5 @@ namespace EduCal {
             writer.Write(buffer, 0, buffer.Length);
             writer.Close();
         }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     }
 }

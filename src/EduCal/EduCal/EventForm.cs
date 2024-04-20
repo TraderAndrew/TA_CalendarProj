@@ -15,7 +15,8 @@ namespace EduCal
     {
         public event AddEventHandler EventfrmAdd;
         DateTime dt = DateTime.Now;
-
+        public static string Description;
+        public static new string Location;
 
         public EventForm()
         {
@@ -31,15 +32,19 @@ namespace EduCal
         {
             if (String.IsNullOrEmpty(txtBoxStartDate.Text))
             {
-                lblError.Text = "Please enter a start date.";
+                lblError.Text = "You must enter a start date";
             }
             else if (String.IsNullOrEmpty(txtEvent.Text))
             {
-                lblError.Text = "Please enter your event.";
+                lblError.Text = "You must enter an event name";
             }
             else if (txtEvent.Text.Length < 3 || txtEvent.Text.Length > 100)
             {
-                lblError.Text = "There must be between 3 to 100 characters to make a event.";
+                lblError.Text = "Event name must be between 3 - 100 characters";
+            }
+            else if (txtBoxDescription.Text.Length > 1000)
+            {
+                lblError.Text = "Description must be less than 1000 characters";
             }
             else if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
             {
@@ -60,6 +65,9 @@ namespace EduCal
             AddEventArgs ae = new AddEventArgs() { Model = tmp };
             EventfrmAdd(this, ae);
 
+            Description = txtBoxDescription.Text;
+            Location = txtBoxLocation.Text;
+
             this.Close();
         }
 
@@ -73,34 +81,15 @@ namespace EduCal
             }
             else
             {
-                EventModel tmp = new EventModel() { EventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
+                EventModel tmp = new EventModel() { Description = txtBoxDescription.Text, EventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
                 AddEventArgs ae = new AddEventArgs() { Model = tmp };
                 EventfrmAdd(this, ae);
 
+                Description = txtBoxDescription.Text;
+                Location = txtBoxLocation.Text;
+
                 this.Close();
             }
-
-
-
         }
-
-
-
-
-
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     }
 }

@@ -23,7 +23,6 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent () {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileEvent = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,13 +50,16 @@
             // 
             // mnuMain
             // 
-            resources.ApplyResources(this.mnuMain, "mnuMain");
             this.mnuMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile,
             this.mnuEdit,
             this.mnuAbout});
+            this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
+            this.mnuMain.Size = new System.Drawing.Size(1262, 28);
+            this.mnuMain.TabIndex = 27;
+            this.mnuMain.Text = "menuStrip1";
             // 
             // mnuFile
             // 
@@ -67,30 +69,35 @@
             this.xmlOpen,
             this.iCalExport});
             this.mnuFile.Name = "mnuFile";
-            resources.ApplyResources(this.mnuFile, "mnuFile");
+            this.mnuFile.Size = new System.Drawing.Size(46, 24);
+            this.mnuFile.Text = "&File";
             // 
             // mnuFileEvent
             // 
             this.mnuFileEvent.Name = "mnuFileEvent";
-            resources.ApplyResources(this.mnuFileEvent, "mnuFileEvent");
+            this.mnuFileEvent.Size = new System.Drawing.Size(246, 26);
+            this.mnuFileEvent.Text = "New Event";
             this.mnuFileEvent.Click += new System.EventHandler(this.MnuFileEvent_Click);
             // 
             // xmlSave
             // 
             this.xmlSave.Name = "xmlSave";
-            resources.ApplyResources(this.xmlSave, "xmlSave");
+            this.xmlSave.Size = new System.Drawing.Size(246, 26);
+            this.xmlSave.Text = "Save Calendar";
             this.xmlSave.Click += new System.EventHandler(this.XmlSave_Click);
             // 
             // xmlOpen
             // 
             this.xmlOpen.Name = "xmlOpen";
-            resources.ApplyResources(this.xmlOpen, "xmlOpen");
+            this.xmlOpen.Size = new System.Drawing.Size(246, 26);
+            this.xmlOpen.Text = "Open Existing Calendar";
             this.xmlOpen.Click += new System.EventHandler(this.XmlOpen_Click);
             // 
             // iCalExport
             // 
             this.iCalExport.Name = "iCalExport";
-            resources.ApplyResources(this.iCalExport, "iCalExport");
+            this.iCalExport.Size = new System.Drawing.Size(246, 26);
+            this.iCalExport.Text = "iCal Export";
             this.iCalExport.Click += new System.EventHandler(this.ICalExport_Click);
             // 
             // mnuEdit
@@ -98,12 +105,14 @@
             this.mnuEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSettings});
             this.mnuEdit.Name = "mnuEdit";
-            resources.ApplyResources(this.mnuEdit, "mnuEdit");
+            this.mnuEdit.Size = new System.Drawing.Size(49, 24);
+            this.mnuEdit.Text = "&Edit";
             // 
             // mnuSettings
             // 
             this.mnuSettings.Name = "mnuSettings";
-            resources.ApplyResources(this.mnuSettings, "mnuSettings");
+            this.mnuSettings.Size = new System.Drawing.Size(145, 26);
+            this.mnuSettings.Text = "Settings";
             this.mnuSettings.Click += new System.EventHandler(this.MnuSettings_Click);
             // 
             // mnuAbout
@@ -111,83 +120,156 @@
             this.mnuAbout.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuAboutBtn});
             this.mnuAbout.Name = "mnuAbout";
-            resources.ApplyResources(this.mnuAbout, "mnuAbout");
+            this.mnuAbout.Size = new System.Drawing.Size(64, 24);
+            this.mnuAbout.Text = "Abou&t";
             // 
             // mnuAboutBtn
             // 
             this.mnuAboutBtn.Name = "mnuAboutBtn";
-            resources.ApplyResources(this.mnuAboutBtn, "mnuAboutBtn");
+            this.mnuAboutBtn.Size = new System.Drawing.Size(231, 26);
+            this.mnuAboutBtn.Text = "Calendar Project Info";
             this.mnuAboutBtn.Click += new System.EventHandler(this.MnuAboutBtn_Click);
             // 
             // statusMain
             // 
-            resources.ApplyResources(this.statusMain, "statusMain");
             this.statusMain.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusMain.Location = new System.Drawing.Point(0, 1065);
             this.statusMain.Name = "statusMain";
+            this.statusMain.Size = new System.Drawing.Size(1262, 22);
+            this.statusMain.TabIndex = 28;
             // 
             // daycontainer
             // 
-            resources.ApplyResources(this.daycontainer, "daycontainer");
+            this.daycontainer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.daycontainer.Location = new System.Drawing.Point(50, 152);
+            this.daycontainer.Margin = new System.Windows.Forms.Padding(2);
             this.daycontainer.Name = "daycontainer";
+            this.daycontainer.Size = new System.Drawing.Size(1188, 795);
+            this.daycontainer.TabIndex = 29;
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(70, 125);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Sunday";
             // 
             // label2
             // 
-            resources.ApplyResources(this.label2, "label2");
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(227, 125);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 25);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Monday";
             // 
             // label3
             // 
-            resources.ApplyResources(this.label3, "label3");
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(556, 125);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 25);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Wednesday";
             // 
             // label4
             // 
-            resources.ApplyResources(this.label4, "label4");
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(386, 125);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 25);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Tuesday";
             // 
             // label5
             // 
-            resources.ApplyResources(this.label5, "label5");
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(905, 125);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 25);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Friday";
             // 
             // label6
             // 
-            resources.ApplyResources(this.label6, "label6");
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(743, 125);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 25);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Thursday";
             // 
             // label7
             // 
-            resources.ApplyResources(this.label7, "label7");
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label7.Location = new System.Drawing.Point(1055, 125);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 25);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Saturday";
             // 
             // btnNext
             // 
-            resources.ApplyResources(this.btnNext, "btnNext");
+            this.btnNext.Location = new System.Drawing.Point(854, 44);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 64);
+            this.btnNext.TabIndex = 36;
+            this.btnNext.Text = "Next Month";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
             // btnPrevious
             // 
-            resources.ApplyResources(this.btnPrevious, "btnPrevious");
+            this.btnPrevious.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnPrevious.Location = new System.Drawing.Point(321, 44);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(75, 64);
+            this.btnPrevious.TabIndex = 37;
+            this.btnPrevious.Text = "Previous Month";
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.BtnPrevious_Click);
             // 
             // lblMonthYear
             // 
-            resources.ApplyResources(this.lblMonthYear, "lblMonthYear");
+            this.lblMonthYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lblMonthYear.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblMonthYear.Location = new System.Drawing.Point(400, 44);
+            this.lblMonthYear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMonthYear.Name = "lblMonthYear";
+            this.lblMonthYear.Size = new System.Drawing.Size(450, 62);
+            this.lblMonthYear.TabIndex = 38;
+            this.lblMonthYear.Text = "MONTH YEAR";
+            this.lblMonthYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmMain
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1262, 1087);
             this.Controls.Add(this.lblMonthYear);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
@@ -201,11 +283,10 @@
             this.Controls.Add(this.daycontainer);
             this.Controls.Add(this.statusMain);
             this.Controls.Add(this.mnuMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(80, 38, 80, 38);
             this.Name = "frmMain";
-            this.ShowIcon = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Education Calendar";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();

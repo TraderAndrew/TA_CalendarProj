@@ -251,7 +251,7 @@ namespace EduCal {
                 writer.Close();
             }
 
-            MessageBox.Show("Saved :)");
+            MessageBox.Show("Saved :)", "Education Project");
         }
 
         private void XmlOpen_Click(object sender, EventArgs e)

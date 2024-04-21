@@ -41,10 +41,9 @@
             // 
             this.lblColorofDays.AutoSize = true;
             this.lblColorofDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColorofDays.Location = new System.Drawing.Point(36, 26);
-            this.lblColorofDays.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblColorofDays.Location = new System.Drawing.Point(27, 21);
             this.lblColorofDays.Name = "lblColorofDays";
-            this.lblColorofDays.Size = new System.Drawing.Size(136, 25);
+            this.lblColorofDays.Size = new System.Drawing.Size(108, 20);
             this.lblColorofDays.TabIndex = 2;
             this.lblColorofDays.Text = "Color of Days:";
             // 
@@ -52,29 +51,30 @@
             // 
             this.lblFirmMainColor.AutoSize = true;
             this.lblFirmMainColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirmMainColor.Location = new System.Drawing.Point(36, 138);
-            this.lblFirmMainColor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFirmMainColor.Location = new System.Drawing.Point(27, 112);
             this.lblFirmMainColor.Name = "lblFirmMainColor";
-            this.lblFirmMainColor.Size = new System.Drawing.Size(244, 25);
+            this.lblFirmMainColor.Size = new System.Drawing.Size(196, 20);
             this.lblFirmMainColor.TabIndex = 3;
             this.lblFirmMainColor.Text = "Color of Main Background:";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(418, 243);
+            this.btnSave.Location = new System.Drawing.Point(314, 203);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(56, 21);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Apply";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(41, 54);
+            this.radioButton1.Location = new System.Drawing.Point(31, 44);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(92, 20);
+            this.radioButton1.Size = new System.Drawing.Size(76, 17);
             this.radioButton1.TabIndex = 7;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Color: Pink";
@@ -84,9 +84,10 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(41, 80);
+            this.radioButton2.Location = new System.Drawing.Point(31, 65);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(100, 20);
+            this.radioButton2.Size = new System.Drawing.Size(83, 17);
             this.radioButton2.TabIndex = 8;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Color: White";
@@ -96,9 +97,10 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(41, 167);
+            this.radioButton3.Location = new System.Drawing.Point(31, 136);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(124, 20);
+            this.radioButton3.Size = new System.Drawing.Size(102, 17);
             this.radioButton3.TabIndex = 10;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Color: Light Blue";
@@ -108,9 +110,10 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(41, 195);
+            this.radioButton4.Location = new System.Drawing.Point(31, 158);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(100, 20);
+            this.radioButton4.Size = new System.Drawing.Size(83, 17);
             this.radioButton4.TabIndex = 9;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Color: White";
@@ -119,9 +122,9 @@
             // 
             // frmSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 288);
+            this.ClientSize = new System.Drawing.Size(392, 234);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton2);
@@ -129,10 +132,10 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblFirmMainColor);
             this.Controls.Add(this.lblColorofDays);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSettings";
+            this.Text = "Settings";
             this.ResumeLayout(false);
             this.PerformLayout();
 

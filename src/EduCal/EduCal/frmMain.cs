@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 
 namespace EduCal {
@@ -22,12 +23,10 @@ namespace EduCal {
         public DateTime NowDate { get; set; }
         public EventForm CalEventForm { get; set; }
         public frmSettings SettingMenu { get; set; }
-        public frmSettings FrmMainBackColor { get; set; }
 
 
         int month, year;
         public Color dayFore, dayBack, mainColor;
-
 
         public frmMain() 
         { 
@@ -41,7 +40,7 @@ namespace EduCal {
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Displaydays(int _dayoftheweek, int _days)
@@ -105,7 +104,6 @@ namespace EduCal {
                 daycontainer.Controls.Add(item);
             }
         }
-
         
         /// <summary>
         /// The displayMonths method works to hold as well
@@ -130,12 +128,11 @@ namespace EduCal {
             
             Displaydays(dayoftheweek, days);
         }
-
             
         /// <summary>
         /// This btnPrevious_Click allows user to toggle
-        /// through the different months in a year as
-        /// well go back to months in previous years.
+        /// back to previous months in a year as well as
+        /// months in past years.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -145,20 +142,39 @@ namespace EduCal {
             NowDate = NowDate.AddMonths(-1);
             Displaymonths();
         }
-
+        
+        /// <summary>
+        /// This BtnNext_Click will allow the user to toggle forward
+        /// to future months as well as months in future years.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnNext_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
             NowDate = NowDate.AddMonths(1);
             Displaymonths();
         }
-
+        
+        /// <summary>
+        /// Brings up the about form when the dropdown on the about button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MnuAboutBtn_Click(object sender, EventArgs e)
         {
             frmAbout CalendarProjectInfo = new frmAbout();
             CalendarProjectInfo.ShowDialog();
         }
 
+        /// <summary>
+        /// This MnuSettings_CLick when clicked will display
+        /// a form that will allow the user to change the color
+        /// settings of the calendar as well as change the main
+        /// background color of the calendar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MnuSettings_Click(object sender, EventArgs e)
         {
             SettingMenu = new frmSettings();
@@ -167,6 +183,15 @@ namespace EduCal {
             SettingMenu.Show();
         }
 
+        /// <summary>
+        /// This MnuSetting_AddNew will hold the the color values
+        /// that the users decides on in the settings form and ensure
+        /// that they are displayed on the calendar everytime the user
+        /// opens the calendar as well as if the user decides to send a
+        /// copy of the calendar to a file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
         {
             dayFore = e.ForeColor;
@@ -187,13 +212,25 @@ namespace EduCal {
             CalEventForm.Show();
         }
 
+        /// <summary>
+        /// Adds the event from the model AddEventArgs e
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Eventform_AddNew(object sender, AddEventArgs e)
         {
             Events.Add(e.Model);
             Displaymonths();
         }
-
-        private void MainBackgroundColor(object sender, MainBackgroundChange e)
+        
+        /// <summary>
+        /// This MainBackgroundColor holds the background color
+        /// value so that whenever the program runs, it will always
+        /// know the background color.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainBackgroundColor(object sender, MainBackgroundEventArgs e)
         {
             this.BackColor = e.mainBackground;
         }
@@ -214,6 +251,8 @@ namespace EduCal {
                 XmlFile.Serialize(writer, Events);
                 writer.Close();
             }
+
+            MessageBox.Show("Saved :)", "Education Project");
         }
 
         private void XmlOpen_Click(object sender, EventArgs e)
@@ -236,25 +275,15 @@ namespace EduCal {
             var1.AppendLine($"DTSTAMP: {DateTime.Now}");
             var1.AppendLine($"DTSTART:{DateTime.Now}");
             var1.AppendLine($"DTEND:{DateTime.Now}");
+            var1.AppendLine($"DECRIPTION:{EventForm.Description}");
+            var1.AppendLine($"LOCATION:{EventForm.Location}");
             var1.AppendLine("END:VEVENT");
             var1.AppendLine("END:VCALENDAR"); 
             byte[] buffer = new ASCIIEncoding().GetBytes(var1.ToString());
             writer.Write(buffer, 0, buffer.Length);
             writer.Close();
+
+            MessageBox.Show("Saved :)", "Education Project");
         }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     }
 }

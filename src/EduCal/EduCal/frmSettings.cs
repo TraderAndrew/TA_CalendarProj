@@ -16,7 +16,6 @@ namespace EduCal
         public event ColorOfDayEventHandler SettingsChanged;
         public event frmMainColorEventHandler FrmMainBackground;
 
-
         public frmSettings()
         {
             InitializeComponent();
@@ -53,7 +52,7 @@ namespace EduCal
             ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs { ForeColor = dayFore, BackGroundColor = dayBack };
             SettingsChanged(this, dayColor);
 
-            MainBackgroundChange mainColor = new MainBackgroundChange { mainBackground = mainBack };
+            MainBackgroundEventArgs mainColor = new MainBackgroundEventArgs { mainBackground = mainBack };
             FrmMainBackground(this, mainColor);
 
             this.Close();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,8 @@ namespace EduCal
     {
         public event AddEventHandler EventfrmAdd;
         DateTime dt = DateTime.Now;
-
+        public static string Description;
+        public static new string Location;
 
         public EventForm()
         {
@@ -23,29 +25,26 @@ namespace EduCal
 
         private void EventForm_Load(object sender, EventArgs e)
         {
-            if (dt.Month > 9) 
-            {
-                txtBoxStartDate.Text = $"{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
-            }
-            else
-            {
-                txtBoxStartDate.Text = $"0{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
-            }
+            txtBoxStartDate.Text = $"{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtBoxStartDate.Text))
             {
-                lblError.Text = "Start Date Empty";
+                lblError.Text = "You must enter a start date";
             }
             else if (String.IsNullOrEmpty(txtEvent.Text))
             {
-                lblError.Text = "Event Text Empty";
+                lblError.Text = "You must enter an event name";
             }
             else if (txtEvent.Text.Length < 3 || txtEvent.Text.Length > 100)
             {
-                lblError.Text = "Must be between 3 to 100 characters.";
+                lblError.Text = "Event name must be between 3 - 100 characters";
+            }
+            else if (txtBoxDescription.Text.Length > 1000)
+            {
+                lblError.Text = "Description must be less than 1000 characters";
             }
             else if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
             {
@@ -66,6 +65,9 @@ namespace EduCal
             AddEventArgs ae = new AddEventArgs() { Model = tmp };
             EventfrmAdd(this, ae);
 
+            Description = txtBoxDescription.Text;
+            Location = txtBoxLocation.Text;
+
             this.Close();
         }
 
@@ -79,31 +81,15 @@ namespace EduCal
             }
             else
             {
-                EventModel tmp = new EventModel() { EventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
+                EventModel tmp = new EventModel() { Description = txtBoxDescription.Text, EventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
                 AddEventArgs ae = new AddEventArgs() { Model = tmp };
                 EventfrmAdd(this, ae);
+
+                Description = txtBoxDescription.Text;
+                Location = txtBoxLocation.Text;
 
                 this.Close();
             }
         }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     }
 }

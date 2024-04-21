@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 
 namespace EduCal {
@@ -274,6 +275,8 @@ namespace EduCal {
             var1.AppendLine($"DTSTAMP: {DateTime.Now}");
             var1.AppendLine($"DTSTART:{DateTime.Now}");
             var1.AppendLine($"DTEND:{DateTime.Now}");
+            var1.AppendLine($"DECRIPTION:{EventForm.Description}");
+            var1.AppendLine($"LOCATION:{EventForm.Location}");
             var1.AppendLine("END:VEVENT");
             var1.AppendLine("END:VCALENDAR"); 
             byte[] buffer = new ASCIIEncoding().GetBytes(var1.ToString());

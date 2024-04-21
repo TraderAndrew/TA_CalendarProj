@@ -279,6 +279,8 @@ namespace EduCal {
             byte[] buffer = new ASCIIEncoding().GetBytes(var1.ToString());
             writer.Write(buffer, 0, buffer.Length);
             writer.Close();
+
+            MessageBox.Show("Saved :)", "Education Project");
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EduCal
 {
-    public delegate void frmMainColorEventHandler(object sender, MainBackgroundEventArgs e);
+    public delegate void MainBackgroundEventHandler(object sender, MainBackgroundEventArgs e);
     public class MainBackgroundEventArgs:EventArgs
     {
         public Color mainBackground { get; set; }

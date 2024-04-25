@@ -18,10 +18,7 @@ namespace EduCal
         }
 
         private void frmDescription_Load(object sender, EventArgs e)
-        {
-            frmTxtBoxDescription.Text = EventForm.Description;
-            frmTxtBoxLocation.Text = EventForm.Location;
-
+        {   
             if (String.IsNullOrEmpty(frmTxtBoxDescription.Text))
             {
                 frmTxtBoxDescription.Text = "You did not put a description";

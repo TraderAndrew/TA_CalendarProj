@@ -18,7 +18,7 @@ namespace EduCal {
 
     public partial class frmMain : Form 
     {
-        public new List<EventModel> Events { get; set; }
+        public List<EventModel> EventModelInfo { get; set; }
         public List<UserControlDays> UserDays { get; set; }
         public DateTime NowDate { get; set; }
         public EventForm CalEventForm { get; set; }
@@ -31,7 +31,7 @@ namespace EduCal {
         public frmMain() 
         { 
             InitializeComponent();
-            Events = new List<EventModel>();
+            EventModelInfo = new List<EventModel>();
             NowDate = DateTime.Now;
             dayFore = Color.Black;
             dayBack = Color.White;
@@ -64,7 +64,7 @@ namespace EduCal {
                 }
                 newDay.Days(i);
 
-                foreach (EventModel em in Events)
+                foreach (EventModel em in EventModelInfo)
                 {
                     if (em.isMutliDay)
                     {
@@ -219,7 +219,7 @@ namespace EduCal {
         /// <param name="e"></param>
         private void Eventform_AddNew(object sender, AddEventArgs e)
         {
-            Events.Add(e.Model);
+            EventModelInfo.Add(e.Model);
             Displaymonths();
         }
         
@@ -246,7 +246,7 @@ namespace EduCal {
             XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
             TextWriter writer = new StreamWriter("MyEvents.xml");
 
-            if (Events != null && Events.Count > 0) 
+            if (Events != null && EventModelInfo.Count > 0) 
             {
                 XmlFile.Serialize(writer, Events);
                 writer.Close();
@@ -260,7 +260,7 @@ namespace EduCal {
             XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
             FileStream fs = new FileStream("MyEvents.xml", FileMode.Open);
 
-            Events = (List<EventModel>)XmlFile.Deserialize(fs);
+            EventModelInfo = (List<EventModel>)XmlFile.Deserialize(fs);
             Displaymonths();
         }
 

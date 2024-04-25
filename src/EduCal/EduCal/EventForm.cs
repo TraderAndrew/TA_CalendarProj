@@ -15,8 +15,6 @@ namespace EduCal
     {
         public event AddEventHandler EventfrmAdd;
         DateTime dt = DateTime.Now;
-        public static string Description;
-        public static new string Location;
 
         public EventForm()
         {
@@ -65,9 +63,6 @@ namespace EduCal
             AddEventArgs ae = new AddEventArgs() { Model = tmp };
             EventfrmAdd(this, ae);
 
-            Description = txtBoxDescription.Text;
-            Location = txtBoxLocation.Text;
-
             this.Close();
         }
 
@@ -84,9 +79,6 @@ namespace EduCal
                 EventModel tmp = new EventModel() { Description = txtBoxDescription.Text, EventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
                 AddEventArgs ae = new AddEventArgs() { Model = tmp };
                 EventfrmAdd(this, ae);
-
-                Description = txtBoxDescription.Text;
-                Location = txtBoxLocation.Text;
 
                 this.Close();
             }

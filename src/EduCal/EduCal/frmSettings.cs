@@ -14,7 +14,7 @@ namespace EduCal
     public partial class frmSettings : Form
     {
         public event ColorOfDayEventHandler SettingsChanged;
-        public event frmMainColorEventHandler FrmMainBackground;
+        public event MainBackgroundEventHandler FrmMainBackground;
 
         public frmSettings()
         {

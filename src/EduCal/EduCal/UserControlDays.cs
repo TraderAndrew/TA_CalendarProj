@@ -14,16 +14,12 @@ namespace EduCal
     public partial class UserControlDays : UserControl
     {
         public bool WeekEnd { get; set; } = false;
-        public DateTime UcToday { get; set; }
-        //UcToday gets todays date and displays it in the top left corner of the boxes in the calendar
         public String UcTodaytxt { get { return _ucTodaytxt; } set { _ucTodaytxt = value; lblUserTxt.Text = value; } }
-        //UcTodaytxt gets the the txt from the event form the user inputs as his/her event and displays it in the middle of the boxes of the calendar
 
 
         public event AddEventHandler PopAdd;
         public static string static_day;
         private String _ucTodaytxt;
-       
 
         public UserControlDays()
         {
@@ -44,20 +40,10 @@ namespace EduCal
             PopAdd(this, ae);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void lblUserTxtClick(object sender, EventArgs e)
+        {
+            frmDescription frmDescription = new frmDescription();
+            frmDescription.Show();
+        }
     }
 }

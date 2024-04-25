@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace EduCal
     {
         public event AddEventHandler EventfrmAdd;
         DateTime dt = DateTime.Now;
+        public static string Description;
+        public static new string Location;
 
         public EventForm()
         {
@@ -22,33 +25,38 @@ namespace EduCal
 
         private void EventForm_Load(object sender, EventArgs e)
         {
-            if (dt.Month > 9)
-            {
-                txtBoxStartDate.Text = $"{dt.Month}/{dt.Day}/{dt.Year}";
-            }
-            else 
-            {
-                txtBoxStartDate.Text = $"0{dt.Month}/{dt.Day}/{dt.Year}";
-            }
+            txtBoxStartDate.Text = $"{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
+            if (String.IsNullOrEmpty(txtBoxStartDate.Text))
             {
-                runDateRange();            
+                lblError.Text = "You must enter a start date";
+            }
+            else if (String.IsNullOrEmpty(txtEvent.Text))
+            {
+                lblError.Text = "You must enter an event name";
+            }
+            else if (txtEvent.Text.Length < 3 || txtEvent.Text.Length > 100)
+            {
+                lblError.Text = "Event name must be between 3 - 100 characters";
+            }
+            else if (txtBoxDescription.Text.Length > 1000)
+            {
+                lblError.Text = "Description must be less than 1000 characters";
+            }
+            else if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
+            {
+                RunDateRange();
             }
             else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
             {
-                runSingleDay();
-            }
-            else 
-            {
-                lblError.Text = "You have to enter a start date";
+                RunSingleDay();
             }
         }
 
-        private void runDateRange() 
+        private void RunDateRange() 
         {
             DateTime sDate = DateTime.Parse(txtBoxStartDate.Text);
             DateTime eDate = DateTime.Parse(txtBoxEndDate.Text);
@@ -57,10 +65,13 @@ namespace EduCal
             AddEventArgs ae = new AddEventArgs() { Model = tmp };
             EventfrmAdd(this, ae);
 
+            Description = txtBoxDescription.Text;
+            Location = txtBoxLocation.Text;
+
             this.Close();
         }
 
-        private void runSingleDay() 
+        private void RunSingleDay() 
         {
             
             if (!DateTime.TryParse(txtBoxStartDate.Text, out dt))
@@ -70,31 +81,15 @@ namespace EduCal
             }
             else
             {
-                EventModel tmp = new EventModel() { EventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
+                EventModel tmp = new EventModel() { Description = txtBoxDescription.Text, EventStartDay = dt, Name = txtEvent.Text, isMutliDay = false };
                 AddEventArgs ae = new AddEventArgs() { Model = tmp };
                 EventfrmAdd(this, ae);
+
+                Description = txtBoxDescription.Text;
+                Location = txtBoxLocation.Text;
 
                 this.Close();
             }
         }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     }
 }

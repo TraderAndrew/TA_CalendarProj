@@ -45,10 +45,11 @@
             // lblUserTxt
             // 
             this.lblUserTxt.AutoSize = true;
-            this.lblUserTxt.Location = new System.Drawing.Point(61, 62);
+            this.lblUserTxt.Location = new System.Drawing.Point(44, 51);
             this.lblUserTxt.Name = "lblUserTxt";
             this.lblUserTxt.Size = new System.Drawing.Size(0, 16);
             this.lblUserTxt.TabIndex = 1;
+            this.lblUserTxt.Click += new System.EventHandler(this.lblUserTxtClick);
             // 
             // UserControlDays
             // 
@@ -57,9 +58,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblUserTxt);
             this.Controls.Add(this.lblDays);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserControlDays";
             this.Size = new System.Drawing.Size(171, 118);
-            this.DoubleClick += new System.EventHandler(this.UserControlDays_Click);
+            this.Click += new System.EventHandler(this.UserControlDays_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

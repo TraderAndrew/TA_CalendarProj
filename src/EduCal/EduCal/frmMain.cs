@@ -38,11 +38,6 @@ namespace EduCal {
             Displaymonths();
         }
 
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Displaydays(int _dayoftheweek, int _days)
         {
             UserDays = new List<UserControlDays>();

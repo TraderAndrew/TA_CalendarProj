@@ -287,7 +287,6 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Education Calendar";
-            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
             this.ResumeLayout(false);

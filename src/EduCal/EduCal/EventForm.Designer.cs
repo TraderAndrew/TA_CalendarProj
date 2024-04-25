@@ -47,7 +47,7 @@
             // 
             this.txtBoxStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxStartDate.Location = new System.Drawing.Point(57, 22);
-            this.txtBoxStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBoxStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxStartDate.Name = "txtBoxStartDate";
             this.txtBoxStartDate.Size = new System.Drawing.Size(104, 26);
             this.txtBoxStartDate.TabIndex = 0;
@@ -56,10 +56,10 @@
             // 
             this.txtEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEvent.Location = new System.Drawing.Point(57, 70);
-            this.txtEvent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEvent.Margin = new System.Windows.Forms.Padding(2);
             this.txtEvent.Name = "txtEvent";
             this.txtEvent.Size = new System.Drawing.Size(410, 26);
-            this.txtEvent.TabIndex = 1;
+            this.txtEvent.TabIndex = 2;
             // 
             // label1
             // 
@@ -84,10 +84,10 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(410, 396);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 22);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -106,10 +106,10 @@
             // 
             this.txtBoxEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEndDate.Location = new System.Drawing.Point(186, 22);
-            this.txtBoxEndDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBoxEndDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxEndDate.Name = "txtBoxEndDate";
             this.txtBoxEndDate.Size = new System.Drawing.Size(129, 26);
-            this.txtBoxEndDate.TabIndex = 6;
+            this.txtBoxEndDate.TabIndex = 2;
             // 
             // label3
             // 
@@ -125,10 +125,10 @@
             // 
             this.txtBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxDescription.Location = new System.Drawing.Point(57, 123);
-            this.txtBoxDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBoxDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxDescription.Name = "txtBoxDescription";
             this.txtBoxDescription.Size = new System.Drawing.Size(410, 269);
-            this.txtBoxDescription.TabIndex = 8;
+            this.txtBoxDescription.TabIndex = 4;
             this.txtBoxDescription.Text = "";
             // 
             // label4
@@ -156,11 +156,11 @@
             // 
             this.txtBoxLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxLocation.Location = new System.Drawing.Point(328, 22);
-            this.txtBoxLocation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBoxLocation.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxLocation.Multiline = true;
             this.txtBoxLocation.Name = "txtBoxLocation";
             this.txtBoxLocation.Size = new System.Drawing.Size(139, 25);
-            this.txtBoxLocation.TabIndex = 11;
+            this.txtBoxLocation.TabIndex = 3;
             // 
             // label6
             // 
@@ -190,7 +190,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEvent);
             this.Controls.Add(this.txtBoxStartDate);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EventForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event Form";

@@ -92,7 +92,6 @@ namespace EduCal
 
                 this.Close();
             }
-
         }
 
         private void RunSingleDay() 

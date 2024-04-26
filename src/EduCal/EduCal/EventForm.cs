@@ -44,26 +44,45 @@ namespace EduCal
             {
                 lblError.Text = "Description must be less than 1000 characters";
             }
-            else if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
+            else
             {
-                RunDateRange();
-            }
-            else if (!String.IsNullOrEmpty(txtBoxStartDate.Text))
-            {
-                RunSingleDay();
+                if (!String.IsNullOrEmpty(txtBoxStartDate.Text) && !String.IsNullOrEmpty(txtBoxEndDate.Text))
+                {
+                    RunDateRange();
+                }
+                else
+                {
+                    RunSingleDay();
+                }
             }
         }
 
         private void RunDateRange() 
         {
-            DateTime sDate = DateTime.Parse(txtBoxStartDate.Text);
-            DateTime eDate = DateTime.Parse(txtBoxEndDate.Text);
+            if (!DateTime.TryParse(txtBoxStartDate.Text, out dt) && !DateTime.TryParse(txtBoxEndDate.Text, out dt))
+            {
+                lblError.Text = "Both dates need valid dates.";
+            }
+            else if (!DateTime.TryParse(txtBoxEndDate.Text, out dt))
+            {
+                lblError.Text = "End Date error";
+            }
+            else if (!DateTime.TryParse(txtBoxStartDate.Text, out dt)) 
+            {
+                lblError.Text = "Start Date error";
+            }
+            else
+            {
+                DateTime sDate = DateTime.Parse(txtBoxStartDate.Text);
+                DateTime eDate = DateTime.Parse(txtBoxEndDate.Text);
 
-            EventModel tmp = new EventModel() { EventStartDay = sDate, EventEndDay = eDate, Name = txtEvent.Text, isMutliDay = true };
-            AddEventArgs ae = new AddEventArgs() { Model = tmp };
-            EventfrmAdd(this, ae);
+                EventModel tmp = new EventModel() { EventStartDay = sDate, EventEndDay = eDate, Name = txtEvent.Text, isMutliDay = true };
+                AddEventArgs ae = new AddEventArgs() { Model = tmp };
+                EventfrmAdd(this, ae);
 
-            this.Close();
+                this.Close();
+            }
+
         }
 
         private void RunSingleDay() 
@@ -71,8 +90,7 @@ namespace EduCal
             
             if (!DateTime.TryParse(txtBoxStartDate.Text, out dt))
             {
-                lblError.Text = "Enter a valid date";
-                dt = DateTime.Now;
+                lblError.Text = "Start Date error";
             }
             else
             {

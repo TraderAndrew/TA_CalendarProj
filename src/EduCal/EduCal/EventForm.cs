@@ -23,7 +23,17 @@ namespace EduCal
 
         private void EventForm_Load(object sender, EventArgs e)
         {
-            txtBoxStartDate.Text = $"{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
+            if (String.IsNullOrEmpty(UserControlDays.static_day))
+            {
+                txtBoxStartDate.Text = $"{dt.Month}/{dt.Day}/{dt.Year}";
+
+            }
+            else 
+            {
+                txtBoxStartDate.Text = $"{dt.Month}/{UserControlDays.static_day}/{dt.Year}";
+            }
+            
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)

@@ -11,6 +11,6 @@ namespace EduCal
     public delegate void MainBackgroundEventHandler(object sender, MainBackgroundEventArgs e);
     public class MainBackgroundEventArgs:EventArgs
     {
-        public Color mainBackground { get; set; }
+        public Color MainBackground { get; set; }
     }
 }

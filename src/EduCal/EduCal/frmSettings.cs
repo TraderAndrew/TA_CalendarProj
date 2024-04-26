@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace EduCal
 {
@@ -19,6 +18,40 @@ namespace EduCal
         public frmSettings()
         {
             InitializeComponent();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            var dayBack = Color.White;
+            var dayFore = Color.Black;
+            var mainBack = SystemColors.Control;
+
+            if (radioButton1.Checked)
+            {
+                dayBack = Color.Pink;
+                dayFore = Color.Blue;
+            }
+            else if (radioButton2.Checked)
+            {
+                dayBack = Color.White;
+                dayFore = Color.Black;
+            }
+            else if (radioButton3.Checked)
+            {
+                mainBack = Color.LightBlue;
+            }
+            else if (radioButton4.Checked)
+            {
+                mainBack = SystemColors.Control;
+            }
+
+            ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs { ForeColor = dayFore, BackGroundColor = dayBack };
+            SettingsChanged(this, dayColor);
+
+            MainBackgroundEventArgs mainColor = new MainBackgroundEventArgs { MainBackground = mainBack };
+            FrmMainBackground(this, mainColor);
+
+            this.Close();
         }
 
         /// <summary>
@@ -37,49 +70,9 @@ namespace EduCal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            var dayBack = Color.White;
-            var dayFore = Color.Black;
-            var mainBack = SystemColors.Control;
-
-            if (radioButton1.Checked)
-            {
-                dayBack = Color.Pink;
-                dayFore = Color.Blue;
-            }
-
-            if (radioButton2.Checked)
-            {
-                dayBack = Color.White;
-                dayFore = Color.Black;
-            }
-
-            if (radioButton3.Checked)
-            {
-                mainBack = Color.LightBlue;
-            }
-
-            if (radioButton4.Checked)
-            {
-                mainBack = SystemColors.Control;
-            }
-
-            ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs { ForeColor = dayFore, BackGroundColor = dayBack };
-            SettingsChanged(this, dayColor);
-
-            MainBackgroundEventArgs mainColor = new MainBackgroundEventArgs { mainBackground = mainBack };
-            FrmMainBackground(this, mainColor);
-
-            this.Close();
-        }
-
-        
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-           //This radioButton_CheckedChanged method will ensure that when the user changes the color values of any of the 
-           //items(letters, background, foregrounds, etc.) in the settings that those changes will only be applied after
-           //the user clicks the apply button instead of automatically applying the changes when the user clicks on the options.
+            
         }
     }
 }

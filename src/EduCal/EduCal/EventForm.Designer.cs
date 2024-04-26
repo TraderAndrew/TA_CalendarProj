@@ -55,7 +55,7 @@
             // txtEvent
             // 
             this.txtEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEvent.Location = new System.Drawing.Point(57, 70);
+            this.txtEvent.Location = new System.Drawing.Point(55, 79);
             this.txtEvent.Margin = new System.Windows.Forms.Padding(2);
             this.txtEvent.Name = "txtEvent";
             this.txtEvent.Size = new System.Drawing.Size(410, 26);
@@ -74,12 +74,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 55);
+            this.label2.Location = new System.Drawing.Point(55, 64);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Event";
+            this.label2.Text = "Event:";
             // 
             // btnSave
             // 
@@ -87,7 +87,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 22);
-            this.btnSave.TabIndex = 5;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -109,7 +109,7 @@
             this.txtBoxEndDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxEndDate.Name = "txtBoxEndDate";
             this.txtBoxEndDate.Size = new System.Drawing.Size(129, 26);
-            this.txtBoxEndDate.TabIndex = 2;
+            this.txtBoxEndDate.TabIndex = 1;
             // 
             // label3
             // 
@@ -124,17 +124,17 @@
             // txtBoxDescription
             // 
             this.txtBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDescription.Location = new System.Drawing.Point(57, 123);
+            this.txtBoxDescription.Location = new System.Drawing.Point(57, 191);
             this.txtBoxDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxDescription.Name = "txtBoxDescription";
-            this.txtBoxDescription.Size = new System.Drawing.Size(410, 269);
+            this.txtBoxDescription.Size = new System.Drawing.Size(410, 201);
             this.txtBoxDescription.TabIndex = 4;
             this.txtBoxDescription.Text = "";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 107);
+            this.label4.Location = new System.Drawing.Point(54, 176);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
@@ -155,17 +155,17 @@
             // txtBoxLocation
             // 
             this.txtBoxLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxLocation.Location = new System.Drawing.Point(328, 22);
+            this.txtBoxLocation.Location = new System.Drawing.Point(55, 138);
             this.txtBoxLocation.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxLocation.Multiline = true;
             this.txtBoxLocation.Name = "txtBoxLocation";
-            this.txtBoxLocation.Size = new System.Drawing.Size(139, 25);
+            this.txtBoxLocation.Size = new System.Drawing.Size(408, 25);
             this.txtBoxLocation.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(326, 7);
+            this.label6.Location = new System.Drawing.Point(55, 123);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);

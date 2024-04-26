@@ -57,17 +57,17 @@ namespace EduCal {
                 {
                     newDay.WeekEnd = true;
                 }
-                newDay.Days(i);
 
                 foreach (EventModel em in EventModelInfo)
                 {
+                    em.Day = i;
                     if (em.isMutliDay)
                     {
                         if (em.EventStartDay.Date <= uniqToday.Date) 
                         {
                             if (em.EventEndDay.Date >= uniqToday.Date) 
                             {
-                                newDay.UcTodaytxt = em.Name;
+                                newDay.Event = em;
                             }
                         }
                     }
@@ -75,10 +75,11 @@ namespace EduCal {
                     {
                         if (em.EventStartDay.ToShortDateString() == uniqToday.ToShortDateString())
                         {
-                            newDay.UcTodaytxt = em.Name;
+                            newDay.Event = em;
                         }
                     }
                 }
+                newDay.Days(i);
                 UserDays.Add(newDay);
             }
 
@@ -227,7 +228,7 @@ namespace EduCal {
         /// <param name="e"></param>
         private void MainBackgroundColor(object sender, MainBackgroundEventArgs e)
         {
-            this.BackColor = e.mainBackground;
+            this.BackColor = e.MainBackground;
         }
 
         /// <summary>
@@ -238,47 +239,82 @@ namespace EduCal {
         /// <param name="e"></param>
         private void XmlSave_Click(object sender, EventArgs e)
         {
-            XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
-            TextWriter writer = new StreamWriter("MyEvents.xml");
-
             if (Events != null && EventModelInfo.Count > 0) 
             {
-                XmlFile.Serialize(writer, Events);
-                writer.Close();
-            }
+                try 
+                {
+                    XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
+                    TextWriter writer = new StreamWriter("MyEvents.xml");
+                    XmlFile.Serialize(writer, EventModelInfo);
+                    writer.Close();
 
-            MessageBox.Show("Saved :)", "Education Project");
+                    MessageBox.Show("Saved :)", "Education Project");
+                } 
+                catch (Exception)
+                {
+                    MessageBox.Show("You already have a file opened! You must restart to save the new events :)", "Education Calendar XML Save");
+                }
+            }
+            else
+            {
+                MessageBox.Show("There is nothing to save!", "Education Calendar XML Save");
+            }
         }
 
         private void XmlOpen_Click(object sender, EventArgs e)
         {
-            XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
-            FileStream fs = new FileStream("MyEvents.xml", FileMode.Open);
+            if (Events != null && EventModelInfo.Count > 0)
+            {
+                MessageBox.Show("You can not opend a file with events already displayed!", "Education Calendar XML Open");
+            }
+            else
+            {
+                try
+                {
+                    XmlSerializer XmlFile = new XmlSerializer(typeof(List<EventModel>));
+                    FileStream fs = new FileStream("MyEvents.xml", FileMode.Open);
 
-            EventModelInfo = (List<EventModel>)XmlFile.Deserialize(fs);
-            Displaymonths();
+                    EventModelInfo = (List<EventModel>)XmlFile.Deserialize(fs);
+                    Displaymonths();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("You have an empty 'MyEvents' file! You need to make events first :)", "Education Calendar XML Open");
+                }
+            }
+            
         }
 
         private void ICalExport_Click(object sender, EventArgs e)
         {
-            FileStream writer = new FileStream("Event.ics", FileMode.Create);
-            StringBuilder var1 = new StringBuilder();
-            var1.AppendLine("BEGIN: VCALENDAR");
-            var1.AppendLine("VERSION:2.0");
-            var1.AppendLine("PRODID: -//Andrews Calendar/ v1.0//EN");
-            var1.AppendLine("BEGIN: VEVENT");
-            //var1.AppendLine($"DTSTAMP: {DateTime.Now}");
-            //var1.AppendLine($"DTSTART:{DateTime.Now}");
-            //var1.AppendLine($"DTEND:{DateTime.Now}");
-            //var1.AppendLine($"DECRIPTION:{EventForm.Description}");
-            //var1.AppendLine($"LOCATION:{EventForm.Location}");
-            var1.AppendLine("END:VEVENT");
-            var1.AppendLine("END:VCALENDAR"); 
-            byte[] buffer = new ASCIIEncoding().GetBytes(var1.ToString());
-            writer.Write(buffer, 0, buffer.Length);
-            writer.Close();
+            if(Events != null && EventModelInfo.Count > 0)
+            {
+                EventModel em = EventModelInfo.FirstOrDefault();
+                FileStream writer = new FileStream("Event.ics", FileMode.Create);
+                StringBuilder var1 = new StringBuilder();
+                var1.AppendLine("BEGIN: VCALENDAR");
+                var1.AppendLine("VERSION:2.0");
+                var1.AppendLine("PRODID: -//Andrews Calendar/v1.0//EN");
+                var1.AppendLine("BEGIN: VEVENT");
+                var1.AppendLine("DURATION:PT1H0M0S");
+                var1.AppendLine("DUE:19980430T000000Z");
+                var1.AppendLine($"DTSTAMP: {em.Name}");
+                var1.AppendLine($"DTSTART:{em.EventStartDay}");
+                var1.AppendLine($"DTEND:{em.EventEndDay}");
+                var1.AppendLine($"DECRIPTION:{em.Description}");
+                var1.AppendLine($"LOCATION:{em.Location}");
+                var1.AppendLine("END:VEVENT");
+                var1.AppendLine("END:VCALENDAR");
+                byte[] buffer = new ASCIIEncoding().GetBytes(var1.ToString());
+                writer.Write(buffer, 0, buffer.Length);
+                writer.Close();
 
-            MessageBox.Show("Saved :)", "Education Project");
+                MessageBox.Show("Saved :)", "Education Project");
+            }
+            else
+            {
+                MessageBox.Show("There is nothing to save!", "Education Calendar iCal Save");
+            }
         }
     }
 }

@@ -38,7 +38,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 76);
+            this.label1.Location = new System.Drawing.Point(53, 86);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
@@ -58,12 +58,12 @@
             // 
             // frmTxtBoxDescription
             // 
-            this.frmTxtBoxDescription.Location = new System.Drawing.Point(56, 93);
+            this.frmTxtBoxDescription.Location = new System.Drawing.Point(56, 101);
             this.frmTxtBoxDescription.Margin = new System.Windows.Forms.Padding(2);
             this.frmTxtBoxDescription.Multiline = true;
             this.frmTxtBoxDescription.Name = "frmTxtBoxDescription";
             this.frmTxtBoxDescription.ReadOnly = true;
-            this.frmTxtBoxDescription.Size = new System.Drawing.Size(420, 338);
+            this.frmTxtBoxDescription.Size = new System.Drawing.Size(420, 330);
             this.frmTxtBoxDescription.TabIndex = 3;
             // 
             // label2

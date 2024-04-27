@@ -13,5 +13,6 @@ namespace EduCal
     {
         public Color BackGroundColor { get; set; }
         public Color ForeColor { get; set; }
+        public Color MainBackGroundColor { get; set; }
     }
 }

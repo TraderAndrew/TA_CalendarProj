@@ -13,7 +13,6 @@ namespace EduCal
     public partial class frmSettings : Form
     {
         public event ColorOfDayEventHandler SettingsChanged;
-        public event MainBackgroundEventHandler FrmMainBackground;
 
         public frmSettings()
         {
@@ -45,11 +44,8 @@ namespace EduCal
                 mainBack = SystemColors.Control;
             }
 
-            ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs { ForeColor = dayFore, BackGroundColor = dayBack };
+            ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs { MainBackGroundColor = mainBack, ForeColor = dayFore, BackGroundColor = dayBack };
             SettingsChanged(this, dayColor);
-
-            MainBackgroundEventArgs mainColor = new MainBackgroundEventArgs { MainBackground = mainBack };
-            FrmMainBackground(this, mainColor);
 
             this.Close();
         }
@@ -72,7 +68,8 @@ namespace EduCal
         /// <param name="e"></param>
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            
+            //This method is to stop the form from automatically changing the colors on the main form.
+            // The user now has to click apply before the colors change.
         }
     }
 }

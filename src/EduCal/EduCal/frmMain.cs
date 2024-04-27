@@ -26,7 +26,7 @@ namespace EduCal {
 
 
         int month, year;
-        public Color dayFore, dayBack, mainColor;
+        public Color dayFore, dayBack;
 
         public frmMain() 
         { 
@@ -175,7 +175,6 @@ namespace EduCal {
         {
             SettingMenu = new frmSettings();
             SettingMenu.SettingsChanged += MnuSetting_AddNew;
-            SettingMenu.FrmMainBackground += MainBackgroundColor;
             SettingMenu.Show();
         }
 
@@ -191,7 +190,8 @@ namespace EduCal {
         private void MnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
         {
             dayFore = e.ForeColor;
-            dayBack = e.BackGroundColor;           
+            dayBack = e.BackGroundColor;
+            this.BackColor = e.MainBackGroundColor;
             Displaymonths();
         }
 
@@ -217,18 +217,6 @@ namespace EduCal {
         {
             EventModelInfo.Add(e.Model);
             Displaymonths();
-        }
-        
-        /// <summary>
-        /// This MainBackgroundColor holds the background color
-        /// value so that whenever the program runs, it will always
-        /// know the background color.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainBackgroundColor(object sender, MainBackgroundEventArgs e)
-        {
-            this.BackColor = e.MainBackground;
         }
 
         /// <summary>

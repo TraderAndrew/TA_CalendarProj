@@ -69,7 +69,7 @@ namespace EduCal
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
             //This method is to stop the form from automatically changing the colors on the main form.
-            // The user now has to click apply before the colors change.
+            //The user now has to click apply before the colors change.
         }
     }
 }

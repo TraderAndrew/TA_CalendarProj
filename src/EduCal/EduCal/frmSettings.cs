@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace EduCal
 {
     public partial class frmSettings : Form
     {
         public event ColorOfDayEventHandler SettingsChanged;
-        public event frmMainColorEventHandler FrmMainBackground;
 
         public frmSettings()
         {
@@ -32,28 +30,22 @@ namespace EduCal
                 dayBack = Color.Pink;
                 dayFore = Color.Blue;
             }
-
-            if (radioButton2.Checked)
+            else if (radioButton2.Checked)
             {
                 dayBack = Color.White;
                 dayFore = Color.Black;
             }
-
-            if (radioButton3.Checked)
+            else if (radioButton3.Checked)
             {
                 mainBack = Color.LightBlue;
             }
-
-            if (radioButton4.Checked)
+            else if (radioButton4.Checked)
             {
                 mainBack = SystemColors.Control;
             }
 
-            ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs { ForeColor = dayFore, BackGroundColor = dayBack };
+            ColorOfDayEventArgs dayColor = new ColorOfDayEventArgs { MainBackGroundColor = mainBack, ForeColor = dayFore, BackGroundColor = dayBack };
             SettingsChanged(this, dayColor);
-
-            MainBackgroundEventArgs mainColor = new MainBackgroundEventArgs { mainBackground = mainBack };
-            FrmMainBackground(this, mainColor);
 
             this.Close();
         }
@@ -76,7 +68,8 @@ namespace EduCal
         /// <param name="e"></param>
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-           
+            //This method is to stop the form from automatically changing the colors on the main form.
+            //The user now has to click apply before the colors change.
         }
     }
 }

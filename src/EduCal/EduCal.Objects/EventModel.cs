@@ -15,6 +15,8 @@ namespace EduCal
         [XmlAttribute("Name")]
         public string Name { get; set; } 
         public string Description { get; set; }
+        public string Location { get; set; }
+        public int Day { get; set; }
         public DateTime EventStartDay { get; set; }
         public DateTime EventEndDay { get; set;}
     }

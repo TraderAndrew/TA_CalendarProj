@@ -1,4 +1,4 @@
 # 202420_CIS285
-Andrew Trader, Dalton Waters, Min Zhong, Braki Walaa
+Andrew Trader
 # Header
-This is our project for school
+This was my school project

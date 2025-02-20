@@ -100,13 +100,7 @@ namespace EduCal {
                 daycontainer.Controls.Add(item);
             }
         }
-        
-        /// <summary>
-        /// The displayMonths method works to hold as well
-        /// display the date, time, and year to be used by 
-        /// on click buttons as well as the creation of
-        /// events by the user.
-        /// </summary>
+
         private void Displaymonths() 
         {
             daycontainer.Controls.Clear();
@@ -124,14 +118,7 @@ namespace EduCal {
             
             Displaydays(dayoftheweek, days);
         }
-            
-        /// <summary>
-        /// This btnPrevious_Click allows user to toggle
-        /// back to previous months in a year as well as
-        /// months in past years.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void BtnPrevious_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
@@ -139,12 +126,6 @@ namespace EduCal {
             Displaymonths();
         }
         
-        /// <summary>
-        /// This BtnNext_Click will allow the user to toggle forward
-        /// to future months as well as months in future years.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void BtnNext_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
@@ -152,25 +133,12 @@ namespace EduCal {
             Displaymonths();
         }
         
-        /// <summary>
-        /// Brings up the about form when the dropdown on the about button is clicked
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void MnuAboutBtn_Click(object sender, EventArgs e)
         {
             frmAbout CalendarProjectInfo = new frmAbout();
             CalendarProjectInfo.ShowDialog();
         }
 
-        /// <summary>
-        /// This MnuSettings_CLick when clicked will display
-        /// a form that will allow the user to change the color
-        /// settings of the calendar as well as change the main
-        /// background color of the calendar.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void MnuSettings_Click(object sender, EventArgs e)
         {
             SettingMenu = new frmSettings();
@@ -178,15 +146,6 @@ namespace EduCal {
             SettingMenu.Show();
         }
 
-        /// <summary>
-        /// This MnuSetting_AddNew will hold the the color values
-        /// that the users decides on in the settings form and ensure
-        /// that they are displayed on the calendar everytime the user
-        /// opens the calendar as well as if the user decides to send a
-        /// copy of the calendar to a file.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void MnuSetting_AddNew(object sender, ColorOfDayEventArgs e)
         {
             dayFore = e.ForeColor;
@@ -195,12 +154,6 @@ namespace EduCal {
             Displaymonths();
         }
 
-        /// <summary>
-        /// MnuFileEvent_Click allows the user to acess the event form to
-        /// put an event on the calendar.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void MnuFileEvent_Click(object sender, EventArgs e)
         {
             CalEventForm = new EventForm();
@@ -208,23 +161,12 @@ namespace EduCal {
             CalEventForm.Show();
         }
 
-        /// <summary>
-        /// Adds the event from the model AddEventArgs e
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Eventform_AddNew(object sender, AddEventArgs e)
         {
             EventModelInfo.Add(e.Model);
             Displaymonths();
         }
 
-        /// <summary>
-        /// XmlSave_Click, Xml_Open, and ICalExport_Click all save to 
-        /// the file directory C:\WORKING\CIS285_EduCal_T2\bin\Debug
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void XmlSave_Click(object sender, EventArgs e)
         {
             if (Events != null && EventModelInfo.Count > 0) 
